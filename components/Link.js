@@ -8,7 +8,7 @@
  * This HOC solves the problem, by adding the prefix (which is defined in next.config.js)
  * to 'as' property
  */
-import getConfig from 'next-server/config';
+import getConfig from 'next/config';
 import Link from 'next/link';
 
 const { publicRuntimeConfig } = getConfig();
