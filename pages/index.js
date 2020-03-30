@@ -1,15 +1,12 @@
-import Link from "next/link";
-import {PathPrefix} from "../components/PrefixedLink";
+import Link from "../components/Link";
 
 export default function Index() {
     return (
         <div>
             <p>Hello</p>
-            <PathPrefix prefix={process.env.BACKEND_URL}>
-                <Link href={"/about"}>
-                    <a> About </a>
-                </Link>
-            </PathPrefix>
+            <Link href={"/about"}>
+                <a> About </a>
+            </Link>
         </div>
     );
 }
