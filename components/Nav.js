@@ -1,4 +1,4 @@
-import style from './styles/nav.module.scss';
+import style from './styles/Nav.module.scss';
 
 export default function Nav (props) {
     return (
