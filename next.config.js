@@ -5,7 +5,7 @@ module.exports = {
     exportPathMap: () => ({
         '/': { page: '/' },
       }),
-    assetPrefix: isProd ? '/Dashboard' : '',
+    assetPrefix: isProduction ? '/Dashboard' : '',
     publicRuntimeConfig: {
         // used in '/components/Link.js/', for more details go to the component itself
         linkPrefix: isProduction ? '/Dashboard' : ''
