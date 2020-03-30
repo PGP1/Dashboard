@@ -1,0 +1,28 @@
+@import '../../pages/styles/_constant';
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: $margin;
+    z-index: $z-highest;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+        font-weight: bold;
+    }
+
+    .accountHolder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .avatar {
+        background: lightblue;
+        width: 30px;
+        height: 30px;
+        margin-right: .5em;
+        border-radius: 100%;
+    }
+}

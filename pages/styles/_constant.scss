@@ -1,0 +1,59 @@
+$margin: 2em;
+
+$z-highest: 9999;
+
+@mixin breakpoint($class) {
+	@if $class == xs {
+		@media (max-width: 767px) { @content; }
+	}
+
+	@else if $class == sm {
+		@media (min-width: 768px) { @content; }
+	}
+
+	@else if $class == md {
+		@media (min-width: 992px) { @content; }
+	}
+
+	@else if $class == slg {
+		@media (min-width: 1065px) { @content; }
+	}
+
+	@else if $class == lg {
+		@media (min-width: 1200px) { @content; }
+	}
+
+	@else if $class == xlg {
+		@media (min-width: 1300px) { @content; }
+	}
+
+	@else {
+		@warn "Breakpoint mixin supports: xs, sm, md, lg";
+	}
+}
+
+
+.grid {
+    display: grid;
+
+    &--one-one {
+        @extend .grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &--one-two {
+        @extend .grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    &--two-one {
+        @extend .grid;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.center-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

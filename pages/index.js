@@ -4,8 +4,8 @@ export default function Index() {
     return (
         <div>
             <p>Hello</p>
-            <Link href={"/about"}>
-                <a> About </a>
+            <Link href={"/register"}>
+                <a> register </a>
             </Link>
         </div>
     );
