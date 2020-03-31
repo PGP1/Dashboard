@@ -6,7 +6,7 @@ import Particles from 'react-particles-js';
 import React, { Component } from 'react';
 import AWSController from "../api/AWSController"
 import SimpleReactValidator from 'simple-react-validator';
-import Link from "next/Link";
+import Link from "next/link";
 
 class Register extends Component {
 
