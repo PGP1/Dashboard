@@ -6,6 +6,7 @@ import Particles from 'react-particles-js';
 import React, { Component } from 'react';
 import AWSController from "../api/AWSController"
 import SimpleReactValidator from 'simple-react-validator';
+import Link from "next/Link";
 
 class Register extends Component {
 
@@ -16,6 +17,8 @@ class Register extends Component {
         this.state = {
             step: 0,
             serverError: "",
+            code: "",
+            serverInfo: ""
         };
     }
 
@@ -43,6 +46,24 @@ class Register extends Component {
             this.forceUpdate();
             this.setState({ error: true });
         }
+    };
+
+    confirmSignUp = () => {
+        const { code, username } = this.state;
+        AWSController.confirmSignUp(username, code).then((data) => {
+            this.setState({ step: 3 });
+        }).catch(err => {
+            this.setState({ error: true, serverError: err.message })
+        });
+    };
+
+    resendSignUp = () => {
+        const { username } = this.state;
+        AWSController.resendSignUp(username).then((data) => {
+            this.setState({ serverInfo: "Verification code sent" })
+        }).catch(err => {
+            this.setState({ serverError: err.message })
+        });
     };
 
     render() {
@@ -75,7 +96,7 @@ class Register extends Component {
                     <div className={style.right}>
                         <div>
                             <h2 className="header">
-                                {step === 0 ? 'Register' : 'Validate'}
+                                {step === 0 ? 'Register' : step === 1 ? 'Validate' : 'Success'}
                             </h2>
                             { step === 0 ?
                             <Form error={error}>
@@ -109,21 +130,33 @@ class Register extends Component {
                                     </Message.List>
                                 </Message>}
                                 <Button primary={this.validator.allValid()} type='submit' onClick={this.handleRegister}>Next</Button>
-                            </Form> :
+                            </Form> : step === 1 ?
                                 <>
                                 <p>We've sent you a validation code to <code>{this.state.email}</code>.</p>
                                 <p>Retype your code here:</p>
                                     <Form>
                                         <Form.Field>
                                             <label>Verification code</label>
-                                            <input className={"verification-code"} maxLength={6} placeHolder={"_ _ _ _ _ _"}/>
+                                            <input className={"verification-code"} name={"code"} maxLength={6}
+                                                   value={this.state.code}
+                                                   placeHolder={"_ _ _ _ _ _"} onChange={this.handleChange}/>
+                                            <p className={"inlineError"}>{this.state.serverError}</p>
+                                            <p className={"inlineInfo"}>{this.state.serverInfo}</p>
                                         </Form.Field>
                                         <div className={"space-between align-center"}>
-                                            <a onClick={() => this.setState({ step: 0 })} className={"link"}>Back</a>
-                                            <Button primary type={'submit'}>Verify</Button>
+                                            <a onClick={this.resendSignUp} className={"link"}>Resend verification code</a>
+                                            <Button primary type={'submit'}
+                                                    onClick={this.confirmSignUp}
+                                                    disabled={this.state.code.length === 6 ? '' : 'disabled' }>
+                                                Verify
+                                            </Button>
                                         </div>
                                     </Form>
-                                </>
+                                </> : <>
+                                        <p>Done!</p>
+                                        <p>We have successfully verified your account. Please head to
+                                            <Link href={"/login"}><a>/login</a></Link> to login.</p>
+                                    </>
                             }
                         </div>
                     </div>
