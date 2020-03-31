@@ -35,3 +35,30 @@ body{
     left: 0;
     top: 0;
 }
+
+.verification-code {
+    text-align: center;
+
+    &:focus {
+        outline: none;
+        color: dodgerblue;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    @extend .flex;
+    justify-content: space-between;
+}
+
+.align-center {
+    @extend .flex;
+    align-items: center;
+}
+
+.link {
+    cursor: pointer;
+}

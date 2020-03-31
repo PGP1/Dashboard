@@ -12,7 +12,11 @@ class Register extends Component {
     constructor(props) {
         super(props);
         this.validator = new SimpleReactValidator();
-        this.state = {};
+
+        this.state = {
+            step: 0,
+            serverError: ""
+        };
     }
 
     handleChange = () => {
@@ -23,16 +27,34 @@ class Register extends Component {
         if (this.validator.allValid()) {
             this.setState({ error: false });
             const { username, password, email } = this.state;
-            AWSController.signUp(username, password, email);
+            AWSController.signUp(username, password, email).then((data, err) => {
+                if(data) {
+                    this.setState({ error: false, step: 1 });
+                }
+                if(err) {
+                    this.setState({ error: true, serverError: err.message })
+                }
+            });
         } else {
-            this.validator.showMessages();
-            this.setState({ error: true });
             this.forceUpdate();
+            this.setState({ error: true });
         }
     };
 
+    createValidation = () => {
+        return <Message.List>
+            <Message.Item>{this.validator.message('Email', this.state.email, 'required|email')}</Message.Item>
+            <Message.Item>{this.validator.message('Username', this.state.username, 'required|alpha_num')}</Message.Item>
+            <Message.Item>{this.validator.message('Password', this.state.password, 'required|min:8')}</Message.Item>
+        </Message.List>
+    };
+
     render() {
-        console.log('this validate', this.validator.allValid(), this.validator);
+        let errorMsgs = Object.entries(this.validator.getErrorMessages()).map(([key, value]) => {
+            return <Message.Item>{value}</Message.Item>
+        });
+
+        const { step, error } = this.state;
         return (
             <Layout>
                 <div className={style.container}>
@@ -56,37 +78,56 @@ class Register extends Component {
                     <div className={style.right}>
                         <div>
                             <h2 className="header">
-                                Register
+                                {step === 0 ? 'Register' : 'Validate'}
                             </h2>
-                            <Form error={!this.validator.allValid()}>
+                            { step === 0 ?
+                            <Form error={error}>
                                 <Form.Field>
                                     <label>Email</label>
                                     <input placeholder='Email' name="email" value={this.state.email}
                                                 onChange={this.handleChange}/>
+                                    {this.validator.message('Email', this.state.email, 'required|email')}
                                 </Form.Field>
                                 <Form.Field>
                                     <label>Username</label>
                                     <input placeholder='Username' name="username" value={this.state.username}
                                                 onChange={this.handleChange}/>
+                                    {this.validator.message('Username', this.state.username, 'required|alpha_num')}
                                 </Form.Field>
                                 <Form.Field>
                                     <label>Password</label>
                                     <input placeholder='Password' type="password" name="password" value={this.state.password}
                                                 onChange={this.handleChange}/>
+                                    {this.validator.message('Password', this.state.password, 'required|min:8')}
                                 </Form.Field>
                                 <Form.Field>
                                     <Checkbox label='I agree to the Terms and Conditions' />
                                 </Form.Field>
-                                <Message error>
+                                {error && <Message error>
                                     <Message.Header>Uh oh!</Message.Header>
                                     <Message.List>
-                                        <Message.Item>{this.validator.message('Email', this.state.email, 'required|email')}</Message.Item>
-                                        <Message.Item>{this.validator.message('Username', this.state.username, 'required|alpha_num')}</Message.Item>
-                                        <Message.Item>{this.validator.message('Password', this.state.password, 'required')}</Message.Item>
+                                        {this.state.serverError}
+                                        {errorMsgs}
+
                                     </Message.List>
-                                </Message>
+                                </Message>}
                                 <Button primary={this.validator.allValid()} type='submit' onClick={this.handleRegister}>Next</Button>
-                            </Form>
+                            </Form> :
+                                <>
+                                <p>We've sent you a validation code to <code>{this.state.email}</code>.</p>
+                                <p>Retype your code here:</p>
+                                    <Form>
+                                        <Form.Field>
+                                            <label>Verification code</label>
+                                            <input className={"verification-code"} maxLength={6} placeHolder={"_ _ _ _ _ _"}/>
+                                        </Form.Field>
+                                        <div className={"space-between align-center"}>
+                                            <a onClick={() => this.setState({ step: 0 })} className={"link"}>Back</a>
+                                            <Button primary type={'submit'}>Verify</Button>
+                                        </div>
+                                    </Form>
+                                </>
+                            }
                         </div>
                     </div>
                 </div>
