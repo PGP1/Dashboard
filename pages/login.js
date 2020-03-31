@@ -5,7 +5,6 @@ class Login extends Component {
         return (
             <>
                 <p> Hi </p>
-                <Test/>
             </>
         )
     }
