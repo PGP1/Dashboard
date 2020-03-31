@@ -19,6 +19,7 @@
     word-wrap: break-word;
     padding: 5em;
     max-width: 400px;
+    z-index: $z-1stOrder;
     & h1 {
         font-weight: 400;
     }
@@ -29,6 +30,8 @@
 
 .right {
     padding: 5em;
+    z-index: $z-1stOrder;
+    position: relative;
     @extend .center-center;
     & > div {
         width: 100%;

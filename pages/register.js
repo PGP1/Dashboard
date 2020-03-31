@@ -15,25 +15,29 @@ class Register extends Component {
 
         this.state = {
             step: 0,
-            serverError: ""
+            serverError: "",
         };
     }
 
     handleChange = () => {
-        this.setState({ [event.target.name]: event.target.value, error: !this.validator.allValid() });
+        this.setState({ [event.target.name]: event.target.value}, () => {
+            console.log('test', this.validator.allValid());
+            this.setState({
+                error: !this.validator.allValid()
+            });
+        });
     };
 
     handleRegister = () => {
         if (this.validator.allValid()) {
             this.setState({ error: false });
             const { username, password, email } = this.state;
-            AWSController.signUp(username, password, email).then((data, err) => {
+            AWSController.signUp(username, password, email).then((data) => {
                 if(data) {
                     this.setState({ error: false, step: 1 });
                 }
-                if(err) {
-                    this.setState({ error: true, serverError: err.message })
-                }
+            }).catch(err => {
+                this.setState({ error: true, serverError: err.message })
             });
         } else {
             this.forceUpdate();
@@ -41,17 +45,10 @@ class Register extends Component {
         }
     };
 
-    createValidation = () => {
-        return <Message.List>
-            <Message.Item>{this.validator.message('Email', this.state.email, 'required|email')}</Message.Item>
-            <Message.Item>{this.validator.message('Username', this.state.username, 'required|alpha_num')}</Message.Item>
-            <Message.Item>{this.validator.message('Password', this.state.password, 'required|min:8')}</Message.Item>
-        </Message.List>
-    };
-
     render() {
-        let errorMsgs = Object.entries(this.validator.getErrorMessages()).map(([key, value]) => {
-            return <Message.Item>{value}</Message.Item>
+        let errors = Object.entries(this.validator.getErrorMessages());
+        let errorMsgs = errors.map(([key, value]) => {
+            if(value !== null) return <Message.Item>{value}</Message.Item>
         });
 
         const { step, error } = this.state;

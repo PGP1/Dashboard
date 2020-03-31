@@ -1,6 +1,7 @@
 $margin: 2em;
 
-$z-highest: 9999;
+$z-highest: 99999;
+$z-1stOrder: 10000;
 
 @mixin breakpoint($class) {
 	@if $class == xs {
