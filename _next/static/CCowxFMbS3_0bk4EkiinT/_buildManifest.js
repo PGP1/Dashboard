@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = {"/register":["static\u002Fchunks\u002Fea88be26.4d328fe00e261d55801b.js","static\u002Fcss\u002Fb67d0d03af3322e09f68.css"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
