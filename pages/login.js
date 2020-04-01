@@ -3,116 +3,16 @@ import style from './styles/login.module.scss';
 import { Button, Form, Icon } from 'semantic-ui-react';
 import Animation from '../components/Animation';
 import Particles from 'react-particles-js';
+
 class Login extends Component {
-    render() {
+  
+  render() {
+      const particles_config = require('./assets/config/particles_config.json');
+      
         return (
             <div className={style.container}>
                 <div className={style.left}>
-                    <Particles className={style.left} params={{
-                         particles: {
-                            number: {
-                              value: 80,
-                              density: {
-                                enable: true,
-                                value_area: 800
-                              }
-                            },
-                            color: {
-                              value: "#ffffff"
-                            },
-                            shape: {
-                              type: "circle",
-                              stroke: {
-                                width: 0,
-                                color: "#000000"
-                              },
-                              polygon: {
-                                nb_sides: 5
-                              }
-                            },
-                            opacity: {
-                              value: 0.6155448755889102,
-                              random: false,
-                              anim: {
-                                enable: false,
-                                speed: 1,
-                                opacity_min: 0.1,
-                                sync: false
-                              }
-                            },
-                            size: {
-                              value: 7.891600969088593,
-                              random: true,
-                              anim: {
-                                enable: false,
-                                speed: 40,
-                                size_min: 0.1,
-                                sync: false
-                              }
-                            },
-                            line_linked: {
-                              enable: true,
-                              distance: 173.61522131994906,
-                              color: "#ffffff",
-                              opacity: 0.4,
-                              width: 1
-                            },
-                            move: {
-                              enable: true,
-                              speed: 6,
-                              direction: "none",
-                              random: false,
-                              straight: false,
-                              out_mode: "out",
-                              bounce: false,
-                              attract: {
-                                enable: false,
-                                rotateX: 600,
-                                rotateY: 1200
-                              }
-                            }
-                          },
-                          interactivity: {
-                            detect_on: "canvas",
-                            events: {
-                              onhover: {
-                                enable: true,
-                                mode: "repulse"
-                              },
-                              onclick: {
-                                enable: true,
-                                mode: "push"
-                              },
-                              resize: true
-                            },
-                            modes: {
-                              grab: {
-                                distance: 200,
-                                line_linked: {
-                                  opacity: 1
-                                }
-                              },
-                              bubble: {
-                                distance: 200,
-                                size: 100,
-                                duration: 2,
-                                opacity: 8,
-                                speed: 3
-                              },
-                              repulse: {
-                                distance: 100,
-                                duration: 0.4
-                              },
-                              push: {
-                                particles_nb: 4
-                              },
-                              remove: {
-                                particles_nb: 2
-                              }
-                            }
-                          },
-                          retina_detect: true
-                    }} />
+                    <Particles className={style.left} params={particles_config} />
                 </div>
 
                 <div className={style.right}>
