@@ -11,32 +11,25 @@
     url("https://i.pinimg.com/originals/51/cd/d6/51cdd66f1768b8e380fd1eab073d532f.jpg");
   background-size: cover;
   height: 100%;
+  position: relative;
 }
 
 .right {
+  @extend .center-center;
   background: white;
-  position: relative;
-
   .logo {
-    transform: translate(0%,55%);
+    transform: translate(0%, 55%);
   }
-
   & .form {
-    width: 80%;
-    height: 25%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    max-height: 200px;
     & .button {
       float: right;
     }
+    & .content {
+      text-align: left;
+    }
   }
 }
-
-// .content {
-//     position: relative;
-// }

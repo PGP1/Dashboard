@@ -8,7 +8,6 @@ class Login extends Component {
   
   render() {
       const particles_config = require('./assets/config/particles_config.json');
-      
         return (
             <div className={style.container}>
                 <div className={style.left}>
