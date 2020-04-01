@@ -3,12 +3,13 @@ import style from './styles/login.module.scss';
 import { Button, Form, Icon } from 'semantic-ui-react';
 import Animation from '../components/Animation';
 import Particles from 'react-particles-js';
-
+import Layout from '../components/Layout'
 class Login extends Component {
   
   render() {
       const particles_config = require('./assets/config/particles_config.json');
         return (
+            <Layout>
             <div className={style.container}>
                 <div className={style.left}>
                     <Particles className={style.left} params={particles_config} />
@@ -41,6 +42,7 @@ class Login extends Component {
                     </div>
                 </div>
             </div>
+            </Layout>
         )
     }
 }
