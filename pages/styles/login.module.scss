@@ -1,0 +1,42 @@
+@import "constant";
+
+.container {
+  @extend .grid--two-one;
+  position: relative;
+  height: 100vh;
+}
+
+.left {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://i.pinimg.com/originals/51/cd/d6/51cdd66f1768b8e380fd1eab073d532f.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
+.right {
+  background: white;
+  position: relative;
+
+  .logo {
+    transform: translate(0%,55%);
+  }
+
+  & .form {
+    width: 80%;
+    height: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+
+    & .button {
+      float: right;
+    }
+  }
+}
+
+// .content {
+//     position: relative;
+// }
