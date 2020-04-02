@@ -1,6 +1,6 @@
 import Layout from "../components/Layout.js";
 import style from "./styles/register.module.scss";
-import { Button, Checkbox, Form, Message } from 'semantic-ui-react';
+import { Button, Checkbox, Form, Message, Icon } from 'semantic-ui-react';
 import Animation from "../components/Animation";
 import Particles from 'react-particles-js';
 import React, { Component } from 'react';
@@ -23,7 +23,7 @@ class Register extends Component {
     }
 
     handleChange = () => {
-        this.setState({ [event.target.name]: event.target.value}, () => {
+        this.setState({ [event.target.name]: event.target.value }, () => {
             console.log('test', this.validator.allValid());
             this.setState({
                 error: !this.validator.allValid()
@@ -36,7 +36,7 @@ class Register extends Component {
             this.setState({ error: false });
             const { username, password, email } = this.state;
             AWSController.signUp(username, password, email).then((data) => {
-                if(data) {
+                if (data) {
                     this.setState({ error: false, step: 1 });
                 }
             }).catch(err => {
@@ -69,14 +69,13 @@ class Register extends Component {
     render() {
         let errors = Object.entries(this.validator.getErrorMessages());
         let errorMsgs = errors.map(([key, value]) => {
-            if(value !== null) return <Message.Item>{value}</Message.Item>
+            if (value !== null) return <Message.Item>{value}</Message.Item>
         });
 
         const { step, error } = this.state;
         return (
             <Layout>
                 <div className={style.container}>
-                    <Animation/>
                     <div className={style.left}>
                         <Particles className={"background"} params={{
                             particles: {
@@ -87,72 +86,76 @@ class Register extends Component {
                                     value: "#85D68F"
                                 }
                             }
-                        }}/>
+                        }} />
                         <div className={style.description}>
                             <h1>Control your plants anytime, any where</h1>
                             <h3>Sunt nulla anim consectetur aute ea officia fugiat velit consectetur reprehenderit.</h3>
                         </div>
                     </div>
                     <div className={style.right}>
+                        <Animation />
                         <div>
                             <h2 className="header">
                                 {step === 0 ? 'Register' : step === 1 ? 'Validate' : 'Success'}
                             </h2>
-                            { step === 0 ?
-                            <Form error={error}>
-                                <Form.Field>
-                                    <label>Email</label>
-                                    <input placeholder='Email' name="email" value={this.state.email}
-                                                onChange={this.handleChange}/>
-                                    {this.validator.message('Email', this.state.email, 'required|email')}
-                                </Form.Field>
-                                <Form.Field>
-                                    <label>Username</label>
-                                    <input placeholder='Username' name="username" value={this.state.username}
-                                                onChange={this.handleChange}/>
-                                    {this.validator.message('Username', this.state.username, 'required|alpha_num')}
-                                </Form.Field>
-                                <Form.Field>
-                                    <label>Password</label>
-                                    <input placeholder='Password' type="password" name="password" value={this.state.password}
-                                                onChange={this.handleChange}/>
-                                    {this.validator.message('Password', this.state.password, 'required|min:8')}
-                                </Form.Field>
-                                <Form.Field>
-                                    <Checkbox label='I agree to the Terms and Conditions' />
-                                </Form.Field>
-                                {error && <Message error>
-                                    <Message.Header>Uh oh!</Message.Header>
-                                    <Message.List>
-                                        {this.state.serverError}
-                                        {errorMsgs}
+                            {step === 0 ?
+                                <Form error={error}>
+                                    <Form.Field>
+                                        <label>Email</label>
+                                        <input placeholder='Email' name="email" value={this.state.email}
+                                            onChange={this.handleChange} />
+                                        {this.validator.message('Email', this.state.email, 'required|email')}
+                                    </Form.Field>
+                                    <Form.Field>
+                                        <label>Username</label>
+                                        <input placeholder='Username' name="username" value={this.state.username}
+                                            onChange={this.handleChange} />
+                                        {this.validator.message('Username', this.state.username, 'required|alpha_num')}
+                                    </Form.Field>
+                                    <Form.Field>
+                                        <label>Password</label>
+                                        <input placeholder='Password' type="password" name="password" value={this.state.password}
+                                            onChange={this.handleChange} />
+                                        {this.validator.message('Password', this.state.password, 'required|min:8')}
+                                    </Form.Field>
+                                    <Form.Field>
+                                        <Checkbox label='I agree to the Terms and Conditions' />
+                                    </Form.Field>
+                                    {error && <Message error>
+                                        <Message.Header>Uh oh!</Message.Header>
+                                        <Message.List>
+                                            {this.state.serverError}
+                                            {errorMsgs}
 
-                                    </Message.List>
-                                </Message>}
-                                <Button primary={this.validator.allValid()} type='submit' onClick={this.handleRegister}>Next</Button>
-                            </Form> : step === 1 ?
-                                <>
-                                <p>We've sent you a validation code to <code>{this.state.email}</code>.</p>
-                                <p>Retype your code here:</p>
-                                    <Form>
-                                        <Form.Field>
-                                            <label>Verification code</label>
-                                            <input className={"verification-code"} name={"code"} maxLength={6}
-                                                   value={this.state.code}
-                                                   placeHolder={"_ _ _ _ _ _"} onChange={this.handleChange}/>
-                                            <p className={"inlineError"}>{this.state.serverError}</p>
-                                            <p className={"inlineInfo"}>{this.state.serverInfo}</p>
-                                        </Form.Field>
-                                        <div className={"space-between align-center"}>
-                                            <a onClick={this.resendSignUp} className={"link"}>Resend verification code</a>
-                                            <Button primary type={'submit'}
+                                        </Message.List>
+                                    </Message>}
+                                    <Button animated primary={this.validator.allValid()} type='submit' onClick={this.handleRegister}>
+                                        <Button.Content visible>Next</Button.Content>
+                                        <Button.Content hidden><Icon name='arrow right' /></Button.Content>
+                                    </Button>
+                                </Form> : step === 1 ?
+                                    <>
+                                        <p>We've sent you a validation code to <code>{this.state.email}</code>.</p>
+                                        <p>Retype your code here:</p>
+                                        <Form>
+                                            <Form.Field>
+                                                <label>Verification code</label>
+                                                <input className={"verification-code"} name={"code"} maxLength={6}
+                                                    value={this.state.code}
+                                                    placeHolder={"_ _ _ _ _ _"} onChange={this.handleChange} />
+                                                <p className={"inlineError"}>{this.state.serverError}</p>
+                                                <p className={"inlineInfo"}>{this.state.serverInfo}</p>
+                                            </Form.Field>
+                                            <div className={"space-between align-center"}>
+                                                <a onClick={this.resendSignUp} className={"link"}>Resend verification code</a>
+                                                <Button primary type={'submit'}
                                                     onClick={this.confirmSignUp}
-                                                    disabled={this.state.code.length === 6 ? '' : 'disabled' }>
-                                                Verify
+                                                    disabled={this.state.code.length === 6 ? '' : 'disabled'}>
+                                                    Verify
                                             </Button>
-                                        </div>
-                                    </Form>
-                                </> : <>
+                                            </div>
+                                        </Form>
+                                    </> : <>
                                         <p>Done!</p>
                                         <p>We have successfully verified your account. Please head to
                                             <Link href={"/login"}><a>/login</a></Link> to login.</p>

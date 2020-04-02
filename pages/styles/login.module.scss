@@ -1,0 +1,29 @@
+@import "constant";
+
+.container {
+  @extend .grid--two-one;
+  position: relative;
+  height: 100vh;
+}
+
+.left {
+  background: linear-gradient(90deg, #ff9f43,#fbbd08);
+  background-size: cover;
+  position: relative;
+}
+
+.right {
+  @extend .center-center;
+  position: relative;
+  padding: 5em;
+  background: white;
+ 
+  & .form {
+    width: 100%;
+    max-width: 400px;
+    max-height: 200px;
+    & .content {
+      text-align: left;
+    }
+  }
+}

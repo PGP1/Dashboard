@@ -14,7 +14,8 @@ module.exports = {
     distDir: 'build',
     exportPathMap: () => ({
         '/': { page: '/' },
-        '/register': { page: '/register' }
+        '/register': { page: '/register' },
+        '/login' : { page: '/login' }
     }),
     assetPrefix: isProduction ? '/Dashboard' : '',
     publicRuntimeConfig: {
