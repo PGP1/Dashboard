@@ -12,29 +12,16 @@
   position: relative;
 }
 
-.background {
-  // background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-  //   url("https://i.pinimg.com/originals/51/cd/d6/51cdd66f1768b8e380fd1eab073d532f.jpg");
-  // background-size: cover;
-
-  background: black;
-}
-
 .right {
   @extend .center-center;
   position: relative;
   padding: 5em;
   background: white;
-  // .logo {
-  //   // transform: translate(0%, 55%);
-  // }
+ 
   & .form {
     width: 100%;
     max-width: 400px;
     max-height: 200px;
-    & .button {
-      //float: right;
-    }
     & .content {
       text-align: left;
     }
