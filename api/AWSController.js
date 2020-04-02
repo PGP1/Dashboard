@@ -3,11 +3,24 @@ import awsconfig from '../aws-exports';
 Amplify.configure(awsconfig);
 
 class AWSController {
-    async signUp(username,password, email) {
-        return await Auth.signUp({username, password,
+
+
+    // For advanced usage
+    // You can pass an object which has the username, password and validationData which is sent to a PreAuthentication Lambda trigger
+    async signIn(username, password) {
+        return await Auth.signIn({
+            username, // Required, the username
+            password // Optional, the password
+        });
+    }
+
+    async signUp(username, password, email) {
+        return await Auth.signUp({
+            username, password,
             attributes: {
                 email,
-            }});
+            }
+        });
     }
 
     async confirmSignUp(username, code) {
