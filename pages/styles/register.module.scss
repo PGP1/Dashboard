@@ -7,10 +7,14 @@
 }
 
 .left {
-    position: relative;
-    @extend .center-center;
-    background: #fbbd08;
-    color: #000;
+  position: relative;
+  @extend .center-center;
+  background: #fbbd08;
+  color: #000;
+ 
+  @include breakpoint(xs) {
+    padding-bottom: 30px;
+  }
 }
 
 .description {

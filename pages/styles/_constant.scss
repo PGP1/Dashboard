@@ -5,7 +5,7 @@ $z-1stOrder: 10000;
 
 @mixin breakpoint($class) {
 	@if $class == xs {
-		@media (max-width: 767px) { @content; }
+		@media (max-width: 600px) { @content; }
 	}
 
 	@else if $class == sm {
@@ -16,16 +16,8 @@ $z-1stOrder: 10000;
 		@media (min-width: 992px) { @content; }
 	}
 
-	@else if $class == slg {
-		@media (min-width: 1065px) { @content; }
-	}
-
 	@else if $class == lg {
 		@media (min-width: 1200px) { @content; }
-	}
-
-	@else if $class == xlg {
-		@media (min-width: 1300px) { @content; }
 	}
 
 	@else {
@@ -50,7 +42,12 @@ $z-1stOrder: 10000;
     &--two-one {
         @extend .grid;
         grid-template-columns: 2fr 1fr;
-    }
+	}
+	
+	@include breakpoint(xs) {
+		grid-template-columns: 1fr;
+		grid-gap: 10px;
+	}
 }
 
 .center-center {
