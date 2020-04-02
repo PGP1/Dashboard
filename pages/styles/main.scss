@@ -19,13 +19,18 @@ body{
     margin-bottom: 1em;
 }
 
-
 .animation {
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    transform: translate(-50%,-50%);
+
+    @include breakpoint(xs) {
+        top:0;
+        left: 50%;
+    }
+
 }
 
 .background {
