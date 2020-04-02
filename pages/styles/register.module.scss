@@ -1,9 +1,9 @@
 @import "constant";
 
 .container {
-    @extend .grid--one-one;
-    position: relative;
-    height: 100vh;
+  @extend .grid--one-one;
+  position: relative;
+  height: 100vh;
 }
 
 .left {
@@ -18,26 +18,27 @@
 }
 
 .description {
-    position: relative;
-    word-wrap: break-word;
-    padding: 5em;
-    max-width: 400px;
-    z-index: $z-1stOrder;
-    & h1 {
-        font-weight: 400;
-    }
-    & h2, h3 {
-        font-weight: 300;
-    }
+  position: relative;
+  word-wrap: break-word;
+  padding: 5em;
+  max-width: 400px;
+  z-index: $z-1stOrder;
+  & h1 {
+    font-weight: 400;
+  }
+  & h2,
+  h3 {
+    font-weight: 300;
+  }
 }
 
 .right {
-    padding: 5em;
+  padding: 5em;
+  position: relative;
+  @extend .center-center;
+  & > div {
     z-index: $z-1stOrder;
-    position: relative;
-    @extend .center-center;
-    & > div {
-        width: 100%;
-        max-width: 400px;
-    }
+    width: 100%;
+    max-width: 400px;
+  }
 }
