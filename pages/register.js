@@ -7,6 +7,8 @@ import React, { Component } from 'react';
 import AWSController from "../api/AWSController"
 import SimpleReactValidator from 'simple-react-validator';
 import Link from "next/link";
+import particles_config from "./assets/config/particles_config.json"
+
 
 class Register extends Component {
 
@@ -77,16 +79,7 @@ class Register extends Component {
             <Layout>
                 <div className={style.container}>
                     <div className={style.left}>
-                        <Particles className={"background"} params={{
-                            particles: {
-                                number: {
-                                    value: 100
-                                },
-                                color: {
-                                    value: "#85D68F"
-                                }
-                            }
-                        }} />
+                        <Particles className={"background"} params={particles_config} />
                         <div className={style.description}>
                             <h1>Control your plants anytime, any where</h1>
                             <h3>Sunt nulla anim consectetur aute ea officia fugiat velit consectetur reprehenderit.</h3>
@@ -129,10 +122,19 @@ class Register extends Component {
 
                                         </Message.List>
                                     </Message>}
-                                    <Button animated primary={this.validator.allValid()} type='submit' onClick={this.handleRegister}>
-                                        <Button.Content visible>Next</Button.Content>
-                                        <Button.Content hidden><Icon name='arrow right' /></Button.Content>
-                                    </Button>
+                                    <div className="space-between flex align-center">
+
+                                        <Button animated primary={this.validator.allValid()} type='submit' onClick={this.handleRegister}>
+                                            <Button.Content visible>Next</Button.Content>
+                                            <Button.Content hidden><Icon name='arrow right' /></Button.Content>
+                                        </Button>
+
+                                        <Link href={"/login"}>
+                                            <a>
+                                                Have an account?
+                                            </a>
+                                        </Link>
+                                    </div>
                                 </Form> : step === 1 ?
                                     <>
                                         <p>We've sent you a validation code to <code>{this.state.email}</code>.</p>
@@ -158,7 +160,7 @@ class Register extends Component {
                                     </> : <>
                                         <p>Done!</p>
                                         <p>We have successfully verified your account. Please head to
-                                            <Link href={"/login"}><a>/login</a></Link> to login.</p>
+                                            <Link href={"/login"}><a> /login</a></Link> to login.</p>
                                     </>
                             }
                         </div>

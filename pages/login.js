@@ -6,6 +6,7 @@ import Animation from '../components/Animation';
 import Particles from 'react-particles-js';
 import Layout from '../components/Layout'
 import AWSController from '../api/AWSController';
+import particles_config from "./assets/config/particles_config.json"
 
 class Login extends Component {
     constructor(props) {
@@ -30,7 +31,6 @@ class Login extends Component {
 
     render() {
 
-        const particles_config = require('./assets/config/particles_config.json');
         const { error } = this.state;
 
         return (

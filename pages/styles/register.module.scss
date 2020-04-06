@@ -1,7 +1,7 @@
 @import "constant";
 
 .container {
-  @extend .grid--one-one;
+  @extend .grid--two-one;
   position: relative;
   height: 100vh;
 }

@@ -35,13 +35,17 @@ $z-1stOrder: 10000;
     }
 
     &--one-two {
-        @extend .grid;
-        grid-template-columns: 1fr 2fr;
+        @extend .grid--one-one;
+		@include breakpoint(lg){
+			grid-template-columns: 1fr 2fr;
+		}
     }
 
     &--two-one {
-        @extend .grid;
-        grid-template-columns: 2fr 1fr;
+        @extend .grid--one-one;
+		@include breakpoint(lg){
+			grid-template-columns: 2fr 1fr;
+		}
 	}
 	
 	@include breakpoint(xs) {
