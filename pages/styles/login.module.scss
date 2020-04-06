@@ -7,14 +7,10 @@
 }
 
 .left {
-  position: relative;
   @extend .center-center;
-  background: #fbbd08;
-  color: #000;
- 
-  @include breakpoint(xs) {
-    padding-bottom: 30px;
-  }
+  background: linear-gradient(90deg, #ff9f43,#fbbd08);
+  background-size: cover;
+  position: relative;
 }
 
 .description {
@@ -24,21 +20,26 @@
   max-width: 400px;
   z-index: $z-1stOrder;
   & h1 {
-    font-weight: 400;
+      font-weight: 400;
   }
-  & h2,
-  h3 {
-    font-weight: 300;
+  & h2, h3 {
+      font-weight: 300;
   }
 }
 
 .right {
-  padding: 5em;
-  position: relative;
   @extend .center-center;
-  & > div {
+  position: relative;
+  padding: 5em;
+  background: white;
+ 
+  & .form {
     z-index: $z-1stOrder;
     width: 100%;
     max-width: 400px;
+    max-height: 200px;
+    & .content {
+      text-align: left;
+    }
   }
 }

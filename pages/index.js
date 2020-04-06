@@ -7,6 +7,10 @@ export default function Index() {
             <Link href={"/register"}>
                 <a> register </a>
             </Link>
+            <br/>
+            <Link href={"/login"}>
+                <a> login </a>
+            </Link>
         </div>
     );
 }
