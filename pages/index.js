@@ -11,6 +11,10 @@ export default function Index() {
             <Link href={"/login"}>
                 <a> login </a>
             </Link>
+            <br/>
+            <Link href={"/device"}>
+                <a> device </a>
+            </Link>
         </div>
     );
 }
