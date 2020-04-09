@@ -32,7 +32,10 @@ class Device extends Component {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <button class="ui right floated primary button"> Add device </button>
+
+                                <div className={style.bottom}>
+                                <button className=" ui right floated primary button"> Add device </button>
+                                </div>
                             </div>
                         </div>
                     </div>

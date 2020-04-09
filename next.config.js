@@ -16,7 +16,7 @@ module.exports = {
         '/': { page: '/' },
         '/register': { page: '/register' },
         '/login' : { page: '/login' },
-        '/device' : { page: '/device '}
+        '/device' : { page: '/device'}
     }),
     assetPrefix: isProduction ? '/Dashboard' : '',
     publicRuntimeConfig: {

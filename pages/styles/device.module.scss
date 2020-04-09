@@ -3,9 +3,9 @@
 .container {
   position: relative;
   height: 100vh;
-  background: url(../assets/device-background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  //   background: url(../assets/device-background.jpg);
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
 }
 
 .formCenter {
@@ -22,17 +22,19 @@
 }
 
 .content {
+  background: white;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
   width: 100%;
   max-width: 750px;
-  padding: 0px 40px;
-  text-align: center;
+  padding: 30px 40px;
+  
 
-  & button {
-      margin-left: auto;
+  & .bottom {
+    display: flex;
+    justify-content: end;
+    width: 100%;
   }
-
 }
