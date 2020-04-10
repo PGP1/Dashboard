@@ -3,16 +3,19 @@ import React, { Component } from 'react';
 import style from "./styles/device.module.scss";
 import Layout from "../components/Layout";
 import AWSController from "../api/AWSController";
+import APIController from "../api/APIController.js";
 import Router from "next/router";
-import { Modal, Form, Icon, Button } from 'semantic-ui-react';
-
+import { Modal, Form, Icon, Button, Message } from 'semantic-ui-react';
 class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isAuthenticated: false,
             user: null,
-            open: false
+            open: false,
+            devices: [],
+            error: false,
+            errorMsg: ""
         }
     }
 
@@ -29,24 +32,47 @@ class Index extends Component {
     };
 
     setUser = (user) => {
-        this.setState({ user })
+        this.setState({ user }, () => {
+            this.fetchDevice(user);
+        })
+    };
+
+    fetchDevice = (user) => {
+        APIController.getMyDevices(user.idToken).then(res => {
+            const { data } = res;
+            this.setState({ devices: data });
+        }).catch(err => console.log(err))
     };
 
     componentDidMount() {
         AWSController.getCurrentSession().then(session => {
             this.setAuthenticate(true);
-            console.log("session", session);
             AWSController.getCurrentSession().then(user => {
                 this.setUser(user);
-                console.log("user", this.state.user);
             });
         }).catch(err => Router.push("/login"));
 
         this.setState({ isAuthenticating: false });
     }
 
+    handleDeviceChange = (event) => {
+        this.setState({ deviceName: event.target.value }) ;
+    };
+
+    handleAddDevice = () => {
+        const { user, deviceName } = this.state;
+        APIController.linkMyDevice(user.idToken, deviceName).then(res => {
+            this.close();
+            this.fetchDevice();
+        }).catch(err => {
+            if(err.response) {
+                this.setState({error: true, errorMsg: err.response.data.message });
+            }
+        })
+    };
+
     render() {
-        const { isAuthenticated, open, size, dimmer } = this.state;
+        const { isAuthenticated, open, size, dimmer, devices, errorMsg, error } = this.state;
 
         return (
             <>
@@ -66,16 +92,11 @@ class Index extends Component {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Device 1</td>
+                                                {devices.map((each, i) =>  <tr key={i}>
+                                                    <td>{each}</td>
                                                     <td>Online</td>
                                                     <td>Access / Shutdown</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Device 1</td>
-                                                    <td>Online</td>
-                                                    <td>Access / Shutdown</td>
-                                                </tr>
+                                                </tr>)}
                                             </tbody>
                                         </table>
 
@@ -87,12 +108,16 @@ class Index extends Component {
                                                     <Form>
                                                         <Form.Field required>
                                                             <label>Device Name</label>
-                                                            <input />
+                                                            <input onChange={this.handleDeviceChange}/>
                                                         </Form.Field>
+                                                        {error && <Message negative>
+                                                            <Message.Header>Uh oh!</Message.Header>
+                                                            <p> {errorMsg} </p>
+                                                        </Message>}
                                                     </Form>
                                                 </Modal.Content>
                                                 <Modal.Actions>
-                                                    <Button content='Add' primary />
+                                                    <Button content='Add' primary onClick={this.handleAddDevice}/>
                                                 </Modal.Actions>
                                             </Modal>
                                         </div>
