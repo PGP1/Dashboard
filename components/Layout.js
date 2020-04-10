@@ -3,7 +3,7 @@ import Nav from "./Nav";
 export default function Layout (props) {
     return (
         <>
-            <Nav/>
+            <Nav isAuthenticated={props?.isAuthenticated}/>
             <div className={"layout"}>
                 {props.children}
             </div>
