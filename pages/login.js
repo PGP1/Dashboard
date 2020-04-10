@@ -7,6 +7,7 @@ import Particles from 'react-particles-js';
 import Layout from '../components/Layout'
 import AWSController from '../api/AWSController';
 import particles_config from "./assets/config/particles_config.json"
+import Router from 'next/router'
 
 class Login extends Component {
     constructor(props) {
@@ -20,14 +21,14 @@ class Login extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
-    }
+    };
 
     handleLogin = () => {
         const { username, password } = this.state;
         AWSController.signIn(username, password)
-            .then(data => console.log(data))
+            .then(data => Router.push("/"))
             .catch(err => this.setState({serverError: err.message, error: true }))
-    }
+    };
 
     render() {
 
