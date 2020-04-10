@@ -4,7 +4,6 @@ Amplify.configure(awsconfig);
 
 class AWSController {
 
-
     // For advanced usage
     // You can pass an object which has the username, password and validationData which is sent to a PreAuthentication Lambda trigger
     async signIn(username, password) {
@@ -33,6 +32,19 @@ class AWSController {
 
     async resendSignUp(username) {
         return Auth.resendSignUp(username);
+    }
+
+    async getCurrentSession() {
+        return await Auth.currentSession();
+    }
+
+    async getCurrentAuthenticatedUser() {
+        return await Auth.currentAuthenticatedUser();
+    }
+
+    async getCurrentUserName() {
+        return this.getCurrentAuthenticatedUser()
+            .then(session => session.username);
     }
 }
 
