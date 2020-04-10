@@ -63,7 +63,7 @@ class Index extends Component {
         const { user, deviceName } = this.state;
         APIController.linkMyDevice(user.idToken, deviceName).then(res => {
             this.close();
-            this.fetchDevice();
+            this.fetchDevice(user);
         }).catch(err => {
             if(err.response) {
                 this.setState({error: true, errorMsg: err.response.data.message });
