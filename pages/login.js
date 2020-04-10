@@ -6,8 +6,9 @@ import Animation from '../components/Animation';
 import Particles from 'react-particles-js';
 import Layout from '../components/Layout'
 import AWSController from '../api/AWSController';
-import particles_config from "./assets/config/particles_config.json"
-import Router from 'next/router'
+import particles_config from "./assets/config/particles_config.json";
+import Router from 'next/router';
+import getConfig from 'next/config';
 
 class Login extends Component {
     constructor(props) {
@@ -25,8 +26,9 @@ class Login extends Component {
 
     handleLogin = () => {
         const { username, password } = this.state;
+        const { publicRuntimeConfig } = getConfig();
         AWSController.signIn(username, password)
-            .then(data => Router.push("/"))
+            .then(data => Router.push(`${publicRuntimeConfig.linkPrefix}/`))
             .catch(err => this.setState({serverError: err.message, error: true }))
     };
 
