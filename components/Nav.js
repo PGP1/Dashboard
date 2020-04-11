@@ -7,7 +7,7 @@ export default function Nav (props) {
     AWSController.getCurrentUserName().then(username => setUsername(username));
     return (
         <div className={style.nav}>
-            <div className={style.logo}>Logo</div>
+            <div className={style.logo}>Plantly.</div>
             {props?.isAuthenticated && <div className={style.accountHolder}>
                 <div className={style.avatar}/>
                 <div className={style.username}>{username}</div>

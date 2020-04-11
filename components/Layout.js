@@ -1,12 +1,23 @@
+import React, { Component } from 'react';
 import Nav from "./Nav";
+class Layout extends Component {
 
-export default function Layout (props) {
-    return (
-        <>
-            <Nav isAuthenticated={props?.isAuthenticated}/>
-            <div className={"layout"}>
-                {props.children}
-            </div>
-        </>
-    )
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <>            
+                <Nav isAuthenticated={this.props ?.isAuthenticated} />
+                <div className={"layout"}>
+                    {this.props.children}
+                </div>
+            </>
+        )
+    }
+
+
 }
+export default Layout;
+

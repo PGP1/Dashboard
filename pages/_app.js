@@ -1,5 +1,4 @@
 import Amplify, { Auth } from 'aws-amplify';
-
 import "./styles/main.scss";
 import 'semantic-ui-css/semantic.min.css';
 
