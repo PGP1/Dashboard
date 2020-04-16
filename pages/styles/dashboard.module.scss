@@ -1,0 +1,47 @@
+.topNavigation {
+    width: 100%;
+    height: 60px;
+    background: white;
+    position: relative;
+    z-index: -1;
+}
+
+.topDropdown {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 300px;
+}
+
+.topNotification {
+    height: 16px;
+    width: 16px;
+    background: black;
+    border-radius: 100%;
+    float: right;
+    //top: 50%;
+    //position: absolute;
+    //transform: translateY(-50%);
+    margin-right: 45px;
+    margin-top: 23px;
+}
+
+.dashboardContent {
+    margin-left: 376px;
+    margin-top: 120px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    //height: auto;
+    //background: black;
+}
+
+.dashboardDeviceStatus {
+    height: 100%;
+    width: 100%;
+    max-width: 445px;
+    max-height: 185px;
+    background: yellow;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.06);
+}

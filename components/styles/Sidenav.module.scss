@@ -8,7 +8,7 @@
   height: 100%;
   background-color: #334459;
   left: 0;
-  position: absolute;
+  position: fixed;
   padding: $margin;
 }
 
@@ -36,11 +36,11 @@
 .userInfo {
   float: left;
   margin-left: 16px;
-  font-size: 100%;
+  font-size: 1rem;
 
   & span {
     letter-spacing: 0.11px;
-    font-size: 81.25%;
+    font-size: 0.8125rem;
   }
 }
 
@@ -50,7 +50,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  font-size: 93.75%;
+  font-size: 0.9375rem;
   font-weight: 700;
 
   & li {
@@ -73,7 +73,7 @@
   font-style: normal;
   line-height: normal;
   font-weight: 700;
-  font-size: 93.75%;
+  font-size: 0.9375rem;
 
   & li {
     list-style: none;
