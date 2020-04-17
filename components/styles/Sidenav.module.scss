@@ -1,7 +1,7 @@
 @import "../../pages/styles/_constant";
 
 .container {
-  font-family: Lato;
+  font-family: Poppins;
   color: #ffffff;
   width: 100%;
   max-width: 256px;
@@ -16,7 +16,7 @@
 .userDetails {
   padding-top: 42px;
   grid-gap: 16px;
-  font-weight: 700;
+  font-weight: 500;
 
   &::after {
     content: "";
@@ -51,7 +51,7 @@
   font-style: normal;
   line-height: normal;
   font-size: 0.9375rem;
-  font-weight: 700;
+  font-weight: 500;
 
   & li {
     list-style: none;
@@ -72,7 +72,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.9375rem;
 
   & li {

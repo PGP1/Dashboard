@@ -17,7 +17,7 @@ class Sidenav extends Component {
                 <div className={style.links}>
                     <ul>
                         <li>
-                            <img src='./assets/contacts.svg'/><a href="#">Dashboard</a>
+                            <a href="#">Dashboard</a>
                         </li>
                         <li>
                             <a href="#">Device</a>
