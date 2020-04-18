@@ -1,3 +1,5 @@
+@import "constant";
+
 .container {
   font-family: Poppins;
 }
@@ -31,13 +33,30 @@
 }
 
 .dashboardContent {
-  margin-left: 376px;
-  margin-top: 120px;
+  //margin-left: 256px;
+  margin-top: 68px;
+  padding: 50px;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-//   //height: auto;
-//   background: red;
+  //overflow: hidden;
+  background: white;
+  max-width: calc(100% - 256px);
+  right: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboardDeviceStatusButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboardGridContent {
+  @extend .grid--one-one;
+  max-width: 800px;
+  width: 100%;
+  grid-gap: 10px;
 }
 
 .dashboardDeviceStatus {
@@ -46,6 +65,7 @@
   max-width: 445px;
   max-height: 185px;
   border-radius: 8px;
+  box-shadow: 0 8px 25px 0 rgba(112, 110, 110, 0.15);
 }
 
 .dashboardDeviceStatusContainer {
@@ -59,16 +79,10 @@
 }
 
 .dashboardDeviceStatusGrid {
-    display: grid;
-    grid-template-columns: auto auto;
-    margin-top: 17px;
-    margin-bottom: 30px;
-    font-family: Poppins;
-    font-size: 0.71rem;
-    letter-spacing: 0.1px;
-
-    .gridColumn {
-        text-align: right;
-    }
+  @extend .grid--one-one;
+  margin-top: 17px;
+  margin-bottom: 30px;
+  font-family: Poppins;
+  font-size: 0.71rem;
+  letter-spacing: 0.1px;
 }
-
