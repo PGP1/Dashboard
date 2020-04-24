@@ -1,0 +1,1 @@
+{"pi-id": "testpiID", "payload": {"sensor-device": "testarduinoID", "time": "20-18-04T11:24:36Z", "data": {"temp": 30, "humidity": 30, "water": 330, "ph": 7, "ldr": 485}}}

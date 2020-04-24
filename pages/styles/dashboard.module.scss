@@ -1,7 +1,7 @@
 @import "constant";
 
 .container {
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
 }
 
 .topNavigation {
@@ -25,26 +25,28 @@
   background: black;
   border-radius: 100%;
   float: right;
-  //top: 50%;
-  //position: absolute;
-  //transform: translateY(-50%);
   margin-right: 45px;
   margin-top: 23px;
 }
 
+.purpleBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 195%;
+  background: #6359a0;
+  transform: translateX(-10%) translateY(-30%) rotate(20deg);
+  z-index: -1;
+}
+
 .dashboardContent {
-  //margin-left: 256px;
   margin-top: 68px;
-  padding: 50px;
   width: 100%;
   height: 100vh;
-  //overflow: hidden;
-  background: white;
   max-width: calc(100% - 256px);
   right: 0;
   position: absolute;
-  display: flex;
-  justify-content: center;
 }
 
 .dashboardDeviceStatusButtons {
@@ -53,27 +55,23 @@
 }
 
 .dashboardGridContent {
-  @extend .grid--one-one;
-  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  grid-gap: 10px;
+  grid-gap: 50px;
+  max-width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+
 }
 
 .dashboardDeviceStatus {
-  height: 100%;
-  width: 100%;
-  max-width: 445px;
-  max-height: 185px;
-  border-radius: 8px;
-  box-shadow: 0 8px 25px 0 rgba(112, 110, 110, 0.15);
+  height: auto;
 }
 
-.dashboardDeviceStatusContainer {
-  padding: 22px;
-}
-
-.dashboardDeviceStatusHeader {
-  font-family: Poppins;
+.dashboardHeader {
+  font-family: "Poppins";
   font-size: 1.15rem;
   letter-spacing: 0.16px;
 }
@@ -82,7 +80,35 @@
   @extend .grid--one-one;
   margin-top: 17px;
   margin-bottom: 30px;
-  font-family: Poppins;
-  font-size: 0.71rem;
+  font-family: 'Poppins';
+  font-size: 0.93rem;
   letter-spacing: 0.1px;
+}
+
+.box {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 8px 25px 0 rgba(112, 110, 110, 0.65);
+  margin-bottom: 50px;
+}
+
+.box2 {
+  height: 400px;
+ 
+  //width: 300px;
+}
+
+.left,
+.right {
+  flex: 25%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.chart {
+  max-width: 500px;
+  max-height: 300px;
 }
