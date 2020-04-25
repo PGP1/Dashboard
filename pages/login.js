@@ -28,7 +28,7 @@ class Login extends Component {
         const { username, password } = this.state;
         const { publicRuntimeConfig } = getConfig();
         AWSController.signIn(username, password)
-            .then(data => Router.push(`${publicRuntimeConfig.linkPrefix}/`))
+            .then(data => Router.push(`${publicRuntimeConfig.linkPrefix}/selectDevices`))
             .catch(err => this.setState({serverError: err.message, error: true }))
     };
 

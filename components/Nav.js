@@ -29,23 +29,21 @@ export default function Nav(props) {
     return (
         <div className={style.nav}>
             <div className={style.logo}>Plantly.</div>
-            
-            
-            {true &&
+            {props?.isAuthenticated && <>
+                {props?.page !== 0 &&
                 <>
                     <div className={style.topDropdown}>
                         <Dropdown placeholder='Select Device' options={options}/>
                     </div>
                     <div className={style.topNotification}>noti</div>
-                </>
-           }
-{/* 
+                </>}
 
-           {props?.isAuthenticated && <div className={style.accountHolder}>
-                <div className={style.avatar} />
-                <div className={style.username}>{username}</div>
-            </div>} */}
-
+                {props?.page !== 1 &&
+                <div className={style.accountHolder}>
+                    <div className={style.avatar} />
+                    <div className={style.username}>{username}</div>
+                </div>}
+            </>}
 
         </div>
     )

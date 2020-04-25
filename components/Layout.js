@@ -9,7 +9,7 @@ class Layout extends Component {
     render() {
         return (
             <>            
-                <Nav isAuthenticated={this.props?.isAuthenticated}/>
+                <Nav isAuthenticated={this.props?.isAuthenticated} page={this.props?.page}/>
                 <div className={"layout"}>
                     {this.props.children}
                 </div>

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import Sidenav from '../Components/Sidenav';
-import Layout from '../Components/Layout';
-import style from './styles/dashboard.module.scss';
+import Sidenav from './Sidenav';
+import style from './styles/Dashboard.module.scss';
 import { Doughnut, Bar, HorizontalBar, Line, Radar } from 'react-chartjs-2';
+
+
+
 //import pi_data from './assets/config/pi-data.json';
 // import LineGraph from '../components/LineGraph';
 // import MixedChart from '../components/MixedChart';
@@ -29,14 +31,13 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <Layout className={style.container}>
+            <>
 
                 <Sidenav />
 
                 <div className={style.dashboardContent}>
 
                     <div className={style.purpleBackground} />
-
 
                     <div className={style.dashboardGridContent}>
 
@@ -111,7 +112,6 @@ class Dashboard extends Component {
 
                         <div className={style.right}>
 
-
                             <div className={[style.box, style.box2].join(" ")}>
                                 <div className={style.dashboardHeader}>
                                     Overall details
@@ -160,8 +160,8 @@ class Dashboard extends Component {
                             </div>
                         </div>
                     </div>
-                </div >
-            </Layout >
+                </div>
+            </>
         )
 
     }
