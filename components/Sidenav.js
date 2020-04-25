@@ -31,7 +31,7 @@ class Sidenav extends Component {
                 <div className={style.bottom}>
                     <ul>
                         <li>
-                            <a href="#">Settings</a>
+                            <a href="#">Logout</a>
                         </li>
                         <li className={style.sidebar}>
                             Toggle sidebar
