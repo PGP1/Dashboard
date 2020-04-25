@@ -22,14 +22,14 @@ class Sidenav extends Component {
                         <li>
                             <a href="#">Device</a>
                         </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
                     </ul>
                 </div>
 
                 <div className={style.bottom}>
                     <ul>
+                        <li>
+                            <a href="#">User Settings</a>
+                        </li>
                         <li>
                             <a href="#">Logout</a>
                         </li>
