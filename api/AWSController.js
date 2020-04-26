@@ -13,6 +13,10 @@ class AWSController {
         });
     }
 
+    async getCurrentCredientials() {
+        return await Auth.currentCredentials();
+    }
+
     async signUp(username, password, email) {
         return await Auth.signUp({
             username, password,
