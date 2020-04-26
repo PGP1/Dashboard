@@ -50,7 +50,10 @@ class Dashboard extends Component {
     }
 
     setDevice = (device) => {
-        this.setState({ device })
+        this.setState({ device }, () => {
+            if(this.state.user)
+                this.getData("temperature")
+        });
     }
 
     setUser = (user) => {
