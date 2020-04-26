@@ -11,7 +11,7 @@ class Index extends Component {
         super(props);
         this.state = {
             isAuthenticated: false,
-            page: 1,
+            page: 0,
         }
     }
 
