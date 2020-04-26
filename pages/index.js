@@ -20,6 +20,9 @@ class Index extends Component {
     componentDidMount() {
         AWSController.getCurrentSession().then(session => {
             this.setAuthenticate(true);
+            AWSController.getCurrentCredientials().then(data => {
+                console.log("cred", data)
+            })
         }).catch(err => Router.push("/login"));
 
         this.setState({ isAuthenticating: false });
@@ -53,7 +56,7 @@ class Index extends Component {
         return (
             <>
                 {isAuthenticated &&
-                    <Layout isAuthenticated={isAuthenticated} page={page} device={device}>
+                    <Layout isAuthenticated={isAuthenticated} page={page} device={device} setDevice={this.setDevice}>
                         {this.conditionRender()}
                     </Layout>
                 }

@@ -30,10 +30,10 @@ class Sidenav extends Component {
                 <div className={style.links}>
                     <ul>
                         <li>
-                            <a href="#" class={"flex align-center space"}><Dashboard/> Dashboard</a>
+                            <a href="#" className={"flex align-center space"}><Dashboard/> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#" class={"flex align-center space"} onClick={() => this.props.setPage(0)}>
+                            <a href="#" className={"flex align-center space"} onClick={() => this.props.setPage(0)}>
                                 <Device/> Devices
                             </a>
                         </li>

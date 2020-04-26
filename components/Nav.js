@@ -49,7 +49,8 @@ class Nav extends Component{
                     {this.props?.page !== 0 &&
                     <>
                         <div className={style.topDropdown}>
-                            <Dropdown placeholder='Select Device' options={options}/>
+                            <Dropdown placeholder='Select Device' options={options} defaultValue={this.props?.device}
+                                      onChange={(e, {value}) => this.props?.setDevice(value)}/>
                         </div>
                         <div className={style.topNotification}><Notifications/></div>
                     </>}

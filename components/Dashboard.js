@@ -36,7 +36,6 @@ class Dashboard extends Component {
 
     componentWillReceiveProps(nextProps, nextContext) {
         if(nextProps.device !== this.props.device) {
-            this.props.device = nextProps.device;
             this.setDevice(nextProps.device);
         }
     }
