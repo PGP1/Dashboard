@@ -80,7 +80,7 @@ class SelectDevices extends Component {
                             {devices.map((each, i) =>  <tr key={i}>
                                 <td>{each}</td>
                                 <td>Online</td>
-                                <td>Access / Shutdown</td>
+                                <td><a onClick={() => this.props.setDevice(each)}> Access </a> / Shutdown</td>
                             </tr>)}
                             </tbody>
                         </table>

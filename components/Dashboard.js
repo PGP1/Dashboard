@@ -28,16 +28,30 @@ class Dashboard extends Component {
         }
     }
 
+
+    componentDidMount() {
+        const { device } = this.props;
+        this.setDevice(device);
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        if(nextProps.device !== this.props.device) {
+            this.props.device = nextProps.device;
+            this.setDevice(nextProps.device);
+        }
+    }
+
+    setDevice(device) {
+        this.setState({ device })
+    }
+
     render() {
+        const { device } = this.state;
         return (
             <>
-
-                <Sidenav />
-
+                <Sidenav setPage={this.props.setPage}/>
                 <div className={style.dashboardContent}>
-
                     <div className={style.purpleBackground} />
-
                     <div className={style.dashboardGridContent}>
 
                         <div className={style.left}>
@@ -47,7 +61,7 @@ class Dashboard extends Component {
                                 </div>
                                 <div className={style.dashboardDeviceStatusGrid}>
                                     <div>Device ID</div>
-                                    <div style={{ color: "#BDBDBD" }}>3a0e3db35c8890c8</div>
+                                    <div style={{color: "#BDBDBD" }}>{ device }</div>
                                     <div>Uptime</div>
                                     <div style={{ color: "#BDBDBD" }}>2h30m</div>
                                 </div>

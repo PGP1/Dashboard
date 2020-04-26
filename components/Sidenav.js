@@ -22,7 +22,7 @@ class Sidenav extends Component {
                             <a href="#" class={"flex align-center space"}><Dashboard/> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#" class={"flex align-center space"}><Device/> Devices</a>
+                            <a href="#" class={"flex align-center space"} onClick={() => this.props.setPage(0)}><Device/> Devices</a>
                         </li>
                     </ul>
                 </div>

@@ -12,6 +12,7 @@ class Index extends Component {
         this.state = {
             isAuthenticated: false,
             page: 0,
+            device: "",
         }
     }
 
@@ -24,17 +25,25 @@ class Index extends Component {
         this.setState({ isAuthenticating: false });
     }
 
+    setDevice = (device) => {
+        this.setState({ device: device, page: 1 })
+    }
+
+    setPage = (page) => {
+        this.setState({ page });
+    }
+
     setAuthenticate = () => {
         this.setState({ isAuthenticated: true });
     };
 
     conditionRender() {
-        const { page } = this.state;
+        const { page, device } = this.state;
         switch(page) {
             case 0:
-                return <SelectDevices/>
+                return <SelectDevices setDevice={this.setDevice}/>
             default:
-                return <Dashboard/>
+                return <Dashboard device={device} setPage={this.setPage}/>
         }
     }
 
