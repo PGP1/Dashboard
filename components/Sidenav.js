@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import style from './styles/Sidenav.module.scss';
-
+import Dashboard from './assets/Dashboard.svg'
+import Device from './assets/Device.svg';
+import Settings from './assets/Settings.svg'
 class Sidenav extends Component {
 
     render() {
@@ -17,10 +19,10 @@ class Sidenav extends Component {
                 <div className={style.links}>
                     <ul>
                         <li>
-                            <a href="#">Dashboard</a>
+                            <a href="#" class={"flex align-center space"}><Dashboard/> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#">Device</a>
+                            <a href="#" class={"flex align-center space"}><Device/> Devices</a>
                         </li>
                     </ul>
                 </div>
@@ -28,13 +30,10 @@ class Sidenav extends Component {
                 <div className={style.bottom}>
                     <ul>
                         <li>
-                            <a href="#">User Settings</a>
+                            <a href="#" className={"flex align-center space"}><Settings/> User Settings</a>
                         </li>
                         <li>
                             <a href="#">Logout</a>
-                        </li>
-                        <li className={style.sidebar}>
-                            Toggle sidebar
                         </li>
                     </ul>
                 </div>

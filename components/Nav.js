@@ -2,7 +2,7 @@ import style from './styles/Nav.module.scss';
 import AWSController from '../api/AWSController';
 import { useState } from 'react';
 import { Dropdown } from 'semantic-ui-react';
-
+import Notifications from './assets/Notifications.svg'
 export default function Nav(props) {
     const [username, setUsername] = useState();
     AWSController.getCurrentUserName().then(username => setUsername(username));
@@ -35,7 +35,7 @@ export default function Nav(props) {
                     <div className={style.topDropdown}>
                         <Dropdown placeholder='Select Device' options={options}/>
                     </div>
-                    <div className={style.topNotification}>noti</div>
+                    <div className={style.topNotification}><Notifications/></div>
                 </>}
 
                 {props?.page !== 1 &&

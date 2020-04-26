@@ -71,6 +71,12 @@ body{
     cursor: pointer;
 }
 
+.space {
+    & > * {
+        margin-right: 5px;
+    }
+}
+
 
 .inlineError {
     color: red;

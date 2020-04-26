@@ -4,7 +4,6 @@ import style from './styles/Dashboard.module.scss';
 import { Doughnut, Bar, HorizontalBar, Line, Radar } from 'react-chartjs-2';
 
 
-
 //import pi_data from './assets/config/pi-data.json';
 // import LineGraph from '../components/LineGraph';
 // import MixedChart from '../components/MixedChart';
