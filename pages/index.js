@@ -48,12 +48,12 @@ class Index extends Component {
     }
 
     render() {
-        const { isAuthenticated, page } = this.state;
+        const { isAuthenticated, page, device } = this.state;
 
         return (
             <>
                 {isAuthenticated &&
-                    <Layout isAuthenticated={isAuthenticated} page={page}>
+                    <Layout isAuthenticated={isAuthenticated} page={page} device={device}>
                         {this.conditionRender()}
                     </Layout>
                 }
