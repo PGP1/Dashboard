@@ -14,8 +14,6 @@ class Sidenav extends Component {
         }
     }
 
-
-
     render() {
         return (
             <div className={style.container}>
@@ -46,13 +44,10 @@ class Sidenav extends Component {
                             <a href="#" className={"flex align-center space"}><Settings/> User Settings</a>
                         </li>
                         <li>
-                            <a href="#">Logout</a>
+                            <a onClick={() => AWSController.signOut()} href="/">Logout</a>
                         </li>
                     </ul>
                 </div>
-
-
-
             </div>
         )
     }
