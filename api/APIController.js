@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { DEVICE_LIST, LINK_DEVICE } from "../constants";
+import { DEVICE_LIST, LINK_DEVICE, ELASTIC_QUERY } from "../constants";
 class APIController {
 
     async getMyDevices({ jwtToken }) {
@@ -16,6 +16,14 @@ class APIController {
             headers: { Authorization: jwtToken }
         };
         return await axios.post(LINK_DEVICE, { device }, config);
+    }
+
+    async elasticQuery({ AccessKeyId, SecretKey, SessionToken }, { jwtToken }, DeviceId, QueryType) {
+        const config = {
+            headers: { Authorization: jwtToken }
+        };
+
+        return await axios.post(ELASTIC_QUERY, { AccessKeyId, SecretKey, SessionToken, DeviceId, QueryType }, config);
     }
 }
 

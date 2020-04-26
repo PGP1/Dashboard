@@ -43,13 +43,13 @@ class Nav extends Component{
         const options = devices.map(d => { return {key: d, text: d, value: d}});
 
         return (
-            <div className={style.nav}>
+            <div className={[style.nav, "flex", "align-center"].join(" ")}>
                 <div className={style.logo}>Plantly.</div>
                 {this.props?.isAuthenticated && <>
                     {this.props?.page !== 0 &&
                     <>
                         <div className={style.topDropdown}>
-                            <Dropdown placeholder='Select Device' options={options} defaultValue={this.props?.device}
+                            <Dropdown selection placeholder='Select Device' options={options} defaultValue={this.props?.device}
                                       onChange={(e, {value}) => this.props?.setDevice(value)}/>
                         </div>
                         <div className={style.topNotification}><Notifications/></div>

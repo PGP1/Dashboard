@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Sidenav from './Sidenav';
 import style from './styles/Dashboard.module.scss';
 import { Doughnut, Bar, HorizontalBar, Line, Radar } from 'react-chartjs-2';
+import AWSController from "../api/AWSController";
+import APIController from "../api/APIController";
 
 
 //import pi_data from './assets/config/pi-data.json';
@@ -28,10 +30,17 @@ class Dashboard extends Component {
         }
     }
 
-
     componentDidMount() {
         const { device } = this.props;
         this.setDevice(device);
+        AWSController.getCurrentCredientials().then(d => {
+            const { Credentials } = d.data;
+            this.setState({ credentials: Credentials })
+            AWSController.getCurrentSession().then(user => {
+                this.setUser(user);
+                this.getData("temperature");
+            });
+        });
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -40,8 +49,19 @@ class Dashboard extends Component {
         }
     }
 
-    setDevice(device) {
+    setDevice = (device) => {
         this.setState({ device })
+    }
+
+    setUser = (user) => {
+        this.setState({ user });
+    }
+
+    getData = (queryType) => {
+        const { credentials, user, device } = this.state;
+        APIController.elasticQuery(credentials, user.idToken, device, queryType).then(data => {
+            console.log('elastic data', data);
+        })
     }
 
     render() {

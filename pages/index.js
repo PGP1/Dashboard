@@ -20,9 +20,6 @@ class Index extends Component {
     componentDidMount() {
         AWSController.getCurrentSession().then(session => {
             this.setAuthenticate(true);
-            AWSController.getCurrentCredientials().then(data => {
-                console.log("cred", data)
-            })
         }).catch(err => Router.push("/login"));
 
         this.setState({ isAuthenticating: false });
