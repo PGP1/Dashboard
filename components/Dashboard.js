@@ -5,6 +5,12 @@ import { Doughnut, Bar, HorizontalBar, Line, Radar } from 'react-chartjs-2';
 import AWSController from "../api/AWSController";
 import APIController from "../api/APIController";
 import TemperatureLineChart from "./TemperatureLineChart";
+import WaterLineChart from "./WaterLineChart";
+import HumidityLineChart from "./HumidityLineChart";
+import PhLineChart from "./PhLineChart";
+import LightLineChart from "./LightLineChart";
+
+
 
 //import pi_data from './assets/config/pi-data.json';
 // import LineGraph from '../components/LineGraph';
@@ -98,24 +104,16 @@ class Dashboard extends Component {
                                     <div className={style.box}>
                                         <div className={style.dashboardHeader}>
                                             Water Level
-                                </div>
+                                        </div>
                                         <div className={style.chart}>
-                                            <Line
-                                                data={this.state.data}
-                                                width={100}
-                                                height={300}
-                                                options={{
-                                                    responsive: true,
-                                                    maintainAspectRatio: false
-                                                }}
-                                            />
+                                            <WaterLineChart credentials={credentials} user={user} device={device} />
                                         </div>
                                     </div>
 
                                     <div className={style.box}>
                                         <div className={style.dashboardHeader}>
                                             Temperature Level
-                                </div>
+                                        </div>
                                         <div className={style.chart}>
                                             <TemperatureLineChart credentials={credentials} user={user} device={device} />
                                         </div>
@@ -124,17 +122,9 @@ class Dashboard extends Component {
                                     <div className={style.box}>
                                         <div className={style.dashboardHeader}>
                                             Humidity Level
-                                </div>
+                                        </div>
                                         <div className={style.chart}>
-                                            <Line
-                                                data={this.state.data}
-                                                width={100}
-                                                height={300}
-                                                options={{
-                                                    responsive: true,
-                                                    maintainAspectRatio: false
-                                                }}
-                                            />
+                                            <HumidityLineChart credentials={credentials} user={user} device={device} />
                                         </div>
                                     </div>
                                 </div>
@@ -144,9 +134,9 @@ class Dashboard extends Component {
                                     <div className={[style.box, style.box2].join(" ")}>
                                         <div className={style.dashboardHeader}>
                                             Overall details
-                                </div>
+                                        </div>
                                         <div className={style.chart}>
-                                            <HorizontalBar
+                                            <Bar
                                                 data={this.state.data}
                                                 height={300}
                                                 options={{
@@ -159,32 +149,18 @@ class Dashboard extends Component {
                                     <div className={style.box}>
                                         <div className={style.dashboardHeader}>
                                             pH Level
-                                </div>
+                                        </div>
                                         <div className={style.chart}>
-                                            <Line
-                                                data={this.state.data}
-                                                width={100}
-                                                height={300}
-                                                options={{
-                                                    responsive: true,
-                                                    maintainAspectRatio: false
-                                                }}
-                                            />
+                                            <PhLineChart credentials={credentials} user={user} device={device} />
                                         </div>
                                     </div>
 
                                     <div className={[style.box, style.box2].join(" ")}>
                                         <div className={style.dashboardHeader}>
                                             Light Level
-                                </div>
+                                        </div>
                                         <div className={style.chart}>
-                                            <Line
-                                                data={this.state.data}
-                                                height={500}
-                                                options={{
-                                                    responsive: true,
-                                                    maintainAspectRatio: false
-                                                }} />
+                                            <LightLineChart credentials={credentials} user={user} device={device} />
                                         </div>
                                     </div>
                                 </div>

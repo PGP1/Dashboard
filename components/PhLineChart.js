@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Doughnut, Bar, HorizontalBar, Line, Radar } from 'react-chartjs-2';
 import APIController from "../api/APIController";
 import moment from 'moment';
-const QUERY_TYPE = 'temperature';
+const QUERY_TYPE = 'ph';
 
 class TemperatureLineChart extends Component {
 
@@ -43,11 +43,10 @@ class TemperatureLineChart extends Component {
 
             dataValues = {
                 datasets: [{
-                    label: 'Degrees',
+                    label: 'pH',
                     data: y,
-                    borderColor: 'rgb(231,76,60)',
-                    backgroundColor: 'rgba(231,76,60,0.2)'
-                    
+                    borderColor: 'rgb(155,89,182)',
+                    backgroundColor: 'rgba(155,89,182,0.2)'
                 }],
                 labels: x
             }
@@ -61,15 +60,6 @@ class TemperatureLineChart extends Component {
                 options={{
                     responsive: true,
                     maintainAspectRatio: false,
-                    scales: {
-                        yAxes: [{
-                            override: {
-                                stepWidth: 20,
-                                start: 0,
-                                steps: 10
-                            }
-                        }]
-                    }
                 }}
             />
         )
