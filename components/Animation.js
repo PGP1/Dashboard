@@ -10,7 +10,6 @@ const options = {
     }
 }
 
-
 export default function Animation() {
     return <div className={"animation"}>
         <Lottie options={options} width={300} height={300}/>
