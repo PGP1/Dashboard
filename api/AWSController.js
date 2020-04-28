@@ -13,6 +13,10 @@ class AWSController {
         });
     }
 
+    async signOut() {
+        window.localStorage.clear()
+    }
+
     async getCurrentCredientials() {
         return await Auth.currentCredentials();
     }
