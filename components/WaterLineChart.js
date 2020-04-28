@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Doughnut, Bar, HorizontalBar, Line, Radar } from 'react-chartjs-2';
 import APIController from "../api/APIController";
 import moment from 'moment';
-const QUERY_TYPE = 'water';
+const QUERY_TYPE = 'waterLevel';
 
-class TemperatureLineChart extends Component {
+class WaterLineChart extends Component {
 
     constructor(props) {
         super(props);
@@ -18,8 +18,9 @@ class TemperatureLineChart extends Component {
 
     getData = (credentials, user, device, queryType) => {
         return APIController.elasticQuery(credentials, user.idToken, device, queryType).then(res => {
-            const data = res.data.hits ?.hits;
+            const data = res.data.hits?.hits;
             this.setState({ data });
+            console.log(data);
         })
     }
 
@@ -60,9 +61,16 @@ class TemperatureLineChart extends Component {
                 options={{
                     responsive: true,
                     maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
                 }}
             />
         )
     }
 }
-export default TemperatureLineChart;
+export default WaterLineChart;

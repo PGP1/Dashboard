@@ -18,7 +18,7 @@ class TemperatureLineChart extends Component {
 
     getData = (credentials, user, device, queryType) => {
         return APIController.elasticQuery(credentials, user.idToken, device, queryType).then(res => {
-            const data = res.data.hits ?.hits;
+            const data = res.data.hits?.hits;
             this.setState({ data });
         })
     }
@@ -47,7 +47,7 @@ class TemperatureLineChart extends Component {
                     data: y,
                     borderColor: 'rgb(231,76,60)',
                     backgroundColor: 'rgba(231,76,60,0.2)'
-                    
+
                 }],
                 labels: x
             }
@@ -63,10 +63,8 @@ class TemperatureLineChart extends Component {
                     maintainAspectRatio: false,
                     scales: {
                         yAxes: [{
-                            override: {
-                                stepWidth: 20,
-                                start: 0,
-                                steps: 10
+                            ticks: {
+                                beginAtZero: true
                             }
                         }]
                     }

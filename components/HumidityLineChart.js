@@ -4,7 +4,7 @@ import APIController from "../api/APIController";
 import moment from 'moment';
 const QUERY_TYPE = 'humidity';
 
-class TemperatureLineChart extends Component {
+class HumidityLineChart extends Component {
 
     constructor(props) {
         super(props);
@@ -18,7 +18,8 @@ class TemperatureLineChart extends Component {
 
     getData = (credentials, user, device, queryType) => {
         return APIController.elasticQuery(credentials, user.idToken, device, queryType).then(res => {
-            const data = res.data.hits ?.hits;
+            const data = res.data.hits?.hits;
+            console.log("humidity", data);
             this.setState({ data });
         })
     }
@@ -61,9 +62,16 @@ class TemperatureLineChart extends Component {
                 options={{
                     responsive: true,
                     maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
                 }}
             />
         )
     }
 }
-export default TemperatureLineChart;
+export default HumidityLineChart;

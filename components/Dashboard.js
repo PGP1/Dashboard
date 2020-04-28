@@ -9,13 +9,9 @@ import WaterLineChart from "./WaterLineChart";
 import HumidityLineChart from "./HumidityLineChart";
 import PhLineChart from "./PhLineChart";
 import LightLineChart from "./LightLineChart";
-
-
-
-//import pi_data from './assets/config/pi-data.json';
+// import pi_data from './assets/config/pi-data.json';
 // import LineGraph from '../components/LineGraph';
 // import MixedChart from '../components/MixedChart';
-
 
 class Dashboard extends Component {
     constructor() {
