@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Sidenav from './Sidenav';
 import style from './styles/Dashboard.module.scss';
-import { Doughnut, Bar, HorizontalBar, Line, Radar } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import AWSController from "../api/AWSController";
 import APIController from "../api/APIController";
 import TemperatureLineChart from "./TemperatureLineChart";
@@ -9,9 +9,6 @@ import WaterLineChart from "./WaterLineChart";
 import HumidityLineChart from "./HumidityLineChart";
 import PhLineChart from "./PhLineChart";
 import LightLineChart from "./LightLineChart";
-// import pi_data from './assets/config/pi-data.json';
-// import LineGraph from '../components/LineGraph';
-// import MixedChart from '../components/MixedChart';
 
 class Dashboard extends Component {
     constructor() {
@@ -40,7 +37,6 @@ class Dashboard extends Component {
             this.setState({ credentials: Credentials })
             AWSController.getCurrentSession().then(user => {
                 this.setUser(user);
-                this.getData("temperature");
             });
         });
     }
@@ -52,21 +48,11 @@ class Dashboard extends Component {
     }
 
     setDevice = (device) => {
-        this.setState({ device }, () => {
-            if (this.state.user)
-                this.getData("temperature")
-        });
+        this.setState({ device });
     }
 
     setUser = (user) => {
         this.setState({ user });
-    }
-
-    getData = (queryType) => {
-        const { credentials, user, device } = this.state;
-        APIController.elasticQuery(credentials, user.idToken, device, queryType).then(data => {
-            console.log('elastic data', data);
-        })
     }
 
     render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Doughnut, Bar, HorizontalBar, Line, Radar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import APIController from "../api/APIController";
 import moment from 'moment';
 const QUERY_TYPE = 'ph';
@@ -19,7 +19,6 @@ class PhLineChart extends Component {
     getData = (credentials, user, device, queryType) => {
         return APIController.elasticQuery(credentials, user.idToken, device, queryType).then(res => {
             const data = res.data.hits?.hits;
-            console.log("ph", data);
             this.setState({ data });
         })
     }
