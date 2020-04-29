@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import Notifications from './assets/Notifications.svg'
 import APIController from "../api/APIController";
+import NotificationPopup from './NotificationPopup';    
+
 class Nav extends Component{
 
     constructor() {
@@ -38,6 +40,11 @@ class Nav extends Component{
         this.setState({ username });
     }
 
+    togglePopup = () => {
+        this.setState({ showPopup: !this.state.showPopup });
+    }
+
+
     render() {
         const { username, devices } = this.state;
         const options = devices.map(d => { return {key: d, text: d, value: d}});
@@ -52,7 +59,10 @@ class Nav extends Component{
                             <Dropdown selection placeholder='Select Device' options={options} defaultValue={this.props?.device}
                                       onChange={(e, {value}) => this.props?.setDevice(value)}/>
                         </div>
-                        <div className={style.topNotification}><Notifications/></div>
+                        <div className={style.topNotification}><Notifications  style={{cursor:'pointer'}} onClick={this.togglePopup.bind(this)}/>
+                            {this.state.showPopup ? <NotificationPopup closePopup={this.togglePopup.bind(this)}/> : null}
+
+                        </div>
                     </>}
 
                     {this.props?.page !== 1 &&

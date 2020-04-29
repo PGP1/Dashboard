@@ -1,0 +1,22 @@
+@import "../../pages/styles/_constant";
+
+.container {
+    width: 200px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    //left: 0;
+    right: 0;
+    margin-right: 20px;
+    box-shadow: 0 8px 25px 0 rgba(112, 110, 110, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: #BDBDBD;
+}
