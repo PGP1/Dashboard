@@ -43,7 +43,7 @@ class Index extends Component {
             case 0:
                 return <SelectDevices setDevice={this.setDevice}/>
             default:
-                return <Dashboard device={device} setPage={this.setPage}/>
+                return <Dashboard page={page} device={device} setPage={this.setPage}/>
         }
     }
 

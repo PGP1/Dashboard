@@ -10,6 +10,24 @@ import HumidityLineChart from "./HumidityLineChart";
 import PhLineChart from "./PhLineChart";
 import LightLineChart from "./LightLineChart";
 
+
+class ModuleContent extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const { title, children } = this.props;
+        return <div className={style.box}>
+            <div className={style.dashboardHeader}>
+                { title }
+            </div>
+            <div className={style.chart}>
+                { children }
+            </div>
+        </div>
+    }
+}
 class Dashboard extends Component {
     constructor() {
         super();
@@ -55,8 +73,40 @@ class Dashboard extends Component {
         this.setState({ user });
     }
 
+    renderModules = (modules) => {
+        return modules.map(({ title, render }) => {
+            return <ModuleContent title={title}>{ render }</ModuleContent>
+        })
+    }
+
+
+
     render() {
         const { device, credentials, user } = this.state;
+        const content = [
+            { title: "Device Status", render: <>
+                    <div className={style.dashboardDeviceStatusGrid}>
+                        <div>Device ID</div>
+                        <div style={{ color: "#BDBDBD" }}>{device}</div>
+                        <div>Uptime</div>
+                        <div style={{ color: "#BDBDBD" }}>2h30m</div>
+                    </div>
+                    <div className={style.dashboardDeviceStatusButtons}>
+                        <button className="ui yellow button">Sleep</button>
+                        <button className="ui black button">Restart</button>
+                    </div>
+            </>},
+            { title: "Water Level", render: <WaterLineChart credentials={credentials} user={user} device={device} />},
+            { title: "Temperature Level", render:  <TemperatureLineChart credentials={credentials} user={user} device={device} />},
+            { title: "Humidity Level", render:  <HumidityLineChart credentials={credentials} user={user} device={device} />},
+            /* */
+            { title: "Overall details", render:  <Bar data={this.state.data} height={300} options={{
+                responsive: true,
+                maintainAspectRatio: false
+            }} />},
+            { title: "pH Level", render: <PhLineChart credentials={credentials} user={user} device={device} />},
+            { title: "Light Level", render: <LightLineChart credentials={credentials} user={user} device={device} />},
+        ];
         return (
             <>
                 {device && credentials && user &&
@@ -67,84 +117,11 @@ class Dashboard extends Component {
                             <div className={style.dashboardGridContent}>
 
                                 <div className={style.left}>
-                                    <div className={[style.box, style.dashboardDeviceStatus].join(" ")}>
-                                        <div className={style.dashboardHeader}>
-                                            Device Status
-                                </div>
-                                        <div className={style.dashboardDeviceStatusGrid}>
-                                            <div>Device ID</div>
-                                            <div style={{ color: "#BDBDBD" }}>{device}</div>
-                                            <div>Uptime</div>
-                                            <div style={{ color: "#BDBDBD" }}>2h30m</div>
-                                        </div>
-                                        <div className={style.dashboardDeviceStatusButtons}>
-                                            <button className="ui yellow button">Sleep</button>
-                                            <button className="ui black button">Restart</button>
-                                        </div>
-                                    </div>
-
-                                    <div className={style.box}>
-                                        <div className={style.dashboardHeader}>
-                                            Water Level
-                                        </div>
-                                        <div className={style.chart}>
-                                            <WaterLineChart credentials={credentials} user={user} device={device} />
-                                        </div>
-                                    </div>
-
-                                    <div className={style.box}>
-                                        <div className={style.dashboardHeader}>
-                                            Temperature Level
-                                        </div>
-                                        <div className={style.chart}>
-                                            <TemperatureLineChart credentials={credentials} user={user} device={device} />
-                                        </div>
-                                    </div>
-
-                                    <div className={style.box}>
-                                        <div className={style.dashboardHeader}>
-                                            Humidity Level
-                                        </div>
-                                        <div className={style.chart}>
-                                            <HumidityLineChart credentials={credentials} user={user} device={device} />
-                                        </div>
-                                    </div>
+                                    {this.renderModules(content.slice(0,4))}
                                 </div>
 
                                 <div className={style.right}>
-
-                                    <div className={[style.box, style.box2].join(" ")}>
-                                        <div className={style.dashboardHeader}>
-                                            Overall details
-                                        </div>
-                                        <div className={style.chart}>
-                                            <Bar
-                                                data={this.state.data}
-                                                height={300}
-                                                options={{
-                                                    responsive: true,
-                                                    maintainAspectRatio: false
-                                                }} />
-                                        </div>
-                                    </div>
-
-                                    <div className={style.box}>
-                                        <div className={style.dashboardHeader}>
-                                            pH Level
-                                        </div>
-                                        <div className={style.chart}>
-                                            <PhLineChart credentials={credentials} user={user} device={device} />
-                                        </div>
-                                    </div>
-
-                                    <div className={[style.box, style.box2].join(" ")}>
-                                        <div className={style.dashboardHeader}>
-                                            Light Level
-                                        </div>
-                                        <div className={style.chart}>
-                                            <LightLineChart credentials={credentials} user={user} device={device} />
-                                        </div>
-                                    </div>
+                                    {this.renderModules(content.slice(4,content.length))}
                                 </div>
                             </div>
                         </div>
