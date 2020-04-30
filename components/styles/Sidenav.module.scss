@@ -15,9 +15,9 @@
 
 .userDetails {
   margin-top: 85px;
-  grid-gap: 16px;
   font-weight: 500;
-
+  display: flex;
+  align-items: center;
   &::after {
     content: "";
     display: block;
@@ -26,21 +26,25 @@
 }
 
 .avatar {
-  float: left;
   width: 46px;
   height: 46px;
   border-radius: 100%;
   background: grey;
+  background-size: 46px 46px;
+  flex-shrink: 0;
 }
 
 .userInfo {
   float: left;
   margin-left: 16px;
   font-size: 1rem;
-
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   & span {
     letter-spacing: 0.11px;
     font-size: 0.8125rem;
+
   }
 }
 

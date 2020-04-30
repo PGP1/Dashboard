@@ -49,11 +49,6 @@ class AWSController {
     async getCurrentAuthenticatedUser() {
         return await Auth.currentAuthenticatedUser();
     }
-
-    async getCurrentUserName() {
-        return this.getCurrentAuthenticatedUser()
-            .then(session => session.username);
-    }
 }
 
 export default new AWSController();

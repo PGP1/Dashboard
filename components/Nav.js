@@ -17,8 +17,8 @@ class Nav extends Component{
         }
     }
     componentDidMount() {
-        AWSController.getCurrentUserName().then(username => this.setUsername(username));
         AWSController.getCurrentSession().then(user => {
+            APIController.getUserData(user.idToken).then(d => this.setUserData(d.data))
             this.setUser(user);
         });
     }
@@ -36,8 +36,8 @@ class Nav extends Component{
         })
     };
 
-    setUsername = (username) => {
-        this.setState({ username });
+    setUserData = (userDetail) => {
+        this.setState({ userDetail });
     }
 
     togglePopup = () => {
@@ -46,7 +46,7 @@ class Nav extends Component{
 
 
     render() {
-        const { username, devices } = this.state;
+        const { userDetail, devices } = this.state;
         const options = devices.map(d => { return {key: d, text: d, value: d}});
 
         return (
@@ -61,14 +61,13 @@ class Nav extends Component{
                         </div>
                         <div className={style.topNotification}><Notifications  style={{cursor:'pointer'}} onClick={this.togglePopup.bind(this)}/>
                             {this.state.showPopup ? <NotificationPopup closePopup={this.togglePopup.bind(this)}/> : null}
-
                         </div>
                     </>}
 
                     {this.props?.page !== 1 &&
                     <div className={style.accountHolder}>
-                        <div className={style.avatar} />
-                        <div className={style.username}>{username}</div>
+                        <div className={style.avatar} style={{backgroundImage: `url(${userDetail?.avatar})`}}/>
+                        <div className={style.username}>{userDetail?.username}</div>
                     </div>}
                 </>}
 

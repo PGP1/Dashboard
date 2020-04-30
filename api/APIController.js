@@ -1,13 +1,19 @@
 import axios from 'axios';
-import { DEVICE_LIST, LINK_DEVICE, ELASTIC_QUERY } from "../constants";
+import { DEVICE_LIST, LINK_DEVICE, ELASTIC_QUERY, USER_DATA } from "../constants";
 class APIController {
 
     async getMyDevices({ jwtToken }) {
         const config = {
             headers: { Authorization: jwtToken }
         };
-        console.log("jwtToken", jwtToken);
         return await axios.post(DEVICE_LIST, {}, config);
+    }
+
+    async getUserData({ jwtToken }) {
+        const config = {
+            headers: { Authorization: jwtToken }
+        };
+        return await axios.post(USER_DATA, {}, config);
     }
 
 

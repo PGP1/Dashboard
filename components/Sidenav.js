@@ -16,34 +16,44 @@ class Sidenav extends Component {
         }
     }
 
+    componentDidMount() {
+        AWSController.getCurrentSession().then(user => {
+            APIController.getUserData(user.idToken).then(d => this.setUserData(d.data))
+        });
+    }
+
+    setUserData = (userDetail) => {
+        this.setState({ userDetail });
+    }
+
     render() {
+        const { userDetail } = this.state;
         const panes = [
             {
                 menuItem: 'Profile',
                 render: () => <Tab.Pane attached={false}>
                     <div className={style.userSettingsForm}>
                         <Form>
-                            <Form.Input fluid label='Name'> Sierra Ferguson </Form.Input>
-                            <Form.Input fluid label='Email'> abcdefgh@gmail.com </Form.Input>
-                            <Form.Input fluid label='Username'> test7 </Form.Input>
-                            {/* <Form.Group widths='equal'>
+                            <Form.Input fluid label='Email'> {userDetail?.email} </Form.Input>
+                            <Form.Input fluid label='Username'> {userDetail?.username} </Form.Input>
+                            {/*<Form.Group widths='equal'>*/}
 
 
-                                <Form.Input fluid label='Username'>  </Form.Input>
-                                <Form.Input
-                                    fluid
-                                    id='form-subcomponent-shorthand-input-first-name'
-                                    label='First name'
-                                    placeholder='First name'
-                                />
-                                <Form.Input
-                                    fluid
-                                    id='form-subcomponent-shorthand-input-last-name'
-                                    label='Last name'
-                                    placeholder='Last name'
-                                />
-                            </Form.Group> */}
-                            {/* <Button color='blue'>Update details</Button> */}
+                            {/*    <Form.Input fluid label='Username'>  </Form.Input>*/}
+                            {/*    <Form.Input*/}
+                            {/*        fluid*/}
+                            {/*        id='form-subcomponent-shorthand-input-first-name'*/}
+                            {/*        label='First name'*/}
+                            {/*        placeholder='First name'*/}
+                            {/*    />*/}
+                            {/*    <Form.Input*/}
+                            {/*        fluid*/}
+                            {/*        id='form-subcomponent-shorthand-input-last-name'*/}
+                            {/*        label='Last name'*/}
+                            {/*        placeholder='Last name'*/}
+                            {/*    />*/}
+                            {/*</Form.Group>*/}
+                            {/*<Button color='blue'>Update details</Button>*/}
                         </Form>
                     </div>
                 </Tab.Pane>,
@@ -74,10 +84,10 @@ class Sidenav extends Component {
         return (
             <div className={style.container}>
                 <div className={style.userDetails}>
-                    <div className={style.avatar} />
+                    <div className={style.avatar} style={{backgroundImage: `url(${userDetail?.avatar})`}}/>
                     <div className={style.userInfo}>
-                        Sierra Ferguson <br />
-                        <span>s.ferguson@gmail.com</span>
+                        {userDetail?.username} <br />
+                        <span>{userDetail?.email}</span>
                     </div>
                 </div>
 
@@ -101,7 +111,7 @@ class Sidenav extends Component {
                                 <Modal.Header><Settings fill="black" /> User Settings</Modal.Header>
                                 <Modal.Content image>
                                     <Button style={{ position: "fixed" }}></Button>
-                                    <Image wrapped size='small' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' />
+                                    <Image wrapped size='small' src={userDetail?.avatar} />
                                     <Modal.Description style={{ width: "100%" }}>
                                         <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
                                     </Modal.Description>
