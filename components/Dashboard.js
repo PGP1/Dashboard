@@ -180,13 +180,13 @@ class Dashboard extends Component {
                             <Checkbox toggle />
                         </div>
                         <div>
-                            Water <br />
-                            <Button size='mini' content='Pump water' primary />
+                            <Button size='small' content='Pump water' primary />
                         </div>
                     </div>
             },
-            { title: "pH Level", render: <PhLineChart credentials={credentials} user={user} device={device} /> },
-            { title: "Light Level", render: <LightLineChart credentials={credentials} user={user} device={device} /> },
+            { title: "ElasticSearch Service", render: <></> },
+            { title: "CPU Usage", render: <></> },
+            { title: "RAM Usage", render: <></> },
         ];
         console.log(content)
         return (
@@ -199,11 +199,11 @@ class Dashboard extends Component {
                             <div className={style.dashboardGridContent}>
 
                                 <div className={style.left}>
-                                    {page == 1 ? this.renderModules(content.slice(0, 3)) : this.renderModules(content.slice(5, 6))}
+                                    {page == 1 ? this.renderModules(content.slice(0, 3)) : this.renderModules(content.slice(5, 7))}
                                 </div>
 
                                 <div className={style.right}>
-                                    {page == 1 ? this.renderModules(content.slice(3, 5)) : this.renderModules(content.slice(6, content.length))}
+                                    {page == 1 ? this.renderModules(content.slice(3, 5)) : this.renderModules(content.slice(7, content.length))}
                                 </div>
                             </div>
                         </div>
