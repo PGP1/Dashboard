@@ -9,7 +9,7 @@ import WaterLineChart from "./charts/WaterLineChart";
 import HumidityLineChart from "./charts/HumidityLineChart";
 import PhLineChart from "./charts/PhLineChart";
 import LightLineChart from "./charts/LightLineChart";
-import { Checkbox, Button, Dropdown } from 'semantic-ui-react';
+import { Checkbox, Button, Dropdown, Icon } from 'semantic-ui-react';
 
 
 class ModuleContent extends Component {
@@ -172,15 +172,28 @@ class Dashboard extends Component {
                 title: "Device Controls", render:
                     <div className={style.buttonsContainer}>
                         <div>
-                            Light <br />
+                            <div className={style.buttonHeader}>
+                                Light <br />
+                            </div>
+                            <Checkbox toggle />
+                        </div>
+                        {/* <div>
+                            <div className={style.buttonHeader} />
+                            <Button color='blue'>
+                                Pump
+                            </Button>
+                        </div> */}
+                        <div>
+                            <div className={style.buttonHeader}>
+                                Pump <br />
+                            </div>
                             <Checkbox toggle />
                         </div>
                         <div>
-                            Fan <br />
+                            <div className={style.buttonHeader}>
+                                Fan <br />
+                            </div>
                             <Checkbox toggle />
-                        </div>
-                        <div>
-                            <Button size='small' content='Pump water' primary />
                         </div>
                     </div>
             },
