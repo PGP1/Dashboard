@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Doughnut, Bar, HorizontalBar, Line, Radar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import APIController from "../api/APIController";
 import moment from 'moment';
-const QUERY_TYPE = 'temperature';
+const QUERY_TYPE = 'ph';
 
-class TemperatureLineChart extends Component {
+class PhLineChart extends Component {
 
     constructor(props) {
         super(props);
@@ -18,7 +18,7 @@ class TemperatureLineChart extends Component {
 
     getData = (credentials, user, device, queryType) => {
         return APIController.elasticQuery(credentials, user.idToken, device, queryType).then(res => {
-            const data = res.data.hits ?.hits;
+            const data = res.data.hits?.hits;
             this.setState({ data });
         })
     }
@@ -34,6 +34,7 @@ class TemperatureLineChart extends Component {
     render() {
 
         const { data } = this.state;
+
         let dataValues = {};
 
         if (data) {
@@ -42,21 +43,19 @@ class TemperatureLineChart extends Component {
 
             dataValues = {
                 datasets: [{
-                    label: 'Degrees',
+                    label: 'pH',
                     data: y,
-                    borderColor: 'rgb(231,76,60)',
-                    backgroundColor: 'rgba(231,76,60,0.2)'
-
+                    borderColor: 'rgb(155,89,182)',
+                    backgroundColor: 'rgba(155,89,182,0.2)'
                 }],
                 labels: x
             }
         }
 
         return (
-
             <Line
                 data={dataValues}
-                width={100+"%"}
+                width={100}
                 height={300}
                 options={{
                     responsive: true,
@@ -73,4 +72,4 @@ class TemperatureLineChart extends Component {
         )
     }
 }
-export default TemperatureLineChart;
+export default PhLineChart;

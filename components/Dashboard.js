@@ -4,11 +4,12 @@ import style from './styles/Dashboard.module.scss';
 import { Bar } from 'react-chartjs-2';
 import AWSController from "../api/AWSController";
 import APIController from "../api/APIController";
-import TemperatureLineChart from "./TemperatureLineChart";
+import TemperatureLineChart from "./charts/TemperatureLineChart";
 import WaterLineChart from "./WaterLineChart";
 import HumidityLineChart from "./HumidityLineChart";
 import PhLineChart from "./PhLineChart";
 import LightLineChart from "./LightLineChart";
+import { Checkbox, Button, Dropdown } from 'semantic-ui-react';
 
 
 class ModuleContent extends Component {
@@ -20,10 +21,10 @@ class ModuleContent extends Component {
         const { title, children } = this.props;
         return <div className={style.box}>
             <div className={style.dashboardHeader}>
-                { title }
+                {title}
             </div>
             <div className={style.chart}>
-                { children }
+                {children}
             </div>
         </div>
     }
@@ -43,7 +44,8 @@ class Dashboard extends Component {
                     'Humidity',
                     'Temperature'
                 ]
-            }
+            },
+            page: 1
         }
     }
 
@@ -63,6 +65,9 @@ class Dashboard extends Component {
         if (nextProps.device !== this.props.device) {
             this.setDevice(nextProps.device);
         }
+        if (nextProps.page !== this.props.page) {
+            this.setPage(nextProps.page)
+        }
     }
 
     setDevice = (device) => {
@@ -73,18 +78,84 @@ class Dashboard extends Component {
         this.setState({ user });
     }
 
+    setPage = (page) => {
+        this.setState({ page });
+    }
+
     renderModules = (modules) => {
         return modules.map(({ title, render }) => {
-            return <ModuleContent title={title}>{ render }</ModuleContent>
+            return <ModuleContent title={title}>{render} </ModuleContent>
         })
     }
 
-
-
     render() {
-        const { device, credentials, user } = this.state;
+        const { device, credentials, user, page } = this.state;
+
+        const DropdownFilter = () => (
+            <Dropdown text='Filter by'>
+                <Dropdown.Menu>
+                    <Dropdown.Item text='Day' />
+                    <Dropdown.Item text='Week' />
+                    <Dropdown.Item text='Month' />
+                </Dropdown.Menu>
+            </Dropdown>
+        )
+
         const content = [
-            { title: "Device Status", render: <>
+            {
+                title: "Water Level", render:
+                    <>
+                        <div className={style.dropdownFilter}>
+                            {DropdownFilter()}
+                        </div>
+
+                        <WaterLineChart credentials={credentials} user={user} device={device} />
+                    </>
+            },
+            {
+                title: "Temperature Level", render:
+                    <>
+                        <div className={style.dropdownFilter}>
+                            {DropdownFilter()}
+                        </div>
+
+                        <TemperatureLineChart credentials={credentials} user={user} device={device} />
+                    </>
+            },
+            {
+                title: "Humidity Level", render:
+                    <>
+                        <div className={style.dropdownFilter}>
+                            {DropdownFilter()}
+                        </div>
+
+                        <HumidityLineChart credentials={credentials} user={user} device={device} />
+                    </>
+            },
+            {
+                title: "pH Level", render:
+
+                    <>
+                        <div className={style.dropdownFilter}>
+                            {DropdownFilter()}
+                        </div>
+
+                        <PhLineChart credentials={credentials} user={user} device={device} />
+                    </>
+            },
+            {
+                title: "Light Level", render:
+                    <>
+                        <div className={style.dropdownFilter}>
+                            {DropdownFilter()}
+                        </div>
+
+                        <LightLineChart credentials={credentials} user={user} device={device} />
+                    </>
+            },
+            /* */
+            {
+                title: "Device Status", render: <>
                     <div className={style.dashboardDeviceStatusGrid}>
                         <div>Device ID</div>
                         <div style={{ color: "#BDBDBD" }}>{device}</div>
@@ -95,18 +166,29 @@ class Dashboard extends Component {
                         <button className="ui yellow button">Sleep</button>
                         <button className="ui black button">Restart</button>
                     </div>
-            </>},
-            { title: "Water Level", render: <WaterLineChart credentials={credentials} user={user} device={device} />},
-            { title: "Temperature Level", render:  <TemperatureLineChart credentials={credentials} user={user} device={device} />},
-            { title: "Humidity Level", render:  <HumidityLineChart credentials={credentials} user={user} device={device} />},
-            /* */
-            { title: "Overall details", render:  <Bar data={this.state.data} height={300} options={{
-                responsive: true,
-                maintainAspectRatio: false
-            }} />},
-            { title: "pH Level", render: <PhLineChart credentials={credentials} user={user} device={device} />},
-            { title: "Light Level", render: <LightLineChart credentials={credentials} user={user} device={device} />},
+                </>
+            },
+            {
+                title: "Device Controls", render:
+                    <div className={style.buttonsContainer}>
+                        <div>
+                            Light <br />
+                            <Checkbox toggle />
+                        </div>
+                        <div>
+                            Fan <br />
+                            <Checkbox toggle />
+                        </div>
+                        <div>
+                            Water <br />
+                            <Button size='mini' content='Pump water' primary />
+                        </div>
+                    </div>
+            },
+            { title: "pH Level", render: <PhLineChart credentials={credentials} user={user} device={device} /> },
+            { title: "Light Level", render: <LightLineChart credentials={credentials} user={user} device={device} /> },
         ];
+        console.log(content)
         return (
             <>
                 {device && credentials && user &&
@@ -117,11 +199,11 @@ class Dashboard extends Component {
                             <div className={style.dashboardGridContent}>
 
                                 <div className={style.left}>
-                                    {this.renderModules(content.slice(0,4))}
+                                    {page == 1 ? this.renderModules(content.slice(0, 3)) : this.renderModules(content.slice(5, 6))}
                                 </div>
 
                                 <div className={style.right}>
-                                    {this.renderModules(content.slice(4,content.length))}
+                                    {page == 1 ? this.renderModules(content.slice(3, 5)) : this.renderModules(content.slice(6, content.length))}
                                 </div>
                             </div>
                         </div>
