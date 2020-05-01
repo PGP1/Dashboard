@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
-import APIController from "../api/APIController";
+import APIController from "../../api/APIController";
 import moment from 'moment';
 const QUERY_TYPE = 'humidity';
 

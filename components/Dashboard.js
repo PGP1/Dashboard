@@ -5,10 +5,10 @@ import { Bar } from 'react-chartjs-2';
 import AWSController from "../api/AWSController";
 import APIController from "../api/APIController";
 import TemperatureLineChart from "./charts/TemperatureLineChart";
-import WaterLineChart from "./WaterLineChart";
-import HumidityLineChart from "./HumidityLineChart";
-import PhLineChart from "./PhLineChart";
-import LightLineChart from "./LightLineChart";
+import WaterLineChart from "./charts/WaterLineChart";
+import HumidityLineChart from "./charts/HumidityLineChart";
+import PhLineChart from "./charts/PhLineChart";
+import LightLineChart from "./charts/LightLineChart";
 import { Checkbox, Button, Dropdown } from 'semantic-ui-react';
 
 
