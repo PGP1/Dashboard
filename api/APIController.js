@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { DEVICE_LIST, LINK_DEVICE, ELASTIC_QUERY, USER_DATA } from "../constants";
+import { DEVICE_LIST, LINK_DEVICE, ELASTIC_QUERY, USER_DATA, UPLOAD_AVATAR } from "../constants";
 class APIController {
 
     async getMyDevices({ jwtToken }) {
@@ -30,6 +30,12 @@ class APIController {
         };
 
         return await axios.post(ELASTIC_QUERY, { AccessKeyId, SecretKey, SessionToken, DeviceId, QueryType }, config);
+    }
+
+    async uploadAvatar(file){
+
+        return await axios.post(UPLOAD_AVATAR,file)
+        
     }
 }
 
