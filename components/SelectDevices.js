@@ -3,6 +3,7 @@ import {Button, Form, Message, Modal} from "semantic-ui-react";
 import style from "./styles/Device.module.scss";
 import APIController from "../api/APIController";
 import AWSController from "../api/AWSController";
+import { API } from 'aws-amplify';
 
 
 class SelectDevices extends Component {
@@ -27,6 +28,8 @@ class SelectDevices extends Component {
         this.setState({ deviceName: event.target.value }) ;
     };
 
+
+
     handleAddDevice = () => {
         const { user, deviceName } = this.state;
         APIController.linkMyDevice(user.idToken, deviceName).then(res => {
@@ -38,6 +41,15 @@ class SelectDevices extends Component {
             }
         })
     };
+
+    handleUnlinkDevice = (device) => {
+     
+        APIController.unlinkDevice(this.state.user.idToken, device)
+        .then(res => { console.log(this.state.user)
+            this.fetchDevice(this.state.user)})
+        .catch(err => console.log(err));
+
+    }
 
     setUser = (user) => {
         this.setState({ user }, () => {
@@ -52,6 +64,8 @@ class SelectDevices extends Component {
     close = () => {
         this.setState({ open: false })
     };
+    
+    
 
     fetchDevice = (user) => {
         APIController.getMyDevices(user.idToken).then(res => {
@@ -80,7 +94,8 @@ class SelectDevices extends Component {
                             {devices.map((each, i) =>  <tr key={i}>
                                 <td>{each}</td>
                                 <td>Online</td>
-                                <td><a onClick={() => this.props.setDevice(each)}> Access </a> / Unlink</td>
+                                <td><a onClick={() => this.props.setDevice(each)}> Access </a>/
+                                <a onClick={ ()=> this.handleUnlinkDevice(each)}> Unlink</a></td>
                             </tr>)}
                             </tbody>
                         </table>

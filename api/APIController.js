@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { DEVICE_LIST, LINK_DEVICE, ELASTIC_QUERY, USER_DATA, UPLOAD_AVATAR } from "../constants";
+import { DEVICE_LIST, LINK_DEVICE,UNLINK_DEVICE, ELASTIC_QUERY, USER_DATA, UPLOAD_AVATAR } from "../constants";
 class APIController {
 
     async getMyDevices({ jwtToken }) {
@@ -14,6 +14,15 @@ class APIController {
             headers: { Authorization: jwtToken }
         };
         return await axios.post(USER_DATA, {}, config);
+    }
+
+    async unlinkDevice({jwtToken}, deviceId){
+        const config = {
+            headers: {Authorization: jwtToken}
+        };
+        console.log(deviceId);
+        console.log(config)
+        return await axios.post(UNLINK_DEVICE, {ID : deviceId}, config)
     }
 
 
@@ -37,8 +46,6 @@ class APIController {
         const config = {
             headers: { Authorization: jwtToken, 'Content-Type': 'multipart/form-data'}
         };
-
-        console.log("file", file)
 
         return await axios.post(UPLOAD_AVATAR, file, config);
 
