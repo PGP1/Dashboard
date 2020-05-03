@@ -55,6 +55,7 @@ class Dashboard extends Component {
         AWSController.getCurrentCredientials().then(d => {
             const { Credentials } = d.data;
             this.setState({ credentials: Credentials })
+            console.log("Crendentails", Credentials)
             AWSController.getCurrentSession().then(user => {
                 this.setUser(user);
             });

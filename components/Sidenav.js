@@ -71,22 +71,23 @@ class Sidenav extends Component {
   submitFile = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("file", this.state.image[0]);
+    formData.append("file", this.state.image);
+    console.log("file", formData);
 
     AWSController.getCurrentSession().then((user) => {
-      APIController.uploadAvatar(user.idToken,formData)
+      APIController.uploadAvatar(user.idToken, formData)
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
     });
   };
 
   handlePasswordChange = () => {
-    if (this.state.newPw != this.state.confPw) {
+    if (this.state.newPw !== this.state.confPw) {
       this.setState({
         error: "New password and entered password does not match",
         showEr: true,
       });
-      return;
+      return false;
     } else {
       let oldPassword = this.state.oldPw;
       let newPassword = this.state.newPw;
@@ -128,23 +129,7 @@ class Sidenav extends Component {
                   {" "}
                   {userDetail?.username}{" "}
                 </Form.Input>
-                {/*<Form.Group widths='equal'>*/}
 
-                {/*    <Form.Input fluid label='Username'>  </Form.Input>*/}
-                {/*    <Form.Input*/}
-                {/*        fluid*/}
-                {/*        id='form-subcomponent-shorthand-input-first-name'*/}
-                {/*        label='First name'*/}
-                {/*        placeholder='First name'*/}
-                {/*    />*/}
-                {/*    <Form.Input*/}
-                {/*        fluid*/}
-                {/*        id='form-subcomponent-shorthand-input-last-name'*/}
-                {/*        label='Last name'*/}
-                {/*        placeholder='Last name'*/}
-                {/*    />*/}
-                {/*</Form.Group>*/}
-                {/*<Button color='blue'>Update details</Button>*/}
               </Form>
             </div>
           </Tab.Pane>
