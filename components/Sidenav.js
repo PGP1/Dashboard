@@ -175,7 +175,7 @@ class Sidenav extends Component {
         ),
       },
       {
-        menuItem: "Change Profile",
+        menuItem: "Change Profile Picture",
         render: () => (
           <Tab.Pane attached={false}>
             <Form>
@@ -196,22 +196,6 @@ class Sidenav extends Component {
                 </Message>
               )}
             </Form>
-          </Tab.Pane>
-        ),
-      },
-      {
-        menuItem: "Account",
-        render: () => (
-          <Tab.Pane attached={false}>
-            <h3 style={{ color: "red" }}> Delete your account </h3>
-            <p>
-              Are you sure you want to delete your account? This can not be
-              undone.
-            </p>
-            <Button onClick={this.handleAccountDelete} inverted color="red">
-              {" "}
-              Delete account{" "}
-            </Button>
           </Tab.Pane>
         ),
       },

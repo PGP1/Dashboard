@@ -20,6 +20,7 @@ class Nav extends Component{
         AWSController.getCurrentSession().then(user => {
             APIController.getUserData(user.idToken).then(d => this.setUserData(d.data))
             this.setUser(user);
+            this.fetchDevice(user);
         });
     }
 
