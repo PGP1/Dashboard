@@ -32,10 +32,14 @@ class APIController {
         return await axios.post(ELASTIC_QUERY, { AccessKeyId, SecretKey, SessionToken, DeviceId, QueryType }, config);
     }
 
-    async uploadAvatar(file){
+    async uploadAvatar({jwtToken},file){
+       
+        const config = {
+            headers: { Authorization: jwtToken }
+        };
 
-        return await axios.post(UPLOAD_AVATAR,file)
-        
+        return await axios.post(UPLOAD_AVATAR,file,config);
+
     }
 }
 

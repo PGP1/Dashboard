@@ -27,7 +27,7 @@ class Sidenav extends Component {
       error: "",
       erHeader: "",
       showEr: false,
-      image: null
+      image: null,
     };
   }
 
@@ -54,9 +54,7 @@ class Sidenav extends Component {
   };
 
   handleFileUpload = (e) => {
-  
-    this.setState({image : e.target.files[0]});
-
+    this.setState({ image: e.target.files[0] });
   };
 
   resetTabData = () => {
@@ -66,29 +64,27 @@ class Sidenav extends Component {
       erHeader: "",
       oldPw: "",
       newPw: "",
-      confPw: ""
+      confPw: "",
     });
   };
 
   submitFile = (e) => {
-    console.log(this.state.image)
-    console.log("triggered the submit of the file");
     e.preventDefault();
     const formData = new FormData();
-    formData.append('file', this.state.image[0]);
-    console.log(formData);
-    APIController.uploadAvatar(formData)
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+    formData.append("file", this.state.image[0]);
 
-  }
+    AWSController.getCurrentSession().then((user) => {
+      APIController.uploadAvatar(user.idToken,formData)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    });
+  };
 
   handlePasswordChange = () => {
-    
     if (this.state.newPw != this.state.confPw) {
       this.setState({
         error: "New password and entered password does not match",
-        showEr: true
+        showEr: true,
       });
       return;
     } else {
@@ -201,11 +197,11 @@ class Sidenav extends Component {
               <Form.Input
                 onChange={this.handleFileUpload}
                 fluid
-                name='file'
-                label='Upload an image'
-                type='file'
+                name="file"
+                label="Upload an image"
+                type="file"
               />
-              <Button onClick={this.submitFile} type='submit' color="blue">
+              <Button onClick={this.submitFile} type="submit" color="blue">
                 Change Profile Picture
               </Button>
               {this.state.showEr && (
@@ -227,7 +223,7 @@ class Sidenav extends Component {
               Are you sure you want to delete your account? This can not be
               undone.
             </p>
-            <Button onClick={this.handleAccountDelete}inverted color="red">
+            <Button onClick={this.handleAccountDelete} inverted color="red">
               {" "}
               Delete account{" "}
             </Button>
