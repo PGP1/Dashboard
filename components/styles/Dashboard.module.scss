@@ -49,10 +49,6 @@
   position: absolute;
 }
 
-.dashboardDeviceStatusButtons {
-  display: flex;
-  justify-content: center;
-}
 
 .dashboardGridContent {
   display: flex;
@@ -72,14 +68,7 @@
   letter-spacing: 0.16px;
 }
 
-.dashboardDeviceStatusGrid {
-  @extend .grid--one-one;
-  margin-top: 17px;
-  margin-bottom: 30px;
-  font-family: 'Poppins';
-  font-size: 0.93rem;
-  letter-spacing: 0.1px;
-}
+
 
 .box {
   width: 90%;

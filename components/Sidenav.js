@@ -5,6 +5,7 @@ import Device from "./assets/Device.svg";
 import Settings from "./assets/Settings.svg";
 import APIController from "../api/APIController";
 import AWSController from "../api/AWSController";
+
 import {
   Modal,
   Image,
@@ -28,16 +29,22 @@ class Sidenav extends Component {
       erHeader: "",
       showEr: false,
       image: null,
+      open: false
     };
   }
 
   componentDidMount() {
     AWSController.getCurrentSession().then((user) => {
-      APIController.getUserData(user.idToken).then((d) =>
-        this.setUserData(d.data)
-      );
+      APIController.getUserData(user.idToken).then((d) => {
+        this.setUserData(d.data);
+      });
     });
   }
+  
+  toggle = () => {
+    const { open } = this.state;
+    this.setState({ open: !open })
+  };
 
   setUserData = (userDetail) => {
     this.setState({ userDetail });
@@ -72,22 +79,24 @@ class Sidenav extends Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", this.state.image);
-    console.log("file", formData);
-
     AWSController.getCurrentSession().then((user) => {
-      APIController.uploadAvatar(user.idToken, formData)
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
+      APIController.uploadAvatar(user.idToken, formData).then((res) => {
+          this.setState({error: "Image has been changed", erHeader:"YAY!", showEr:true})
+          APIController.getUserData(user.idToken).then((res) => {
+            this.setUserData(res.data)
+            this.toggle();
+          });
+        }).catch((err) => console.log(err));
     });
   };
 
   handlePasswordChange = () => {
-    if (this.state.newPw !== this.state.confPw) {
+    if (this.state.newPw != this.state.confPw) {
       this.setState({
         error: "New password and entered password does not match",
         showEr: true,
       });
-      return false;
+      return;
     } else {
       let oldPassword = this.state.oldPw;
       let newPassword = this.state.newPw;
@@ -112,8 +121,10 @@ class Sidenav extends Component {
     }
   };
 
+
+
   render() {
-    const { userDetail } = this.state;
+    let { userDetail } = this.state;
     const panes = [
       {
         menuItem: "Profile",
@@ -129,7 +140,23 @@ class Sidenav extends Component {
                   {" "}
                   {userDetail?.username}{" "}
                 </Form.Input>
+                {/*<Form.Group widths='equal'>*/}
 
+                {/*    <Form.Input fluid label='Username'>  </Form.Input>*/}
+                {/*    <Form.Input*/}
+                {/*        fluid*/}
+                {/*        id='form-subcomponent-shorthand-input-first-name'*/}
+                {/*        label='First name'*/}
+                {/*        placeholder='First name'*/}
+                {/*    />*/}
+                {/*    <Form.Input*/}
+                {/*        fluid*/}
+                {/*        id='form-subcomponent-shorthand-input-last-name'*/}
+                {/*        label='Last name'*/}
+                {/*        placeholder='Last name'*/}
+                {/*    />*/}
+                {/*</Form.Group>*/}
+                {/*<Button color='blue'>Update details</Button>*/}
               </Form>
             </div>
           </Tab.Pane>
@@ -175,7 +202,7 @@ class Sidenav extends Component {
         ),
       },
       {
-        menuItem: "Change Profile Picture",
+        menuItem: "Change Profile",
         render: () => (
           <Tab.Pane attached={false}>
             <Form>
@@ -215,12 +242,12 @@ class Sidenav extends Component {
         </div>
 
         <div className={style.links}>
-          <ul>  
+          <ul>
             <li className={this.props.page == 1 ? style.active : ""}>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className={"flex align-center space"}
-                onClick={() => this.props.setPage(1)} 
+                onClick={() => this.props.setPage(1)}
               >
                 <Dashboard /> Dashboard
               </a>
@@ -231,7 +258,7 @@ class Sidenav extends Component {
                 className={"flex align-center space"}
                 onClick={() => this.props.setPage(2)}
               >
-                <Device /> Device
+                <Device /> Devices
               </a>
             </li>
           </ul>
@@ -240,9 +267,10 @@ class Sidenav extends Component {
         <div className={style.bottom}>
           <ul>
             <li>
-              <Modal
+              <Modal open={this.state.open}
+                onClose={this.toggle}
                 trigger={
-                  <a href="#" className={"flex align-center space"}>
+                  <a onClick={this.toggle} href="#" className={"flex align-center space"}>
                     <Settings /> User Settings
                   </a>
                 }

@@ -9,8 +9,11 @@ import WaterLineChart from "./charts/WaterLineChart";
 import HumidityLineChart from "./charts/HumidityLineChart";
 import PhLineChart from "./charts/PhLineChart";
 import LightLineChart from "./charts/LightLineChart";
+import ResourcesChart from "./charts/ResourcesChart"
 import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-react';
 import { Slider } from 'react-semantic-ui-range';
+import DeviceStatus from "./modules/DeviceStatus";
+import ClusterInfo from "./modules/ClusterInfo";
 
 
 class ModuleContent extends Component {
@@ -130,7 +133,6 @@ class Dashboard extends Component {
                         <div className={style.dropdownFilter}>
                             {DropdownFilter()}
                         </div>
-
                         <WaterLineChart credentials={credentials} user={user} device={device} />
                     </>
             },
@@ -177,18 +179,7 @@ class Dashboard extends Component {
             },
             /* */
             {
-                title: "Device Status", render: <>
-                    <div className={style.dashboardDeviceStatusGrid}>
-                        <div>Device ID</div>
-                        <div style={{ color: "#BDBDBD" }}>{device}</div>
-                        <div>Uptime</div>
-                        <div style={{ color: "#BDBDBD" }}>2h30m</div>
-                    </div>
-                    <div className={style.dashboardDeviceStatusButtons}>
-                        <button className="ui yellow button">Sleep</button>
-                        <button className="ui black button">Restart</button>
-                    </div>
-                </>
+                title: "Device Status", render: <DeviceStatus credentials={credentials} user={user} device={device}/>
             },
             {
                 title: "Device Controls", render:
@@ -204,9 +195,7 @@ class Dashboard extends Component {
                                     color="blue"
                                     inverted={false}
                                     settings={settings}
-
                                 />
-
                             </div>
 
                         </div>
@@ -217,7 +206,7 @@ class Dashboard extends Component {
                             </Button>
                         </div> */}
 
-                        <div className={style.groupedButtons}>
+                        {/* <div className={style.groupedButtons}>
                             <div>
                                 <div className={style.buttonHeader}>
                                     Pump
@@ -230,12 +219,12 @@ class Dashboard extends Component {
                                 </div>
                                 <Checkbox toggle />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
             },
-            { title: "ElasticSearch Service", render: <></> },
+            { title: "ElasticSearch Service", render: <ClusterInfo credentials={credentials} user={user} device={device}/> },
             { title: "CPU Usage", render: <></> },
-            { title: "RAM Usage", render: <></> },
+            { title: "RAM Usage", render: <ResourcesChart credentials={credentials} user={user} device={device}/> },
         ];
         console.log(content)
         return (

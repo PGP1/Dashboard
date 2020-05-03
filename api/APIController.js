@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { DEVICE_LIST, LINK_DEVICE,UNLINK_DEVICE, ELASTIC_QUERY, USER_DATA, UPLOAD_AVATAR } from "../constants";
+import { DEVICE_LIST, LINK_DEVICE,UNLINK_DEVICE, ELASTIC_QUERY, USER_DATA, UPLOAD_AVATAR,
+     STATUS_DEVICE_REQUEST, ELASTIC_CLUSTER_QUERY} from "../constants";
 class APIController {
 
     async getMyDevices({ jwtToken }) {
@@ -41,14 +42,30 @@ class APIController {
         return await axios.post(ELASTIC_QUERY, { AccessKeyId, SecretKey, SessionToken, DeviceId, QueryType }, config);
     }
 
-    async uploadAvatar({jwtToken}, file){
+    async elasticClusterQuery({ AccessKeyId, SecretKey, SessionToken }, { jwtToken }, DeviceId) {
+        const config = {
+            headers: { Authorization: jwtToken }
+        };
+
+        return await axios.post(ELASTIC_CLUSTER_QUERY, { AccessKeyId, SecretKey, SessionToken, DeviceId }, config);
+    }
+
+
+    async uploadAvatar({ jwtToken }, file){
        
         const config = {
             headers: { Authorization: jwtToken, 'Content-Type': 'multipart/form-data'}
         };
 
         return await axios.post(UPLOAD_AVATAR, file, config);
+    }
 
+    async getStatusDevice({ jwtToken }, deviceId) {
+        const config = {
+            headers: { Authorization: jwtToken }
+        };
+
+        return await axios.post(STATUS_DEVICE_REQUEST, { deviceId }, config);
     }
 }
 
