@@ -9,7 +9,8 @@ import WaterLineChart from "./charts/WaterLineChart";
 import HumidityLineChart from "./charts/HumidityLineChart";
 import PhLineChart from "./charts/PhLineChart";
 import LightLineChart from "./charts/LightLineChart";
-import { Checkbox, Button, Dropdown, Icon } from 'semantic-ui-react';
+import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-react';
+import { Slider } from 'react-semantic-ui-range';
 
 
 class ModuleContent extends Component {
@@ -45,7 +46,9 @@ class Dashboard extends Component {
                     'Temperature'
                 ]
             },
-            page: 1
+            page: 1,
+            value: 0,
+            value1: 10
         }
     }
 
@@ -71,6 +74,12 @@ class Dashboard extends Component {
         }
     }
 
+    handleValueChange(e, { value }) {
+        this.setState({
+            value: value
+        });
+    }
+
     setDevice = (device) => {
         this.setState({ device });
     }
@@ -91,6 +100,18 @@ class Dashboard extends Component {
 
     render() {
         const { device, credentials, user, page } = this.state;
+
+        const settings = {
+            start: 50,
+            min: 0,
+            max: 255,
+            step: 1,
+            onChange: value => {
+                this.setState({
+                    value1: value
+                });
+            }
+        };
 
         const DropdownFilter = () => (
             <Dropdown text='Filter by'>
@@ -172,11 +193,22 @@ class Dashboard extends Component {
             {
                 title: "Device Controls", render:
                     <div className={style.buttonsContainer}>
-                        <div>
+                        <div className={style.slider}>
                             <div className={style.buttonHeader}>
-                                Light <br />
+                                Light <Label style={{ float: "right" }}>{this.state.value1}</Label>
                             </div>
-                            <Checkbox toggle />
+
+                            <div>
+                                <Slider
+                                    value={this.state.value}
+                                    color="blue"
+                                    inverted={false}
+                                    settings={settings}
+
+                                />
+
+                            </div>
+
                         </div>
                         {/* <div>
                             <div className={style.buttonHeader} />
@@ -184,17 +216,20 @@ class Dashboard extends Component {
                                 Pump
                             </Button>
                         </div> */}
-                        <div>
-                            <div className={style.buttonHeader}>
-                                Pump <br />
+
+                        <div className={style.groupedButtons}>
+                            <div>
+                                <div className={style.buttonHeader}>
+                                    Pump
+                                </div>
+                                <Checkbox toggle />
                             </div>
-                            <Checkbox toggle />
-                        </div>
-                        <div>
-                            <div className={style.buttonHeader}>
-                                Fan <br />
+                            <div>
+                                <div className={style.buttonHeader}>
+                                    Fan
+                                </div>
+                                <Checkbox toggle />
                             </div>
-                            <Checkbox toggle />
                         </div>
                     </div>
             },
@@ -207,7 +242,7 @@ class Dashboard extends Component {
             <>
                 {device && credentials && user &&
                     <>
-                        <Sidenav setPage={this.props.setPage} />
+                        <Sidenav setPage={this.props.setPage} page={page} />
                         <div className={style.dashboardContent}>
                             <div className={style.purpleBackground} />
                             <div className={style.dashboardGridContent}>

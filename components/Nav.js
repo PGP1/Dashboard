@@ -64,7 +64,7 @@ class Nav extends Component{
                         </div>
                     </>}
 
-                    {this.props?.page !== 1 &&
+                    {this.props?.page == 0 &&
                     <div className={style.accountHolder}>
                         <div className={style.avatar} style={{backgroundImage: `url(${userDetail?.avatar})`}}/>
                         <div className={style.username}>{userDetail?.username}</div>
