@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { DEVICE_LIST, LINK_DEVICE,UNLINK_DEVICE, ELASTIC_QUERY, USER_DATA, UPLOAD_AVATAR,
-     STATUS_DEVICE_REQUEST, ELASTIC_CLUSTER_QUERY} from "../constants";
+     STATUS_DEVICE_REQUEST, ELASTIC_CLUSTER_QUERY, CONTROL_DEVICE} from "../constants";
 class APIController {
 
     async getMyDevices({ jwtToken }) {
@@ -65,7 +65,15 @@ class APIController {
             headers: { Authorization: jwtToken }
         };
 
-        return await axios.post(STATUS_DEVICE_REQUEST, { deviceId }, config);
+        return await axios.post(STATUS_DEVICE_REQUEST, { id: deviceId }, config);
+    }
+
+    async controlDevice({ jwtToken }, deviceId, { light }) {
+        const config = {
+            headers: { Authorization: jwtToken }
+        };
+
+        return await axios.post(CONTROL_DEVICE, { id: deviceId, light }, config);
     }
 }
 

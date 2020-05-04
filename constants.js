@@ -7,3 +7,4 @@ export const USER_DATA = "https://ja82bo4e2j.execute-api.ap-southeast-2.amazonaw
 export const UPLOAD_AVATAR = "https://6ziwgkw5mi.execute-api.ap-southeast-2.amazonaws.com/default/uploadAvatar";
 export const UNLINK_DEVICE = "https://386om5i73i.execute-api.ap-southeast-2.amazonaws.com/default/unlinkDevice";
 export const STATUS_DEVICE_REQUEST = "https://08miwb2z3h.execute-api.ap-southeast-2.amazonaws.com/default/status_device_request";
+export const CONTROL_DEVICE = "https://1kkpmpppf9.execute-api.ap-southeast-2.amazonaws.com/default/publish_to_mqttbroker";
