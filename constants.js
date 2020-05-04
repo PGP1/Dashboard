@@ -20,7 +20,6 @@ export const TYPES = {
     WATER: WATER,
     TEMP: TEMP,
     PH: PH,
-    RESOURCES: RESOURCES, 
     HUMIDITY: HUMIDITY,
     LDR: LDR
 }

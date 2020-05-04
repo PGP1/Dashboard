@@ -9,32 +9,10 @@ class DeviceStatus extends Component {
         this.state = { }
     }
 
-    componentDidMount() {
-        this.getStatusDevice();
-    }
-
-
-    getStatusDevice = () => {
-        const { device, user } = this.props;
-        
-        APIController.getStatusDevice(user.idToken, device).then(data => {
-            this.getDeviceResource();
-        })
-    }
-
-    getDeviceResource = () => {
-        const { credentials, device, user } = this.props;
-
-        APIController.elasticQuery(credentials, user.idToken, device, "resources").then(res => {
-            const data = res.data.hits?.hits[0]._source;
-            this.setState({ data });
-        })
-    }
-
+   
     render() {
-        const { device } = this.props;
-        const { data } = this.state;
-
+        const { device, data } = this.props;
+        
         return <>
             { data && <>
                     <div className={style.grid}>

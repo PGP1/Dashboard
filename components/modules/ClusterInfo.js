@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import APIController from "../../api/APIController";
+import { Message } from 'semantic-ui-react';
 
 class ClusterInfo extends Component {
     constructor(props) {
@@ -7,23 +8,25 @@ class ClusterInfo extends Component {
         this.state = {}
     }
 
-    componentDidMount() {
-        this.getClusterInfo();
-    }
-
-
-    getClusterInfo = () => {
-        const { credentials, device, user } = this.props;
-
-        APIController.elasticClusterQuery(credentials, user.idToken, device).then(res => {
-            console.log("Res asdasd ", res);
-            const data = res.data.hits?.hits;
-            console.log("data asdasd", data)
-        })
-    }
-
     render() {
-        return <> Your implementation </>
+
+        const { clusterInfo } = this.props;
+        const stat = clusterInfo.status
+        //const elements = clusterInfo 
+
+        return (<>
+            
+                <div style={{
+                    borderRadius: 100 + "%", width: "50px",
+                    height: "50px", backgroundColor: { stat }
+                }}></div>
+            <Message>
+                <Message.Header>Number of pending requests:</Message.Header>
+                {clusterInfo.number_of_pending_tasks}</Message>
+            <Message>
+                <Message.Header>Server Online:</Message.Header>
+                {clusterInfo.timed_out}</Message>
+        </>)
     }
 }
 

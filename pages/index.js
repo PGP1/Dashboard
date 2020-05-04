@@ -70,9 +70,7 @@ class Index extends Component {
     };
 
     setUserData = (userDetail) => {
-        this.setState({ userDetail }, () => {
-            this.forceUpdate();
-        });
+        this.setState({ userDetail });
     }
 
     conditionRender() {
