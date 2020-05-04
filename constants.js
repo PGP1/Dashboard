@@ -23,3 +23,10 @@ export const TYPES = {
     HUMIDITY: HUMIDITY,
     LDR: LDR
 }
+
+export const UNITS = { 
+    "ph": "ph",
+    "temp": "celcius",
+    "humidity": "%",
+    "ldr": "ppm"
+}

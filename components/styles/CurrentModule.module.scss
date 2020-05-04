@@ -2,6 +2,7 @@
 
 .field {
     line-height: 2.5em;
+    text-align: center;
     font-family: "Poppins", sans-serif;
 }
 
@@ -12,4 +13,11 @@
 .data { 
     font-weight: 300;
     font-size: 2.5em;
+    color: lightslategray;
 }
+
+.holder {
+    margin: 1em auto;
+}
+
+.small { font-size: 2em; }
