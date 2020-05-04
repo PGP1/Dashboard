@@ -4,8 +4,6 @@ import style from '../styles/ModuleContent.module.scss';
 import { Dropdown } from 'semantic-ui-react';
 import APIController from "../../api/APIController";
 import * as _ from "underscore";
-
-
 class ModuleContentWithFilter extends Component {
     constructor(props) {
         super(props);
@@ -52,7 +50,6 @@ class ModuleContentWithFilter extends Component {
     }
 
     render() {
-
         const { title, children } = this.props;
         const { currentType, data } = this.state;
 
