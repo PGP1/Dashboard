@@ -25,8 +25,8 @@ export const TYPES = {
 }
 
 export const UNITS = { 
-    "ph": "ph",
-    "temp": "celcius",
+    "ph": "pH",
+    "temp": "°C",
     "humidity": "%",
     "ldr": "ppm"
 }
