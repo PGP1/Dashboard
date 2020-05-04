@@ -6,7 +6,6 @@ import AWSController from "../api/AWSController";
 import APIController from "../api/APIController";
 
 import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-react';
-import { Slider } from 'react-semantic-ui-range';
 import content from "./content";
 
 class Dashboard extends Component {

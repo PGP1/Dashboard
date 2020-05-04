@@ -15,10 +15,15 @@ class ClusterInfo extends Component {
         const stat = clusterInfo.status;
         let statusStr = "";
         let timeStr = "";
+        let statusCol = "";
 
         if (clusterInfo.timed_out) {
             timeStr = "Offline";
-        } else timeStr = "Online";
+            statusCol = "red";
+        } else {
+            timeStr = "Online"
+            statusCol = "green"
+        };
 
         if (stat == 'yellow') {
             statusStr = "Moderate";
@@ -26,23 +31,28 @@ class ClusterInfo extends Component {
             statusStr = "Low";
         } else statusStr = "Calculating";
 
+
+
         return (
             <>
                 {/* <div>
                     <div style={{ fontFamily: "Poppins", fontSize: 1.15 + "rem", letterSpacing: 0.16 + "px" }}>Server Status </div>
                      />
                 </div> */}
-                <Message style={{marginTop:"20px"}} className={style.statusInfo}>
+                <Message style={{ marginTop: "20px" }} className={style.statusInfo}>
                     Server Traffic:
                     <div style={{ display: "flex", alignItems: "center" }}>
                         <div style={{ marginRight: "3px" }} className={["circle bg-", stat].join('')} />
-                        {statusStr}
+                        <span className={["c-",stat].join('')}>{statusStr}</span>
                     </div>
                 </Message>
 
                 <Message className={style.statusInfo}>
                     <span>Server Online:</span>
-                    <span>{timeStr}</span>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <div style={{ marginRight: "3px" }} className={["circle bg-", statusCol].join('')} />
+                        <span className={["c-",statusCol].join('')}>{timeStr}</span>
+                    </div>
                 </Message>
 
                 <Message className={style.statusInfo}>

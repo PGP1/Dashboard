@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import SummaryChart from "../charts/SummaryChart";
-import AverageChart from "../charts/SummaryChart";
+import RamChart from "../charts/RamChart";
+import CpuChart from "../charts/CpuChart";
 import ClusterInfo from "../modules/ClusterInfo";
 
 import ResourcesChart from "../charts/ResourcesChart";
@@ -40,10 +41,15 @@ const content = [
         Element: ModuleContent
     },
     {
-        title: "Device Information (CPU/RAM)",
-        render: <ResourcesChart />,
+        title: "CPU Information",
+        render: <CpuChart />,
         Element: ModuleContent
     },
+    {
+        title: "RAM Information",
+        render: <RamChart />,
+        Element: ModuleContent
+    }
 ];
 
 export default content;
