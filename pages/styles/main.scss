@@ -102,4 +102,22 @@ a{
 
 canvas {
     margin: 0 auto;
-  }
+}
+
+.circle {    
+    border-radius: 100%; 
+    width: 10px;
+    height: 10px; 
+}
+
+.bg-yellow {
+    background-color: #FFC312;
+}
+  
+.bg-red {
+    background-color: #EA2027;
+}
+
+.bg-green {
+    background-color: #009432;
+}

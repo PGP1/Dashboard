@@ -25,7 +25,7 @@ const content = [
         Element: ModuleContentWithFilter
     },
     {
-        title: "Server Status",
+        title: "Server Information",
         render: <ClusterInfo />,
         Element: ModuleContent
     },
