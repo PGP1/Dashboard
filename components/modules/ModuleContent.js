@@ -28,7 +28,7 @@ class ModuleContent extends Component {
     
     getClusterInfo = (credentials, user, device) => { 
         APIController.elasticClusterQuery(credentials, user.idToken, device).then(res => {
-            this.setState({ clusterInfo: res.data})
+            this.setState({ clusterInfo: res.data })
         }) 
     }
 
@@ -44,13 +44,13 @@ class ModuleContent extends Component {
         if (!_.isEqual(this.props, nextProps)) {
             const { credentials, user, device } = nextProps;
             this.setState({ credentials, user, device }, () => {
-            this.getData(credentials, user, device, currentType);
+                this.getData(credentials, user, device, currentType);
             });
         }
     }
 
     render() {
-        const { title, children } = this.props;
+        const { title, children, device, user } = this.props;
         const { data, clusterInfo } = this.state;
         
         return <div className={style.box}>
@@ -58,7 +58,7 @@ class ModuleContent extends Component {
                 { title }
             </div>
             <div className={style.chart}>
-                { React.cloneElement(children, { data, clusterInfo }) } 
+                { React.cloneElement(children, { data, clusterInfo, device, user }) } 
             </div>
         </div>
     }

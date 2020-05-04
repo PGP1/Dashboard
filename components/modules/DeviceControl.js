@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import style from '../styles/DeviceControl.module.scss';
-import { Label } from 'semantic-ui-react';
-import { Slider } from 'react-semantic-ui-range';
+import { Label, Button } from 'semantic-ui-react';
+import Slider from 'rc-slider';
+import APIController from "../../api/APIController";
 
 export default class DeviceControl extends Component {
     constructor(props) {
@@ -12,18 +13,22 @@ export default class DeviceControl extends Component {
         };
     }
 
+    handleDrag = (light) => {
+        this.setState({ light })
+    }
+
+    handleSubmit = () => {
+        const { user, device } = this.props;
+        const { light } = this.state;
+        console.log("data", light);
+        APIController.controlDevice(user.idToken, device, light).then((data) => {
+            console.log("data-light", data);
+        }).catch(err => console.log("errrrr", err))
+    }
+
     render() {
         const { light } = this.state;
-        const settings = {
-            start: 50,
-            min: 0,
-            max: 255,
-            step: 1,
-            onChange: light => {
-                this.setState({ light });
-            }
-        };
-
+       
         return (<div className={style.buttonsContainer}>
             <div className={style.slider}>
                 <div className={style.buttonHeader}>
@@ -31,22 +36,12 @@ export default class DeviceControl extends Component {
                 </div>
 
                 <div>
-                    <Slider
-                        value={light}
-                        color="blue"
-                        inverted={false}
-                        settings={settings}
-                    />
+                    <Slider onChange={this.handleDrag} min={0} max={255} defaultValue={50} 
+                            onAfterChange={this.handleSubmit}/>
                 </div>
 
             </div>
-            {/* <div>
-            <div className={style.buttonHeader} />
-            <Button color='blue'>
-                Pump
-            </Button>
-        </div> */}
-
+          
             {/* <div className={style.groupedButtons}>
             <div>
                 <div className={style.buttonHeader}>
