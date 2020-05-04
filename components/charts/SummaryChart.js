@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 import APIController from "../../api/APIController";
 import moment from 'moment';
-const QUERY_TYPE = 'water';
+const QUERY_TYPE = 'humidity';
 
-class WaterLineChart extends Component {
+class HumidityLineChart extends Component {
 
     constructor(props) {
         super(props);
@@ -22,7 +22,6 @@ class WaterLineChart extends Component {
             this.setState({ data });
         })
     }
-
 
     componentWillReceiveProps(nextProps) {
         if (this.props.device !== nextProps.device) {
@@ -43,10 +42,11 @@ class WaterLineChart extends Component {
 
             dataValues = {
                 datasets: [{
-                    label: 'Litres',
+                    label: 'Percentage',
                     data: y,
-                    borderColor: 'rgb(52,152,219)',
-                    backgroundColor: 'rgba(52,152,219,0.2)'
+                    borderColor: 'rgb(46,204,113)',
+                    backgroundColor: 'rgba(46,204,113,0.2)',
+                    lineTension: 1,
                 }],
                 labels: x
             }
@@ -72,4 +72,4 @@ class WaterLineChart extends Component {
         )
     }
 }
-export default WaterLineChart;
+export default HumidityLineChart;

@@ -15,7 +15,7 @@ class Nav extends Component{
             showPopup: false
         }
     }
-    
+
     togglePopup = () => {
         this.setState({ showPopup: !this.state.showPopup });
     }

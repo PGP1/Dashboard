@@ -15,6 +15,7 @@ class Index extends Component {
             page: 0,
             userDetail: {},
             user: null,
+            credentials: null,
             device: "",
             devices: []
         }
@@ -22,17 +23,22 @@ class Index extends Component {
 
 
     componentDidMount() {
-        AWSController.getCurrentSession().then(session => {
+        this.getAllCrendentials();
+        this.setState({ isAuthenticating: false });
+    }
+
+    getAllCrendentials = () => {
+        AWSController.getCurrentSession().then(user => {
             this.setAuthenticate(true);
-            this.setUser(session);
-            APIController.getUserData(session.idToken).then(d => {
+            this.setUser(user);
+            APIController.getUserData(user.idToken).then(d => {
                 this.setUserData(d.data);
             })
+            AWSController.getCurrentCredientials().then(d => {
+                const { Credentials } = d.data;
+                this.setState({ credentials: Credentials })
+            });
         }).catch(err => Router.push("/login"));
-
-        this.setState({ isAuthenticating: false });
-
-
     }
 
     setUser = (user) => {
@@ -64,18 +70,23 @@ class Index extends Component {
     };
 
     setUserData = (userDetail) => {
-        this.setState({ userDetail });
+        this.setState({ userDetail }, () => {
+            this.forceUpdate();
+        });
     }
 
     conditionRender() {
-        const { page, user, device, devices, userDetail } = this.state;
+        const { page, user, device, devices, userDetail, credentials } = this.state;
         switch(page) {
             case 0:
                 return <SelectDevices user={user} devices={devices} props={this.props} 
                                       setDevice={this.setDevice} 
                                       fetchDevice={this.fetchDevice} userDetail={userDetail}/>
             default:
-                return <Dashboard user={this.state.user} page={page} device={device} setPage={this.setPage}/>
+                return <Dashboard credentials={credentials} userDetail={userDetail} user={user} 
+                            page={page} setUserData={this.setUserData}
+                            setDevice={this.setDevice} device={device} 
+                            setUser={this.setUser} setPage={this.setPage}/>
         }
     }
 

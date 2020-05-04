@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import style from "./styles/Sidenav.module.scss";
-import Dashboard from "./assets/Dashboard.svg";
-import Device from "./assets/Device.svg";
-import Settings from "./assets/Settings.svg";
+import DashboardIcon from "./assets/Dashboard.svg";
+import DeviceIcon from "./assets/Device.svg";
+import SettingsIcon from "./assets/Settings.svg";
 import APIController from "../api/APIController";
 import AWSController from "../api/AWSController";
 
@@ -18,10 +18,10 @@ import {
 import Axios from "axios";
 
 class Sidenav extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      devices: [],
+      // devices: [],
       oldPw: "",
       newPw: "",
       confPw: "",
@@ -32,22 +32,10 @@ class Sidenav extends Component {
       open: false
     };
   }
-
-  componentDidMount() {
-    AWSController.getCurrentSession().then((user) => {
-      APIController.getUserData(user.idToken).then((d) => {
-        this.setUserData(d.data);
-      });
-    });
-  }
   
   toggle = () => {
     const { open } = this.state;
     this.setState({ open: !open })
-  };
-
-  setUserData = (userDetail) => {
-    this.setState({ userDetail });
   };
 
   handleOldPwOnChange = (e) => {
@@ -76,6 +64,9 @@ class Sidenav extends Component {
   };
 
   submitFile = (e) => {
+
+    const { devices, user, setUserData }  = this.props
+    
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", this.state.image);
@@ -83,7 +74,7 @@ class Sidenav extends Component {
       APIController.uploadAvatar(user.idToken, formData).then((res) => {
           this.setState({error: "Image has been changed", erHeader:"YAY!", showEr:true})
           APIController.getUserData(user.idToken).then((res) => {
-            this.setUserData(res.data)
+            setUserData(res.data)
             this.toggle();
           });
         }).catch((err) => console.log(err));
@@ -91,6 +82,9 @@ class Sidenav extends Component {
   };
 
   handlePasswordChange = () => {
+
+    const { user } = this.props;
+
     if (this.state.newPw != this.state.confPw) {
       this.setState({
         error: "New password and entered password does not match",
@@ -122,7 +116,8 @@ class Sidenav extends Component {
   };
 
   render() {
-    let { userDetail } = this.state;
+    const { userDetail, user, device, page} = this.props;
+    console.log("user detail?", userDetail);
     const panes = [
       {
         menuItem: "Profile",
@@ -138,23 +133,6 @@ class Sidenav extends Component {
                   {" "}
                   {userDetail?.username}{" "}
                 </Form.Input>
-                {/*<Form.Group widths='equal'>*/}
-
-                {/*    <Form.Input fluid label='Username'>  </Form.Input>*/}
-                {/*    <Form.Input*/}
-                {/*        fluid*/}
-                {/*        id='form-subcomponent-shorthand-input-first-name'*/}
-                {/*        label='First name'*/}
-                {/*        placeholder='First name'*/}
-                {/*    />*/}
-                {/*    <Form.Input*/}
-                {/*        fluid*/}
-                {/*        id='form-subcomponent-shorthand-input-last-name'*/}
-                {/*        label='Last name'*/}
-                {/*        placeholder='Last name'*/}
-                {/*    />*/}
-                {/*</Form.Group>*/}
-                {/*<Button color='blue'>Update details</Button>*/}
               </Form>
             </div>
           </Tab.Pane>
@@ -247,7 +225,7 @@ class Sidenav extends Component {
                 className={"flex align-center space"}
                 onClick={() => this.props.setPage(1)}
               >
-                <Dashboard /> Dashboard
+                <DashboardIcon /> Dashboard
               </a>
             </li>
             <li className={this.props.page == 2 ? style.active : ""}>
@@ -256,7 +234,7 @@ class Sidenav extends Component {
                 className={"flex align-center space"}
                 onClick={() => this.props.setPage(2)}
               >
-                <Device /> Devices
+                <DeviceIcon /> Devices
               </a>
             </li>
           </ul>
@@ -269,12 +247,12 @@ class Sidenav extends Component {
                 onClose={this.toggle}
                 trigger={
                   <a onClick={this.toggle} href="#" className={"flex align-center space"}>
-                    <Settings /> User Settings
+                    <SettingsIcon /> User Settings
                   </a>
                 }
               >
                 <Modal.Header>
-                  <Settings fill="black" /> User Settings
+                  <SettingsIcon fill="black" /> User Settings
                 </Modal.Header>
                 <Modal.Content image>
                   <Button style={{ position: "fixed" }}></Button>

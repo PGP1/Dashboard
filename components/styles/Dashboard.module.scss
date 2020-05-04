@@ -63,15 +63,6 @@
 }
 
 
-.box {
-  width: 90%;
-  background: white;
-  border-radius: 8px;
-  padding: 22px;
-  box-shadow: 0 8px 25px 0 rgba(112, 110, 110, 0.65);
-  margin-bottom: 50px;
-}
-
 .left,
 .right {
   flex: 25%;
@@ -88,20 +79,6 @@
   //width: 60%;
   //max-width: 500px;
   max-height: 300px;
-}
-
-.buttonsContainer {
-  display: grid;
-  padding: 20px;
-  grid-template-rows: 1fr 1fr;
-  grid-row-gap: 20px;
-  justify-items: center;
-
-  .buttonHeader {
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
 }
 
 .slider { 
