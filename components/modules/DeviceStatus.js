@@ -12,14 +12,15 @@ class DeviceStatus extends Component {
    
     render() {
         const { device, data } = this.props;
-        
+        const uptime = data[0]?._source.uptime;
+
         return <>
             { data && <>
                     <div className={style.grid}>
                             <div>Device ID</div>
                             <div style={{ color: "#BDBDBD" }}>{device}</div>
                             <div>Uptime</div>
-                            <div style={{ color: "#BDBDBD" }}>{moment.utc(data.uptime*1000).format('HH:mm:ss')} hours</div>
+                            <div style={{ color: "#BDBDBD" }}>{moment.utc(uptime*1000).format('HH:mm:ss')} hours</div>
                     </div>
 
                     <div className={"justify-center"}>
