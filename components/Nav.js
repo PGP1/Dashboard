@@ -9,46 +9,21 @@ import NotificationPopup from './NotificationPopup';
 
 class Nav extends Component{
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            username: "",
-            devices: []
+            showPopup: false
         }
     }
-    componentDidMount() {
-        AWSController.getCurrentSession().then(user => {
-            APIController.getUserData(user.idToken).then(d => this.setUserData(d.data))
-            this.setUser(user);
-            this.fetchDevice(user);
-        });
-    }
-
-    fetchDevice = (user) => {
-        APIController.getMyDevices(user.idToken).then(res => {
-            const { data } = res;
-            this.setState({ devices: data });
-        }).catch(err => console.log(err))
-    };
-
-    setUser = (user) => {
-        this.setState({ user }, () => {
-            this.fetchDevice(user);
-        })
-    };
-
-    setUserData = (userDetail) => {
-        this.setState({ userDetail });
-    }
-
+    
     togglePopup = () => {
         this.setState({ showPopup: !this.state.showPopup });
     }
 
-
     render() {
-        const { userDetail, devices } = this.state;
-        const options = devices.map(d => { return {key: d, text: d, value: d}});
+       
+        const { userDetail, devices, setDevice, page } = this.props;
+        const options = devices?.map(d => { return {key: d, text: d, value: d}});
 
         return (
             <div className={[style.nav, "flex", "align-center"].join(" ")}>
@@ -60,7 +35,7 @@ class Nav extends Component{
                             <Dropdown selection placeholder='Select Device' options={options} defaultValue={this.props?.device}
                                       onChange={(e, {value}) => this.props?.setDevice(value)}/>
                         </div>
-                        <div className={style.topNotification}><Notifications  style={{cursor:'pointer'}} onClick={this.togglePopup.bind(this)}/>
+                        <div className={style.topNotification}><Notifications style={{cursor:'pointer'}} onClick={this.togglePopup.bind(this)}/>
                             {this.state.showPopup ? <NotificationPopup closePopup={this.togglePopup.bind(this)}/> : null}
                         </div>
                     </>}
@@ -75,8 +50,6 @@ class Nav extends Component{
             </div>
         )
     }
-
-
 
 }
 

@@ -14,44 +14,15 @@ import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-reac
 import { Slider } from 'react-semantic-ui-range';
 import DeviceStatus from "./modules/DeviceStatus";
 import ClusterInfo from "./modules/ClusterInfo";
+import ModuleContent from "./modules/ModuleContent";
+import ModuleContentWithFilter from "./modules/ModuleContentWithFilter";
 
-
-class ModuleContent extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const { title, children } = this.props;
-        return <div className={style.box}>
-            <div className={style.dashboardHeader}>
-                {title}
-            </div>
-            <div className={style.chart}>
-                {children}
-            </div>
-        </div>
-    }
-}
 class Dashboard extends Component {
     constructor() {
         super();
         this.state = {
-            data: {
-                datasets: [{
-                    data: [10.3, 4.8, 550, 60, 28]
-                }],
-                labels: [
-                    'Water',
-                    'pH',
-                    'LDR',
-                    'Humidity',
-                    'Temperature'
-                ]
-            },
             page: 1,
-            value: 0,
-            value1: 10
+            light: 0
         }
     }
 
@@ -61,7 +32,7 @@ class Dashboard extends Component {
         AWSController.getCurrentCredientials().then(d => {
             const { Credentials } = d.data;
             this.setState({ credentials: Credentials })
-            console.log("Crendentails", Credentials)
+            console.log("Credentails", Credentials)
             AWSController.getCurrentSession().then(user => {
                 this.setUser(user);
             });
@@ -96,63 +67,39 @@ class Dashboard extends Component {
     }
 
     renderModules = (modules) => {
-        return modules.map(({ title, render }) => {
-            return <ModuleContent title={title}>{render} </ModuleContent>
+        return modules.map(({ title, render, Element }) => {
+            return <Element title={title}>{render} </Element>
         })
     }
 
     render() {
-        const { device, credentials, user, page } = this.state;
+        const { device, credentials, user, page, light } = this.state;
 
         const settings = {
             start: 50,
             min: 0,
             max: 255,
             step: 1,
-            onChange: value => {
-                this.setState({
-                    value1: value
-                });
+            onChange: light => {
+                this.setState({ light });
             }
         };
 
-        const DropdownFilter = () => (
-            <Dropdown text='Filter by'>
-                <Dropdown.Menu>
-                    <Dropdown.Item text='Day' />
-                    <Dropdown.Item text='Week' />
-                    <Dropdown.Item text='Month' />
-                </Dropdown.Menu>
-            </Dropdown>
-        )
-
         const content = [
             {
-                title: "Water Level", render:
-                    <>
-                        <div className={style.dropdownFilter}>
-                            {DropdownFilter()}
-                        </div>
-                        <WaterLineChart credentials={credentials} user={user} device={device} />
-                    </>
+                title: "Summary", 
+                render: <WaterLineChart credentials={credentials} user={user} device={device} />,
+                Element: ModuleContentWithFilter
             },
             {
                 title: "Temperature Level", render:
                     <>
-                        <div className={style.dropdownFilter}>
-                            {DropdownFilter()}
-                        </div>
-
                         <TemperatureLineChart credentials={credentials} user={user} device={device} />
                     </>
             },
             {
                 title: "Humidity Level", render:
                     <>
-                        <div className={style.dropdownFilter}>
-                            {DropdownFilter()}
-                        </div>
-
                         <HumidityLineChart credentials={credentials} user={user} device={device} />
                     </>
             },
@@ -160,20 +107,12 @@ class Dashboard extends Component {
                 title: "pH Level", render:
 
                     <>
-                        <div className={style.dropdownFilter}>
-                            {DropdownFilter()}
-                        </div>
-
                         <PhLineChart credentials={credentials} user={user} device={device} />
                     </>
             },
             {
                 title: "Light Level", render:
                     <>
-                        <div className={style.dropdownFilter}>
-                            {DropdownFilter()}
-                        </div>
-
                         <LightLineChart credentials={credentials} user={user} device={device} />
                     </>
             },
@@ -186,12 +125,12 @@ class Dashboard extends Component {
                     <div className={style.buttonsContainer}>
                         <div className={style.slider}>
                             <div className={style.buttonHeader}>
-                                Light <Label style={{ float: "right" }}>{this.state.value1}</Label>
+                                Light <Label style={{ float: "right" }}>{light}</Label>
                             </div>
 
                             <div>
                                 <Slider
-                                    value={this.state.value}
+                                    value={light}
                                     color="blue"
                                     inverted={false}
                                     settings={settings}
@@ -237,11 +176,11 @@ class Dashboard extends Component {
                             <div className={style.dashboardGridContent}>
 
                                 <div className={style.left}>
-                                    {page == 1 ? this.renderModules(content.slice(0, 3)) : this.renderModules(content.slice(5, 7))}
+                                    {page == 1 ? this.renderModules(content.slice(0, 1)) : this.renderModules(content.slice(0, 1))}
                                 </div>
 
                                 <div className={style.right}>
-                                    {page == 1 ? this.renderModules(content.slice(3, 5)) : this.renderModules(content.slice(7, content.length))}
+                                    {page == 1 ? this.renderModules(content.slice(0, 1)) : this.renderModules(content.slice(0, content.length))}
                                 </div>
                             </div>
                         </div>

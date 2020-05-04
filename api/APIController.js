@@ -73,7 +73,13 @@ class APIController {
             headers: { Authorization: jwtToken }
         };
 
-        return await axios.post(CONTROL_DEVICE, { id: deviceId, light }, config);
+        return await axios.post(CONTROL_DEVICE, { 
+            id: deviceId, 
+            light, 
+            pump: 0, 
+            fan: 0, 
+            type: "arduino" 
+        }, config);
     }
 }
 

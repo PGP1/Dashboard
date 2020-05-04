@@ -121,8 +121,6 @@ class Sidenav extends Component {
     }
   };
 
-
-
   render() {
     let { userDetail } = this.state;
     const panes = [

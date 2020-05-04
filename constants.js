@@ -8,3 +8,19 @@ export const UPLOAD_AVATAR = "https://6ziwgkw5mi.execute-api.ap-southeast-2.amaz
 export const UNLINK_DEVICE = "https://386om5i73i.execute-api.ap-southeast-2.amazonaws.com/default/unlinkDevice";
 export const STATUS_DEVICE_REQUEST = "https://08miwb2z3h.execute-api.ap-southeast-2.amazonaws.com/default/status_device_request";
 export const CONTROL_DEVICE = "https://1kkpmpppf9.execute-api.ap-southeast-2.amazonaws.com/default/publish_to_mqttbroker";
+
+export const WATER = "water";
+export const TEMP = "temp";
+export const PH = "ph";
+export const HUMIDITY = "humidity";
+export const LDR = "ldr";
+export const RESOURCES = "resources";
+
+export const TYPES = { 
+    WATER: WATER,
+    TEMP: TEMP,
+    PH: PH,
+    RESOURCES: RESOURCES, 
+    HUMIDITY: HUMIDITY,
+    LDR: LDR
+}

@@ -7,10 +7,15 @@ class Layout extends Component {
     }
 
     render() {
+        const { isAuthenticated, userDetail, page, device, devices, setDevice} = this.props;
+        console.log("devices", devices);
+
         return (
             <>            
-                <Nav isAuthenticated={this.props?.isAuthenticated} page={this.props?.page} device={this.props?.device}
-                     setDevice={this.props.setDevice}/>
+                <Nav isAuthenticated={isAuthenticated} devices={devices} 
+                        setDevice={setDevice} page={page} device={device} 
+                        userDetail={userDetail}/>
+                     
                 <div className={"layout"}>
                     {this.props.children}
                 </div>

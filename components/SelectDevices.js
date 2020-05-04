@@ -10,31 +10,20 @@ class SelectDevices extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: null,
             open: false,
-            devices: [],
             error: false,
             errorMsg: ""
         }
     }
-
-    componentDidMount() {
-        AWSController.getCurrentSession().then(user => {
-            this.setUser(user);
-        });
-    }
-
     handleDeviceChange = (event) => {
         this.setState({ deviceName: event.target.value }) ;
     };
 
-
-
     handleAddDevice = () => {
-        const { user, deviceName } = this.state;
-        APIController.linkMyDevice(user.idToken, deviceName).then(res => {
+        const { deviceName } = this.state;
+        APIController.linkMyDevice(this.props.user.idToken, deviceName).then(res => {
             this.close();
-            this.fetchDevice(user);
+            this.props.fetchDevice(this.props.user);
         }).catch(err => {
             if(err.response) {
                 this.setState({error: true, errorMsg: err.response.data.message });
@@ -44,18 +33,12 @@ class SelectDevices extends Component {
 
     handleUnlinkDevice = (device) => {
      
-        APIController.unlinkDevice(this.state.user.idToken, device)
-        .then(res => { console.log(this.state.user)
-            this.fetchDevice(this.state.user)})
+        APIController.unlinkDevice(this.props.user.idToken, device)
+        .then(res => { console.log(this.props.user)
+            this.props.fetchDevice(this.props.user)})
         .catch(err => console.log(err));
 
     }
-
-    setUser = (user) => {
-        this.setState({ user }, () => {
-            this.fetchDevice(user);
-        })
-    };
 
     show = (size, dimmer) => () => {
         this.setState({ size, dimmer, open: true })
@@ -65,17 +48,9 @@ class SelectDevices extends Component {
         this.setState({ open: false })
     };
     
-    
-
-    fetchDevice = (user) => {
-        APIController.getMyDevices(user.idToken).then(res => {
-            const { data } = res;
-            this.setState({ devices: data });
-        }).catch(err => console.log(err))
-    };
-
     render() {
-        const { open, size, dimmer, devices, errorMsg, error } = this.state;
+        const { open, size, dimmer, errorMsg, error } = this.state;
+        const {  devices } = this.props;
 
         return <div className={style.container}>
             <div className={style.formCenter}>
