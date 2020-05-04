@@ -10,7 +10,7 @@ class ModuleContentWithFilter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentType: TYPES.WATER,
+            currentType: TYPES.TEMP,
             data: []
         }
     }
@@ -56,7 +56,7 @@ class ModuleContentWithFilter extends Component {
         const { title, children } = this.props;
         const { currentType, data } = this.state;
 
-        const options = Object.entries(TYPES).map(([k, value]) => { 
+        const options = Object.values(TYPES).filter(value => value !== TYPES.WATER).map((value) => { 
             return {key: value, text: value, value: value }
         });
 

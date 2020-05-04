@@ -15,7 +15,7 @@ import ModuleSummary from "../modules/ModuleSummary";
 
 const content = [
     {
-        title: "Current",
+        title: "Current Stats",
         render: <CurrentModule />,
         Element: ModuleSummary
     },

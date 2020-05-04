@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Line, Doughnut } from 'react-chartjs-2';
 import APIController from "../../api/APIController";
 import moment from 'moment';
-import { TYPES, RESOURCES  } from "../../constants";
+import { TYPES, UNITS  } from "../../constants";
 import style from "../styles/CurrentModule.module.scss";
 const QUERY_TYPE = 'humidity';
 
@@ -17,7 +17,7 @@ class CurrentModule extends Component {
 
         // const { data, currentType, getData } = this.props;
     
-        return <div class="flex space-around">
+        return <div className={[style.holder, "flex", "space-around"].join(" ")}>
                 <Water {...this.props}/>
                 <Ph {...this.props}/>
                 <Temp {...this.props}/>
@@ -63,11 +63,23 @@ class Water extends Component {
 
     render() {
         const { data } = this.state;
-
-        return <div class={style.field}>
-            <div class={style.heading}> Water </div>
-            <div class={style.data}>
-                {data}
+        let waterValue = "Calculating...";
+        let color = ""
+        if (data >= 330) {
+            waterValue = "Acceptable";
+            color = "c-green";
+        } else if (data > 100 && data < 330) {
+            waterValue = "Medium";
+            color = "c-yellow";
+        } else if (data < 100) {
+            waterValue = "Need to top up"
+            color = "c-red";
+        }
+        
+        return <div className={style.field}>
+            <div className={style.heading}> Water </div>
+            <div className={[style.data, style.small, color].join(" ")}>
+                { waterValue }
             </div>
         </div>
     }
@@ -109,9 +121,9 @@ class Ph extends Component {
     render() {
         const { data } = this.state;
 
-        return <div class={style.field}>
-            <div class={style.heading}> PH </div>
-            <div class={style.data}>
+        return <div className={style.field}>
+            <div className={style.heading}> PH ({ UNITS[TYPES.PH] })</div>
+            <div className={style.data}>
                 {data}
             </div>
         </div>
@@ -154,9 +166,9 @@ class Temp extends Component {
     render() {
         const { data } = this.state;
 
-        return <div class={style.field}>
-            <div class={style.heading}> Temp </div>
-            <div class={style.data}>
+        return <div className={style.field}>
+            <div className={style.heading}> Temp ({ UNITS[TYPES.TEMP] })</div>
+            <div className={style.data}>
                 {data}
             </div>
         </div>
@@ -199,9 +211,9 @@ class Humidity extends Component {
     render() {
         const { data } = this.state;
 
-        return <div class={style.field}>
-            <div class={style.heading}> Humidity </div>
-            <div class={style.data}>
+        return <div className={style.field}>
+            <div className={style.heading}> Humidity ({ UNITS[TYPES.HUMIDITY] })</div>
+            <div className={style.data}>
                 {data}
             </div>
         </div>
@@ -244,9 +256,9 @@ class Ldr extends Component {
     render() {
         const { data } = this.state;
 
-        return <div class={style.field}>
-            <div class={style.heading}> Ldr </div>
-            <div class={style.data}>
+        return <div className={style.field}>
+            <div className={style.heading}> Ldr ({ UNITS[TYPES.LDR] })</div>
+            <div className={style.data}>
                 {data}
             </div>
         </div>
