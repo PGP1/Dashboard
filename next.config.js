@@ -28,9 +28,9 @@ module.exports = {
         '/register': { page: '/register' },
         '/login': { page: '/login' }
     }),
-    assetPrefix: isProduction ? '/Dashboard' : '',
+    assetPrefix: isProduction ? '' : '',
     publicRuntimeConfig: {
         // used in '/components/Link.js/', for more details go to the component itself
-        linkPrefix: isProduction ? '/Dashboard' : ''
+        linkPrefix: isProduction ? '' : ''
     }
 }
