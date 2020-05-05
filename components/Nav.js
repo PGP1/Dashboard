@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import style from './styles/Nav.module.scss';
 import AWSController from '../api/AWSController';
 import { useState } from 'react';
-import { Dropdown } from 'semantic-ui-react';
-import Notifications from './assets/Notifications.svg'
-import APIController from "../api/APIController";
+import { Dropdown, Button, Icon } from 'semantic-ui-react';
+import Notifications from './assets/Notifications.svg';
 import NotificationPopup from './NotificationPopup';    
 
 class Nav extends Component{
@@ -43,7 +42,7 @@ class Nav extends Component{
                     {this.props?.page == 0 &&
                     <div className={style.accountHolder}>
                         <div className={style.avatar} style={{backgroundImage: `url(${userDetail?.avatar})`}}/>
-                        <div className={style.username}>{userDetail?.username}</div>
+                        <div className={style.username}>{userDetail?.username}</div>     
                     </div>}
                 </>}
 

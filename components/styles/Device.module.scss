@@ -3,6 +3,9 @@
 .container {
   position: relative;
   height: 100vh;
+  background-size: cover;
+  position: relative;
+  
 }
 
 .formCenter {
@@ -19,7 +22,7 @@
 }
 
 .content {
-  background: white;
+  background: white ;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -27,6 +30,7 @@
   width: 100%;
   max-width: 750px;
   padding: 30px 40px;
+  border-radius: 40px;
   
 
   & .bottom {

@@ -6,6 +6,7 @@ import AWSController from "../api/AWSController";
 import { API } from 'aws-amplify';
 
 
+
 class SelectDevices extends Component {
     constructor(props) {
         super(props);
@@ -76,9 +77,14 @@ class SelectDevices extends Component {
                         </table>
 
                         <div className={style.bottom}>
+                            <div style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
                             <button onClick={this.show('small', 'blurring')} className="ui right floated primary button">
                                 Add device
                             </button>
+                            <a href="/" onClick={AWSController.signOut} className="ui right floated light-grey button">
+                                Log out
+                            </a>
+                            </div>
                             <Modal dimmer={dimmer} size={size} open={open} onClose={this.close}>
                                 <Modal.Header>Add a device</Modal.Header>
                                 <Modal.Content>
@@ -97,6 +103,7 @@ class SelectDevices extends Component {
                                     <Button content='Add' primary onClick={this.handleAddDevice}/>
                                 </Modal.Actions>
                             </Modal>
+                          
                         </div>
                     </div>
                 </div>
