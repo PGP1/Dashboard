@@ -13,14 +13,13 @@ class SummaryChart extends Component {
 
     render() {
 
-        const { data, currentType } = this.props;
+        const { aggregation, currentType } = this.props;
 
         let dataValues = {};
 
-        if (data) {
-            const x = data.map(item => moment(item._source.time).format('YYYY-MM-DD h:mm a'));
-            const y = data.map(item => item._source.value);
-            
+        if (aggregation) {
+            const x = aggregation.map(item => moment(item.key_as_string).format('YYYY-MM-DD h:mm a'));
+            const y = aggregation.map(item => item.average.value);
 
             dataValues = {
                 datasets: [{
@@ -46,7 +45,7 @@ class SummaryChart extends Component {
                         xAxes: [{
                             type: 'time',
                             time: {
-                                unit: 'day'
+                                unit: 'hour'
                             }
                         }],
                         yAxes: [{

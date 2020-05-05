@@ -42,7 +42,8 @@ class ModuleContent extends Component {
     getData = (credentials, user, device, queryType) => {
         return APIController.elasticQuery(credentials, user.idToken, device, queryType).then(res => {
             const data = res.data.hits?.hits;
-            this.setState({ data });
+            const aggregation = res.data.aggregations?.avgBucket.buckets;
+            this.setState({ data, aggregation });
         })
     }
 
@@ -59,14 +60,14 @@ class ModuleContent extends Component {
 
     render() {
         const { title, children, device, user } = this.props;
-        const { data, clusterInfo } = this.state;
+        const { data, clusterInfo, aggregation } = this.state;
         
         return <div className={style.box}>
             <div className={style.header}>
                 { title }
             </div>
             <div className={style.chart}>
-                { React.cloneElement(children, { data, clusterInfo, device, user }) } 
+                { React.cloneElement(children, { data, clusterInfo, device, user, aggregation }) } 
             </div>
         </div>
     }

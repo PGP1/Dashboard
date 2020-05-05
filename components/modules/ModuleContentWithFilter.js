@@ -36,7 +36,8 @@ class ModuleContentWithFilter extends Component {
     getData = (credentials, user, device, queryType) => {
         return APIController.elasticQuery(credentials, user.idToken, device, queryType).then(res => {
             const data = res.data.hits?.hits;
-            this.setState({ data }, () =>  console.log("Update graphing for", queryType));
+            const aggregation = res.data.aggregations?.avgBucket.buckets;
+            this.setState({ data, aggregation });
         });
     }
 
@@ -51,7 +52,7 @@ class ModuleContentWithFilter extends Component {
 
     render() {
         const { title, children } = this.props;
-        const { currentType, data } = this.state;
+        const { currentType, data, aggregation } = this.state;
 
         const options = Object.values(TYPES).filter(value => value !== TYPES.WATER).map((value) => { 
             return {key: value, text: value, value: value }
@@ -64,7 +65,7 @@ class ModuleContentWithFilter extends Component {
                 onChange={(e,{value}) => this.setTypes(value)} options={options}/>
             </div>
             <div className={style.chart}>
-                { React.cloneElement(children, { data, currentType }) } 
+                { React.cloneElement(children, { data, currentType, aggregation }) } 
             </div>
         </div>
     }
