@@ -6,6 +6,8 @@ import AWSController from "../api/AWSController";
 import APIController from "../api/APIController";
 import Router from "next/router";
 import Dashboard from "../components/Dashboard";
+import io from "socket.io-client";
+import { SOCKET } from "../constants";
 
 class Index extends Component {
     constructor(props) {
@@ -17,13 +19,15 @@ class Index extends Component {
             user: null,
             credentials: null,
             device: "",
-            devices: []
+            devices: [],
+            socketMessage: []
         }
+        this.socket = io(SOCKET);
     }
-
 
     componentDidMount() {
         this.getAllCrendentials();
+        this.socket.on('response', (socketMessage) => this.setState({ socketMessage }));
         this.setState({ isAuthenticating: false });
     }
 
@@ -89,7 +93,7 @@ class Index extends Component {
     }
 
     render() {
-        const { isAuthenticated, page, device, userDetail, devices } = this.state;
+        const { isAuthenticated, page, device, userDetail, devices, socketMessage } = this.state;
 
         return (
             <>
@@ -97,7 +101,7 @@ class Index extends Component {
                     <Layout isAuthenticated={isAuthenticated} page={page} 
                             device={device}
                             userDetail={userDetail}
-                            devices={devices}
+                            devices={devices} socketMessage={socketMessage}
                             setDevice={this.setDevice}>
                         {this.conditionRender()}
                     </Layout>

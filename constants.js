@@ -30,3 +30,5 @@ export const UNITS = {
     "humidity": "%",
     "ldr": "brightness"
 }
+
+export const SOCKET = "http://13.239.115.39:42069/"
