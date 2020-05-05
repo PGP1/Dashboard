@@ -1,0 +1,10 @@
+@import "../../pages/styles/_constant";
+
+.grid {
+    @extend .grid--one-one;
+    margin-top: 17px;
+    margin-bottom: 30px;
+    font-family: 'Poppins';
+    font-size: 0.93rem;
+    letter-spacing: 0.1px;
+}

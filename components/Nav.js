@@ -1,17 +1,56 @@
+import React, { Component } from 'react';
 import style from './styles/Nav.module.scss';
 import AWSController from '../api/AWSController';
 import { useState } from 'react';
+import { Dropdown, Button, Icon } from 'semantic-ui-react';
+import Notifications from './assets/Notifications.svg';
+import NotificationPopup from './NotificationPopup';
 
-export default function Nav (props) {
-    const [username, setUsername] = useState();
-    AWSController.getCurrentUserName().then(username => setUsername(username));
-    return (
-        <div className={style.nav}>
-            <div className={style.logo}>Logo</div>
-            {props?.isAuthenticated && <div className={style.accountHolder}>
-                <div className={style.avatar}/>
-                <div className={style.username}>{username}</div>
-            </div>}
-        </div>
-    )
+class Nav extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            showPopup: false
+        }
+    }
+
+    togglePopup = () => {
+        this.setState({ showPopup: !this.state.showPopup });
+    }
+
+    render() {
+
+        const { userDetail, devices, setDevice, page, socketMessage } = this.props;
+        const options = devices ?.map(d => { return { key: d, text: d, value: d } });
+
+        return (
+            <div className={[style.nav, "flex", "align-center"].join(" ")}>
+                <div className={style.logo}>Plantly.</div>
+                {this.props ?.isAuthenticated && <>
+                    {this.props ?.page !== 0 &&
+                        <>
+                            <div className={style.topDropdown}>
+                                <Dropdown selection placeholder='Select Device' options={options} defaultValue={this.props ?.device}
+                                    onChange={(e, { value }) => this.props ?.setDevice(value)} />
+                            </div>
+                            <div className={style.topNotification}><Notifications style={{ cursor: 'pointer' }} onClick={this.togglePopup.bind(this)} />
+                                {this.state.showPopup ? <NotificationPopup socketMessage={socketMessage} closePopup={this.togglePopup.bind(this)} /> : null}
+                            </div>
+                        </>}
+
+                    {this.props ?.page == 0 &&
+                        <div className={style.accountHolder}>
+                            <div className={style.avatar} style={{ backgroundImage: `url(${userDetail ?.avatar})` }} />
+                            <div className={style.username}>{userDetail ?.username}</div>
+                            <a style={{marginLeft:"10px"}} className={"ui right floated light-grey button"} href="/" onClick={AWSController.signOut}> Log out </a>
+                        </div>}
+                </>}
+
+            </div>
+        )
+    }
+
 }
+
+export default Nav;

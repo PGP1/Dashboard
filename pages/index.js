@@ -1,35 +1,49 @@
 import Link from "../components/Link";
 import React, { Component } from 'react';
-import style from "./styles/device.module.scss";
 import Layout from "../components/Layout";
+import SelectDevices from "../components/SelectDevices";
 import AWSController from "../api/AWSController";
-import APIController from "../api/APIController.js";
+import APIController from "../api/APIController";
 import Router from "next/router";
-import { Modal, Form, Icon, Button, Message } from 'semantic-ui-react';
+import Dashboard from "../components/Dashboard";
+import io from "socket.io-client";
+import { SOCKET } from "../constants";
+
 class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isAuthenticated: false,
+            page: 0,
+            userDetail: {},
             user: null,
-            open: false,
+            credentials: null,
+            device: "",
             devices: [],
-            error: false,
-            errorMsg: ""
+            socketMessage: []
         }
+        this.socket = io(SOCKET);
     }
 
-    show = (size, dimmer) => () => {
-        this.setState({ size, dimmer, open: true })
-    };
+    componentDidMount() {
+        this.getAllCrendentials();
+        this.socket.on('response', (socketMessage) => this.setState({ socketMessage }));
+        this.setState({ isAuthenticating: false });
+    }
 
-    close = () => {
-        this.setState({ open: false })
-    };
-
-    setAuthenticate = () => {
-        this.setState({ isAuthenticated: true });
-    };
+    getAllCrendentials = () => {
+        AWSController.getCurrentSession().then(user => {
+            this.setAuthenticate(true);
+            this.setUser(user);
+            APIController.getUserData(user.idToken).then(d => {
+                this.setUserData(d.data);
+            })
+            AWSController.getCurrentCredientials().then(d => {
+                const { Credentials } = d.data;
+                this.setState({ credentials: Credentials })
+            });
+        }).catch(err => Router.push("/login"));
+    }
 
     setUser = (user) => {
         this.setState({ user }, () => {
@@ -41,90 +55,55 @@ class Index extends Component {
         APIController.getMyDevices(user.idToken).then(res => {
             const { data } = res;
             this.setState({ devices: data });
-        }).catch(err => console.log(err))
+        }).catch(err => { 
+            this.setState({ devices: [] });
+        });
     };
 
-    componentDidMount() {
-        AWSController.getCurrentSession().then(session => {
-            this.setAuthenticate(true);
-            AWSController.getCurrentSession().then(user => {
-                this.setUser(user);
-            });
-        }).catch(err => Router.push("/login"));
 
-        this.setState({ isAuthenticating: false });
+    setDevice = (device) => {
+        this.setState({ device: device, page: 1 })
     }
 
-    handleDeviceChange = (event) => {
-        this.setState({ deviceName: event.target.value }) ;
+    setPage = (page) => {
+        this.setState({ page });
+    }
+
+    setAuthenticate = () => {
+        this.setState({ isAuthenticated: true });
     };
 
-    handleAddDevice = () => {
-        const { user, deviceName } = this.state;
-        APIController.linkMyDevice(user.idToken, deviceName).then(res => {
-            this.close();
-            this.fetchDevice(user);
-        }).catch(err => {
-            if(err.response) {
-                this.setState({error: true, errorMsg: err.response.data.message });
-            }
-        })
-    };
+    setUserData = (userDetail) => {
+        this.setState({ userDetail });
+    }
+
+    conditionRender() {
+        const { page, user, device, devices, userDetail, credentials } = this.state;
+        switch(page) {
+            case 0:
+                return <SelectDevices user={user} devices={devices} props={this.props} 
+                                      setDevice={this.setDevice} 
+                                      fetchDevice={this.fetchDevice} userDetail={userDetail}/>
+            default:
+                return <Dashboard credentials={credentials} userDetail={userDetail} user={user} 
+                            page={page} setUserData={this.setUserData}
+                            setDevice={this.setDevice} device={device} 
+                            setUser={this.setUser} setPage={this.setPage}/>
+        }
+    }
 
     render() {
-        const { isAuthenticated, open, size, dimmer, devices, errorMsg, error } = this.state;
+        const { isAuthenticated, page, device, userDetail, devices, socketMessage } = this.state;
 
         return (
             <>
-                {isAuthenticated &&
-                    <Layout isAuthenticated={isAuthenticated}>
-                        <div className={style.container}>
-                            <div className={style.formCenter}>
-                                <div className={style.form}>
-                                    <div className={style.content}>
-                                        <h1> Register your devices </h1>
-                                        <table className="ui blue table center aligned segment">
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {devices.map((each, i) =>  <tr key={i}>
-                                                    <td>{each}</td>
-                                                    <td>Online</td>
-                                                    <td>Access / Shutdown</td>
-                                                </tr>)}
-                                            </tbody>
-                                        </table>
-
-                                        <div className={style.bottom}>
-                                            <button onClick={this.show('small', 'blurring')} className="ui right floated primary button"> Add device</button>
-                                            <Modal dimmer={dimmer} size={size} open={open} onClose={this.close}>
-                                                <Modal.Header>Add a device</Modal.Header>
-                                                <Modal.Content>
-                                                    <Form>
-                                                        <Form.Field required>
-                                                            <label>Device Name</label>
-                                                            <input onChange={this.handleDeviceChange}/>
-                                                        </Form.Field>
-                                                        {error && <Message negative>
-                                                            <Message.Header>Uh oh!</Message.Header>
-                                                            <p> {errorMsg} </p>
-                                                        </Message>}
-                                                    </Form>
-                                                </Modal.Content>
-                                                <Modal.Actions>
-                                                    <Button content='Add' primary onClick={this.handleAddDevice}/>
-                                                </Modal.Actions>
-                                            </Modal>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                {isAuthenticated && devices &&
+                    <Layout isAuthenticated={isAuthenticated} page={page} 
+                            device={device}
+                            userDetail={userDetail}
+                            devices={devices} socketMessage={socketMessage}
+                            setDevice={this.setDevice}>
+                        {this.conditionRender()}
                     </Layout>
                 }
             </>)
