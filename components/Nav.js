@@ -43,9 +43,7 @@ class Nav extends Component {
                         <div className={style.accountHolder}>
                             <div className={style.avatar} style={{ backgroundImage: `url(${userDetail ?.avatar})` }} />
                             <div className={style.username}>{userDetail ?.username}</div>
-                            <a style={{marginLeft:"10px"}} className={"ui right floated light-grey button"} href="/" onClick={AWSController.signOut}>
-                                Log out
-                            </a>
+                            <a style={{marginLeft:"10px"}} className={"ui right floated light-grey button"} href="/" onClick={AWSController.signOut}> Log out </a>
                         </div>}
                 </>}
 

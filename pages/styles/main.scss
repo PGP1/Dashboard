@@ -132,3 +132,9 @@ canvas {
 .bg-green {
     background-color: #009432;
 }
+
+.rc-slider-track,
+.rc-slider-handle {
+    background-color: #f0932b !important;
+    border-color: transparent !important;
+}
