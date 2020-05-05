@@ -21,7 +21,7 @@ class Nav extends Component {
 
     render() {
 
-        const { userDetail, devices, setDevice, page } = this.props;
+        const { userDetail, devices, setDevice, page, socketMessage } = this.props;
         const options = devices ?.map(d => { return { key: d, text: d, value: d } });
 
         return (
@@ -35,7 +35,7 @@ class Nav extends Component {
                                     onChange={(e, { value }) => this.props ?.setDevice(value)} />
                             </div>
                             <div className={style.topNotification}><Notifications style={{ cursor: 'pointer' }} onClick={this.togglePopup.bind(this)} />
-                                {this.state.showPopup ? <NotificationPopup closePopup={this.togglePopup.bind(this)} /> : null}
+                                {this.state.showPopup ? <NotificationPopup socketMessage={socketMessage} closePopup={this.togglePopup.bind(this)} /> : null}
                             </div>
                         </>}
 
