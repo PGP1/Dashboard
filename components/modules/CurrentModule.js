@@ -56,7 +56,7 @@ class Water extends Component {
     getData = (credentials, user, device, type) => {
         APIController.elasticQuery(credentials, user.idToken, device, type).then(res => {
             const data = res.data.hits?.hits;
-            const val = data.map(item => item._source.value)[0];
+            const val = data ? data.map(item => item._source.value)[0] : "Loading...";
             this.setState({ data: val })
         });
     }
@@ -113,7 +113,7 @@ class Ph extends Component {
     getData = (credentials, user, device, type) => {
         APIController.elasticQuery(credentials, user.idToken, device, type).then(res => {
             const data = res.data.hits?.hits;
-            const val = data.map(item => item._source.value)[0];
+            const val = data ? data.map(item => item._source.value)[0] : "Loading...";
             this.setState({ data: val })
         });
     }
@@ -158,7 +158,7 @@ class Temp extends Component {
     getData = (credentials, user, device, type) => {
         APIController.elasticQuery(credentials, user.idToken, device, type).then(res => {
             const data = res.data.hits?.hits;
-            const val = data.map(item => item._source.value)[0];
+            const val = data ? data.map(item => item._source.value)[0] : "Loading...";
             this.setState({ data: val })
         });
     }
@@ -203,7 +203,7 @@ class Humidity extends Component {
     getData = (credentials, user, device, type) => {
         APIController.elasticQuery(credentials, user.idToken, device, type).then(res => {
             const data = res.data.hits?.hits;
-            const val = data.map(item => item._source.value)[0];
+            const val = data ? data.map(item => item._source.value)[0] : "Loading...";
             this.setState({ data: val })
         });
     }
@@ -248,7 +248,7 @@ class Ldr extends Component {
     getData = (credentials, user, device, type) => {
         APIController.elasticQuery(credentials, user.idToken, device, type).then(res => {
             const data = res.data.hits?.hits;
-            const val = data.map(item => item._source.value)[0];
+            const val = data ? data.map(item => item._source.value)[0] : "Loading...";
             this.setState({ data: val })
         });
     }

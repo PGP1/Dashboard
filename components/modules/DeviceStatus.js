@@ -12,7 +12,7 @@ class DeviceStatus extends Component {
    
     render() {
         const { device, data } = this.props;
-        const uptime = data[data.length - 1]?._source.uptime;
+        const uptime = data ? data[data.length - 1]?._source.uptime : "Loading...";
 
         return <>
             { data && <>
