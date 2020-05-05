@@ -4,6 +4,7 @@ import APIController from "../../api/APIController";
 import moment from 'moment';
 import {TYPES, SCALE} from '../../constants'
 const QUERY_TYPE = 'Resources';
+import * as _ from "underscore";
 
 class ChangeChart extends Component {
 
@@ -19,25 +20,31 @@ class ChangeChart extends Component {
     }
 
     componentDidMount = () => {
-        this.obtainAllData();
+        const {credentials, user, device} = this.props;
+        this.obtainAllData(credentials,user,device);
     }
 
+    componentWillReceiveProps(nextProps) {
+      
+        if (!_.isEqual(this.props, nextProps)) {
+            const { credentials, user, device } = nextProps;
+            this.setState({ credentials, user, device }, () => {
+                this.obtainAllData(credentials,user,device);
+            });
+        }
+    } 
 
+    obtainAllData = (credentials, user, device) => {
 
-    obtainAllData = () => {
-
-        const {credentials, user, device} = this.props;
-    
         Object.values(TYPES).forEach(type => {
             console.log(type,TYPES.WATER);
             if (type !== TYPES.WATER ) {
                 APIController.elasticQuery(credentials, user.idToken, device, type).then(res => {
-                    // const hits = res.data.hits?.hits; // array
                     const aggregation = res.data.aggregations?.avgBucket.buckets;
-                    const data = aggregation.map(e => e.average.value);  
+                    const data = aggregation ? aggregation.map(e => e.average.value) : [];
                     const val_normalised = data.map( e => ((e/(SCALE[type])) - 0.5)*2);
-                    console.log(type,val_normalised);
-                    this.setState({timeValues: aggregation.map(e => moment(e.key_as_string).format('YYYY-MM-DD h:mm a'))});
+                    
+                    this.setState({timeValues: aggregation ? aggregation.map(e => moment(e.key_as_string).format('YYYY-MM-DD h:mm a')):[]});
                     this.setState({ [type]: val_normalised });
                 });
             }     

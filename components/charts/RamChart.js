@@ -24,7 +24,7 @@ class RamChart extends Component {
             ramDataValues = {
                 datasets: [{
                     data: [ram_usage, 100 - ram_usage],
-                    backgroundColor: ['#3498db', '#2980b9']
+                    backgroundColor: ['rgba(154, 236, 219,0.6)', 'rgba(88, 177, 159,0.6)']
                 }]
                 , labels: ["Usage", "Remaining"]
             }

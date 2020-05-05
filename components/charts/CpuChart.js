@@ -21,7 +21,7 @@ class CpuChart extends Component {
             cpuDataValues = {
                 datasets: [{
                     data: [cpu_usage, 100 - cpu_usage],
-                    backgroundColor: ['#27ae60', '#2ecc71']
+                    backgroundColor: ['rgba(44, 58, 71,0.6)', 'rgba(189, 197, 129,0.6)']
                 }],
                 labels: ["Usage", "Remaining"]
             }
