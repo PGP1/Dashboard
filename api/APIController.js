@@ -50,6 +50,7 @@ class APIController {
         return await axios.post(ELASTIC_CLUSTER_QUERY, { AccessKeyId, SecretKey, SessionToken, DeviceId }, config);
     }
 
+    
 
     async uploadAvatar({ jwtToken }, file){
        

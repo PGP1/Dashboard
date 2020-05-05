@@ -8,8 +8,8 @@ import { TYPES } from "../../constants";
 class ModuleSummary extends Component {
     constructor(props) {
         super(props);
-    }  
-
+    } 
+    
     render() {
         const { title, children, credentials, user, device } = this.props;
         

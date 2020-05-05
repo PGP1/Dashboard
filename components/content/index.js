@@ -9,6 +9,7 @@ import ResourcesChart from "../charts/ResourcesChart";
 import DeviceStatus from "../modules/DeviceStatus";
 import DeviceControl from "../modules/DeviceControl";
 import CurrentModule from '../modules/CurrentModule';
+import ChangeChart from '../charts/ChangeChart';
 
 import ModuleContent from "../modules/ModuleContent";
 import ModuleContentWithFilter from "../modules/ModuleContentWithFilter";
@@ -26,6 +27,11 @@ const content = [
         Element: ModuleContentWithFilter
     },
     {
+        title: "Percentage change over time (0-median) ",
+        render: <ChangeChart />,
+        Element: ModuleSummary
+    },
+    {
         title: "Server Information",
         render: <ClusterInfo />,
         Element: ModuleContent
@@ -41,12 +47,12 @@ const content = [
         Element: ModuleContent
     },
     {
-        title: "CPU Information",
+        title: "CPU Information (%)",
         render: <CpuChart />,
         Element: ModuleContent
     },
     {
-        title: "RAM Information",
+        title: "RAM Information (%)",
         render: <RamChart />,
         Element: ModuleContent
     }
