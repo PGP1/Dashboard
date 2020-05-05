@@ -81,9 +81,6 @@ class SelectDevices extends Component {
                             <button onClick={this.show('small', 'blurring')} className="ui right floated primary button">
                                 Add device
                             </button>
-                            <a href="/" onClick={AWSController.signOut} className="ui right floated light-grey button">
-                                Log out
-                            </a>
                             </div>
                             <Modal dimmer={dimmer} size={size} open={open} onClose={this.close}>
                                 <Modal.Header>Add a device</Modal.Header>

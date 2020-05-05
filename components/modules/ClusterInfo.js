@@ -8,7 +8,7 @@ class ClusterInfo extends Component {
         super(props);
         this.state = {}
     }
-
+    
     render() {
 
         const { clusterInfo } = this.props;
@@ -30,8 +30,6 @@ class ClusterInfo extends Component {
         } else if (stat == "green") {
             statusStr = "Low";
         } else statusStr = "Calculating";
-
-
 
         return (
             <>

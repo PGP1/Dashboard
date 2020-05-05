@@ -4,9 +4,9 @@ import AWSController from '../api/AWSController';
 import { useState } from 'react';
 import { Dropdown, Button, Icon } from 'semantic-ui-react';
 import Notifications from './assets/Notifications.svg';
-import NotificationPopup from './NotificationPopup';    
+import NotificationPopup from './NotificationPopup';
 
-class Nav extends Component{
+class Nav extends Component {
 
     constructor(props) {
         super(props);
@@ -20,30 +20,33 @@ class Nav extends Component{
     }
 
     render() {
-       
+
         const { userDetail, devices, setDevice, page } = this.props;
-        const options = devices?.map(d => { return {key: d, text: d, value: d}});
+        const options = devices ?.map(d => { return { key: d, text: d, value: d } });
 
         return (
             <div className={[style.nav, "flex", "align-center"].join(" ")}>
                 <div className={style.logo}>Plantly.</div>
-                {this.props?.isAuthenticated && <>
-                    {this.props?.page !== 0 &&
-                    <>
-                        <div className={style.topDropdown}>
-                            <Dropdown selection placeholder='Select Device' options={options} defaultValue={this.props?.device}
-                                      onChange={(e, {value}) => this.props?.setDevice(value)}/>
-                        </div>
-                        <div className={style.topNotification}><Notifications style={{cursor:'pointer'}} onClick={this.togglePopup.bind(this)}/>
-                            {this.state.showPopup ? <NotificationPopup closePopup={this.togglePopup.bind(this)}/> : null}
-                        </div>
-                    </>}
+                {this.props ?.isAuthenticated && <>
+                    {this.props ?.page !== 0 &&
+                        <>
+                            <div className={style.topDropdown}>
+                                <Dropdown selection placeholder='Select Device' options={options} defaultValue={this.props ?.device}
+                                    onChange={(e, { value }) => this.props ?.setDevice(value)} />
+                            </div>
+                            <div className={style.topNotification}><Notifications style={{ cursor: 'pointer' }} onClick={this.togglePopup.bind(this)} />
+                                {this.state.showPopup ? <NotificationPopup closePopup={this.togglePopup.bind(this)} /> : null}
+                            </div>
+                        </>}
 
-                    {this.props?.page == 0 &&
-                    <div className={style.accountHolder}>
-                        <div className={style.avatar} style={{backgroundImage: `url(${userDetail?.avatar})`}}/>
-                        <div className={style.username}>{userDetail?.username}</div>     
-                    </div>}
+                    {this.props ?.page == 0 &&
+                        <div className={style.accountHolder}>
+                            <div className={style.avatar} style={{ backgroundImage: `url(${userDetail ?.avatar})` }} />
+                            <div className={style.username}>{userDetail ?.username}</div>
+                            <a style={{marginLeft:"10px"}} className={"ui right floated light-grey button"} href="/" onClick={AWSController.signOut}>
+                                Log out
+                            </a>
+                        </div>}
                 </>}
 
             </div>
