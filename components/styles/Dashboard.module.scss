@@ -1,0 +1,103 @@
+@import "../../pages/styles/_constant";
+
+.container {
+  font-family: "Poppins", sans-serif;
+}
+
+.topNavigation {
+  width: 100%;
+  height: 60px;
+  background: white;
+  position: relative;
+  z-index: -1;
+}
+
+.topDropdown {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 300px;
+}
+
+.topNotification {
+  height: 16px;
+  width: 16px;
+  background: black;
+  border-radius: 100%;
+  float: right;
+  margin-right: 45px;
+  margin-top: 23px;
+}
+
+.purpleBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 195%;
+  background: #6359a0;
+  transform: translateX(-10%) translateY(-30%) rotate(20deg);
+  z-index: -1;
+}
+
+.dashboardContent {
+  margin-top: 100px;
+  width: 100%;
+  height: 100vh;
+  max-width: calc(100% - 256px);
+  right: 0;
+  position: absolute;
+}
+
+
+.dashboardGridContent {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  grid-gap: 50px;
+  max-width: 80%;
+  justify-content: space-between;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+
+}
+
+
+.left,
+.right {
+  flex: 25%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.left {
+  margin-right: 50px;
+}
+
+.chart {
+  //width: 60%;
+  //max-width: 500px;
+  max-height: 300px;
+}
+
+.slider { 
+  width: 100%;
+  & input {
+    width: 30px;
+  }
+}
+
+.dropdownFilter {
+  float: right;
+}
+
+.groupedButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 100%;
+}
+
+

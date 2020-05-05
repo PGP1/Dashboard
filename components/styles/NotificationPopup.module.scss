@@ -1,0 +1,41 @@
+@import "../../pages/styles/_constant";
+
+.container {
+    width: 200px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    //left: 0;
+    right: 0;
+    margin-right: 20px;
+    box-shadow: 0 8px 25px 0 rgba(112, 110, 110, 0.65);
+    //display: block;
+    // align-items: center;
+    // justify-content: center;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.placeholder {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: #BDBDBD;
+}
+
+.notification {
+    font-family: "Poppins", "san-serif";
+    font-size: 0.85rem;
+    color: black;
+    margin: 10px 0px;
+}
+
+.notificationText {
+    //text-align: left;
+    font-size: 0.71rem;
+}
+
+.notificationList {
+    display: block;
+    margin-top: 10px;
+}
