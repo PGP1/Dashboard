@@ -99,8 +99,7 @@ class SelectDevices extends Component {
                                 <Modal.Actions>
                                     <Button content='Add' primary onClick={this.handleAddDevice}/>
                                 </Modal.Actions>
-                            </Modal>
-                          
+                            </Modal> 
                         </div>
                     </div>
                 </div>

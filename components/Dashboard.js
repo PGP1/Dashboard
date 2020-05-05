@@ -52,11 +52,11 @@ class Dashboard extends Component {
                             <div className={style.dashboardGridContent}>
                                 { page == 1 ? this.renderModules(content.slice(0, 1)) : ""}
                                 <div className={style.left}>
-                                    {page == 1 ? this.renderModules(content.slice(1, 2)) : this.renderModules(content.slice(3, 5))}
+                                    {page == 1 ? this.renderModules(content.slice(1, 3)) : this.renderModules(content.slice(4, 6))}
                                 </div>
 
                                 <div className={style.right}>
-                                    {page == 1 ? this.renderModules(content.slice(2, 3)) : this.renderModules(content.slice(5, content.length))}
+                                    {page == 1 ? this.renderModules(content.slice(3, 4)) : this.renderModules(content.slice(6, content.length))}
                                 </div>
                             </div>
                         </div>

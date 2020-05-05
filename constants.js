@@ -30,3 +30,10 @@ export const UNITS = {
     "humidity": "%",
     "ldr": "brightness"
 }
+
+export const SCALE = {
+    ph: 12,
+    temp:50,
+    humidity:100,
+    ldr: 255
+}
