@@ -26,9 +26,7 @@ module.exports = {
     exportPathMap: () => ({
         '/': { page: '/' },
         '/register': { page: '/register' },
-        '/login': { page: '/login' },
-        '/device': { page: '/device' },
-        '/dashboard': { page: '/dashboard' }
+        '/login': { page: '/login' }
     }),
     assetPrefix: isProduction ? '/Dashboard' : '',
     publicRuntimeConfig: {
