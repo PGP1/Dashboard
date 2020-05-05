@@ -17,7 +17,7 @@ class CpuChart extends Component {
         let cpuDataValues = {};
 
         if (data) {
-            const cpu_usage = data[0]?._source["cpu-percent"];
+            const cpu_usage = data[data.length - 1]?._source["cpu-percent"];
             cpuDataValues = {
                 datasets: [{
                     data: [cpu_usage, 100 - cpu_usage],

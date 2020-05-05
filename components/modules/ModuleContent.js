@@ -20,9 +20,9 @@ class ModuleContent extends Component {
         const { currentType } = this.state;
 
         this.setState({ credentials, user, device }, () => {
+            this.getStatusDevice(user.idToken, device);
             this.getData(credentials, user, device, currentType);
             this.getClusterInfo(credentials, user, device)
-
         });
     }
     
@@ -30,6 +30,13 @@ class ModuleContent extends Component {
         APIController.elasticClusterQuery(credentials, user.idToken, device).then(res => {
             this.setState({ clusterInfo: res.data })
         }) 
+    }
+
+    getStatusDevice = () => {
+        const { user, device } = this.props;
+        APIController.getStatusDevice(user.idToken, device).then(() => {
+            console.log("Get status device");
+        });
     }
 
     getData = (credentials, user, device, queryType) => {
@@ -44,6 +51,7 @@ class ModuleContent extends Component {
         if (!_.isEqual(this.props, nextProps)) {
             const { credentials, user, device } = nextProps;
             this.setState({ credentials, user, device }, () => {
+                this.getStatusDevice(user.idToken, device);
                 this.getData(credentials, user, device, currentType);
             });
         }

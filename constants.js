@@ -28,5 +28,5 @@ export const UNITS = {
     "ph": "pH",
     "temp": "°C",
     "humidity": "%",
-    "ldr": "ppm"
+    "ldr": "brightness"
 }
