@@ -64,36 +64,30 @@ class ChangeChart extends Component {
             dataValues = {
                 datasets: [{
                     label:"Temp",
-                    type: "line",
+                    type: "bar",
                     data: temp,
                     lineTension: 0.4,
-                    borderDash: [10, 10],
-                    borderColor: 'rgba(231, 76, 60,1.0)',
-                    backgroundColor:"rgba(231, 76, 60,0.4)"
+                    backgroundColor:"#1c2541"
                 }, 
-                {   label:"pH",
-                    type:"line",
-                    data: ph,
-                    lineTension: 0.4,
-                    borderDash: [4, 4],
-                    borderColor: ['rgba(230, 126, 34,1.0)'],
-                    backgroundColor:"rgba(230, 126, 34,0.4)"
-                },
+              
                {    label:"Ldr",
-                    type:"line",
+                    type:"bar",
                     data: ldr,
                     lineTension: 0.4,
-                    borderDash: [10, 10],
-                    borderColor: 'rgba(241, 196, 15,1.0)',
-                    backgroundColor:"rgba(241, 196, 15,0.4)"
+                    backgroundColor:"#3a506b"
+                },
+                {   
+                    label:"pH",
+                    type:"bar",
+                    data: ph,
+                    lineTension: 0.4,
+                    backgroundColor:"#5bc0be"
                 },
                 {   label:"Humidity",
-                    type:"line",
+                    type:"bar",
                     data: humidity,
                     lineTension: 0.4,
-                    borderDash: [10, 10],
-                    borderColor: ['rgba(46, 204, 113,1.0)'],
-                    backgroundColor:"rgba(46, 204, 113,0.4)"
+                    backgroundColor:"#0b132b"
                 }],
                 labels: timeValues
             }
