@@ -19,7 +19,7 @@ class SummaryChart extends Component {
 
         if (aggregation) {
             const x = aggregation.map(item => moment(item.key_as_string).format('YYYY-MM-DD h:mm a'));
-            const y = aggregation.map(item => item.average.value);
+            const y = aggregation.map(item => item.average.value ? item.average.value : 0);
 
             dataValues = {
                 datasets: [{
