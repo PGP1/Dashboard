@@ -10,6 +10,8 @@
 body{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    overflow-x: auto!important;
+    height: 100%
 }
 
 *{
@@ -137,4 +139,13 @@ canvas {
 .rc-slider-handle {
     background-color: #f0932b !important;
     border-color: transparent !important;
+}
+
+.layout {
+    display: grid;
+    grid-template-areas:    "sidebar navbar" 
+                            "sidebar content";
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    min-height: 100vh;
 }

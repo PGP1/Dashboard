@@ -41,12 +41,7 @@
 }
 
 .dashboardContent {
-  margin-top: 100px;
-  width: 100%;
-  height: 100vh;
-  max-width: calc(100% - 256px);
-  right: 0;
-  position: absolute;
+  grid-area: content;
 }
 
 

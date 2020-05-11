@@ -7,6 +7,7 @@ import APIController from "../api/APIController";
 
 import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-react';
 import content from "./content";
+import Nav from "./Nav";
 
 class Dashboard extends Component {
     constructor(props) {
@@ -39,7 +40,8 @@ class Dashboard extends Component {
     }
     
     render() {
-        const { device, credentials, user, page, light, setPage, userDetail} = this.props;
+        const { isAuthenticated, devices, device, credentials, user, page, 
+            setDevice, useDetail, socketMessage, light, setPage, userDetail} = this.props;
 
         console.log(content)
         return (
@@ -48,11 +50,15 @@ class Dashboard extends Component {
                     <>
                         <Sidenav setPage={setPage} page={page} setUserData={this.props.setUserData} userDetail={userDetail}/>
                         <div className={style.dashboardContent}>
+                            <Nav isAuthenticated={isAuthenticated} devices={devices} 
+                            setDevice={setDevice} page={page} device={device} 
+                            userDetail={userDetail} socketMessage={socketMessage}/>
+                            
                             <div className={style.purpleBackground} />
                             <div className={style.dashboardGridContent}>
                                 { page == 1 ? this.renderModules(content.slice(0, 1)) : ""}
                                 <div className={style.left}>
-                                    {page == 1 ? this.renderModules(content.slice(1, 3)) : this.renderModules(content.slice(4, 6))}
+                                    {page == 1 ? this.renderModules(content.slice(1, 5)) : this.renderModules(content.slice(4, 6))}
                                 </div>
 
                                 <div className={style.right}>
