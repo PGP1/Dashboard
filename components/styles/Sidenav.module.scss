@@ -4,7 +4,7 @@
   font-family: Poppins;
   color: #ffffff;
   background-color: #334459;
-  padding: $margin;
+  padding: $margin/2 $margin;
   grid-area: sidebar;
   height: 100vh;
   display: block;
@@ -14,7 +14,7 @@
 
 
 .userDetails {
-  margin-top: 85px;
+  margin-top: 40px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -25,12 +25,27 @@
   }
 }
 
+.logo {
+  // font-weight: bold;
+  // font-family: Lato;
+  // font-size: 1.225rem;
+  // color: white;
+  // text-align: center;
+  // text-transform: uppercase;
+  background: url("../assets/plantly-white.png") no-repeat;
+  width: 115px;
+  height: 43px;
+  margin: 0 auto;
+  background-size: cover;
+}
+
 .avatar {
   width: 46px;
   height: 46px;
   border-radius: 100%;
   background: grey;
-  background-size: 46px 46px;
+  background-size: cover;
+  background-position: center;
   flex-shrink: 0;
 }
 

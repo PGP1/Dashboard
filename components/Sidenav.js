@@ -206,6 +206,7 @@ class Sidenav extends Component {
 
     return (
       <div className={style.container}>
+        <div className={style.logo}/>
         <div className={style.userDetails}>
           <div
             className={style.avatar}

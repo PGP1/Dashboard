@@ -53,9 +53,9 @@ class Dashboard extends Component {
                             <Nav isAuthenticated={isAuthenticated} devices={devices} 
                             setDevice={setDevice} page={page} device={device} 
                             userDetail={userDetail} socketMessage={socketMessage}/>
-                            
-                            <div className={style.purpleBackground} />
+                            {/* <div className={style.purpleBackground} /> */}
                             <div className={style.dashboardGridContent}>
+                                <h1 class="title">Dashboard</h1>
                                 { page == 1 ? this.renderModules(content.slice(0, 1)) : ""}
                                 <div className={style.left}>
                                     {page == 1 ? this.renderModules(content.slice(1, 5)) : this.renderModules(content.slice(4, 6))}

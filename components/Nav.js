@@ -26,17 +26,23 @@ class Nav extends Component {
 
         return (
             <div className={[style.nav, "flex", "align-center"].join(" ")}>
-                <div className={style.logo}>Plantly.</div>
+                {this.props?.page == 0 && <div className={style.logo}>Plantly.</div>}
                 {this.props ?.isAuthenticated && <>
                     {this.props ?.page !== 0 &&
                         <>
-                            <div className={style.topDropdown}>
-                                <Dropdown selection placeholder='Select Device' options={options} defaultValue={this.props ?.device}
+                            <div class={"ui action input left icon " + style.search}>
+                                <i className="search icon"></i>
+                                <input type="text" className="customInput" placeholder="Search..."/>
+                                <button className="ui button d-purple">Search</button>
+                            </div>
+                            <div class="flex align-center space-between">
+                                <Dropdown placeholder='Select Device' options={options} className={style.deviceSelect} defaultValue={this.props ?.device}
                                     onChange={(e, { value }) => this.props ?.setDevice(value)} />
+                                <div className={style.topNotification} onClick={this.togglePopup.bind(this)}>
+                                    {this.state.showPopup ? <NotificationPopup socketMessage={socketMessage} closePopup={this.togglePopup.bind(this)} /> : null}
+                                </div>
                             </div>
-                            <div className={style.topNotification}><Notifications style={{ cursor: 'pointer' }} onClick={this.togglePopup.bind(this)} />
-                                {this.state.showPopup ? <NotificationPopup socketMessage={socketMessage} closePopup={this.togglePopup.bind(this)} /> : null}
-                            </div>
+                          
                         </>}
 
                     {this.props ?.page == 0 &&

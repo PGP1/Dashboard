@@ -10,7 +10,6 @@ class Layout extends Component {
     render() {
         const { isAuthenticated, userDetail, page, device, devices, 
             setDevice, socketMessage, children} = this.props;
-        console.log("devices", devices);
 
         return (
             <>            

@@ -143,9 +143,34 @@ canvas {
 
 .layout {
     display: grid;
-    grid-template-areas:    "sidebar navbar" 
+    grid-template-areas:    "sidebar content" 
                             "sidebar content";
     grid-template-columns: min-content 1fr;
     grid-template-rows: min-content min-content 1fr;
     min-height: 100vh;
+}
+
+
+.d-purple{
+    background-color: #727cf5!important;
+    border-color: #727cf5!important;
+    box-shadow: 0 2px 6px 0 rgba(114,124,245,.5)!important;
+    color: white!important;
+    &:hover {
+        background-color: #4e5bf2!important;
+        border-color: #4250f2!important;
+    }
+}
+
+.customInput {
+    color: #6c757d!important;
+    background-color: #f1f3fa!important;
+    border: 0!important;
+}
+
+.title {
+    font-size: 18px;
+    color: #6c757d;
+    line-height: 30px;
+    margin-left: 1px;
 }
