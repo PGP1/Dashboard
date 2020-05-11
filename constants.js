@@ -37,4 +37,4 @@ export const SCALE = {
     humidity:100,
     ldr: 255
 }
-export const SOCKET = "http://13.239.115.39:42069/"
+export const SOCKET = "https://13.239.115.39:42069/"
