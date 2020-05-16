@@ -144,10 +144,10 @@ canvas {
 .dashboard-layout {
     display: grid;
     grid-template-areas: "sidebar content";
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: 70px 1fr;
     min-height: 100vh;
-    @include breakpoint(xs) {
-        grid-template-columns: 70px 1fr;
+    @include breakpoint(sm) {
+        grid-template-columns: min-content 1fr;
     }
 }
 
