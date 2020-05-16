@@ -31,21 +31,47 @@ class Dashboard extends Component {
     renderModules = (modules) => {
         const { credentials, user, device } = this.props;
 
-        return modules.map(({ title, render, Element }) => { 
-            return <Element title={title} credentials={credentials} user={user} device={device}> 
-                {/* { React.cloneElement(render, { credentials, user, device }) }  */}
+        return modules.map(({ title, render, Element }, index) => { 
+            return <Element key={index} title={title} credentials={credentials} user={user} device={device}> 
                 { render }
             </Element>
         });
-    }
+    };
+
+    // renderModule = (module, index=0) => {
+    //     const { credentials, user, device } = this.props;
+    //     const { title, render, Element } = module;
+    //     return <Element key={index} title={title} credentials={credentials}
+    //     user={user} device={device}>  { render }  </Element>;
+    // }
+
+    // renderModules = (modules) => {
+    //     let render = [];
+
+    //     for(let i = 0; i < content.length; i++) {
+    //         let module = content[i];
+    //         let el = this.renderModule(module, i);
+                        
+    //         if(i % 2 == 0) {
+    //             render.push(<div class={style.slot}>)
+    //             render.push(el)
+    //             render.push(</div>);
+    //         }
+    //     }
+
+    //     return render;
+    // }
+
+
     
     render() {
         const { isAuthenticated, devices, device, credentials, user, page, 
             setDevice, useDetail, socketMessage, light, setPage, userDetail} = this.props;
 
+       
         console.log(content)
         return (
-            <>
+            <div className="dashboard-layout">
                 {device && credentials && user &&
                     <>
                         <Sidenav setPage={setPage} page={page} setUserData={this.props.setUserData} userDetail={userDetail}/>
@@ -55,20 +81,30 @@ class Dashboard extends Component {
                             userDetail={userDetail} socketMessage={socketMessage}/>
                             {/* <div className={style.purpleBackground} /> */}
                             <div className={style.dashboardGridContent}>
-                                <h1 class="title">Dashboard</h1>
-                                { page == 1 ? this.renderModules(content.slice(0, 1)) : ""}
-                                <div className={style.left}>
+                                <h1 className="title">Dashboard</h1>
+                                {/* { page == 1 ? this.renderModules(content.slice(0, 1)) : ""} */}
+                                {/* <div className={style.left}>
                                     {page == 1 ? this.renderModules(content.slice(1, 5)) : this.renderModules(content.slice(4, 6))}
                                 </div>
 
                                 <div className={style.right}>
                                     {page == 1 ? this.renderModules(content.slice(3, 4)) : this.renderModules(content.slice(6, content.length))}
+                                </div> */}
+                                <div className={style.item}>
+                                    { page == 1 ? this.renderModules(content.slice(0 , 1)) : ""}
                                 </div>
+                                <div className={style.items}>
+                                    <div className="flex">
+                                        { page == 1 ? this.renderModules(content.slice(1, 3)) : ""}
+                                    </div>
+                                </div>
+
+                                {/* { page == 1 ? this.renderModules(content.slice(1, 5)) : this.renderModules(content.slice(4, 6)) } */}
                             </div>
                         </div>
                     </>
                 }
-            </>
+            </div>
         )
     }
 }

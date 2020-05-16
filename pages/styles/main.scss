@@ -141,12 +141,10 @@ canvas {
     border-color: transparent !important;
 }
 
-.layout {
+.dashboard-layout {
     display: grid;
-    grid-template-areas:    "sidebar content" 
-                            "sidebar content";
+    grid-template-areas:    "sidebar content";
     grid-template-columns: min-content 1fr;
-    grid-template-rows: min-content min-content 1fr;
     min-height: 100vh;
 }
 

@@ -30,12 +30,12 @@ class Nav extends Component {
                 {this.props ?.isAuthenticated && <>
                     {this.props ?.page !== 0 &&
                         <>
-                            <div class={"ui action input left icon " + style.search}>
+                            <div className={"ui action input left icon " + style.search}>
                                 <i className="search icon"></i>
                                 <input type="text" className="customInput" placeholder="Search..."/>
                                 <button className="ui button d-purple">Search</button>
                             </div>
-                            <div class="flex align-center space-between">
+                            <div className="flex align-center space-between">
                                 <Dropdown placeholder='Select Device' options={options} className={style.deviceSelect} defaultValue={this.props ?.device}
                                     onChange={(e, { value }) => this.props ?.setDevice(value)} />
                                 <div className={style.topNotification} onClick={this.togglePopup.bind(this)}>
