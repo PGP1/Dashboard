@@ -14,11 +14,11 @@ class Index extends Component {
         super(props);
         this.state = {
             isAuthenticated: false,
-            page: 1, // NOTE initial 0
+            page: 0, // NOTE initial 0
             userDetail: {},
             user: null,
             credentials: null,
-            device: "c0cb03a49a754a17b07b85c4d4f19039", // NOTE inital ""
+            device: "", // NOTE inital ""
             devices: [],
             socketMessage: []
         }

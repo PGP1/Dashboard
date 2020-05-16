@@ -36,7 +36,7 @@ class Nav extends Component {
                                 <button className="ui button d-purple">Search</button>
                             </div>
                             <div className="flex align-center space-between">
-                                <Dropdown placeholder='Select Device' options={options} className={style.deviceSelect} defaultValue={this.props ?.device}
+                                <Dropdown placeholder='Select Device' options={options} className={[style.deviceSelect].join(" ")} defaultValue={this.props ?.device}
                                     onChange={(e, { value }) => this.props ?.setDevice(value)} />
                                 <div className={style.topNotification} onClick={this.togglePopup.bind(this)}>
                                     {this.state.showPopup ? <NotificationPopup socketMessage={socketMessage} closePopup={this.togglePopup.bind(this)} /> : null}

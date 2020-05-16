@@ -81,7 +81,10 @@ class Dashboard extends Component {
                             userDetail={userDetail} socketMessage={socketMessage}/>
                             {/* <div className={style.purpleBackground} /> */}
                             <div className={style.dashboardGridContent}>
-                                <h1 className="title">Dashboard</h1>
+                                <div className="flex space-between align-center">
+                                    <h1 className="title">Dashboard </h1>
+                                    <h1 className="subtitle textOverflow">{device}</h1>
+                                </div>
                                 {/* { page == 1 ? this.renderModules(content.slice(0, 1)) : ""} */}
                                 {/* <div className={style.left}>
                                     {page == 1 ? this.renderModules(content.slice(1, 5)) : this.renderModules(content.slice(4, 6))}
@@ -95,7 +98,15 @@ class Dashboard extends Component {
                                 </div>
                                 <div className={style.items}>
                                     <div className="flex">
-                                        { page == 1 ? this.renderModules(content.slice(1, 3)) : ""}
+                                        { page == 1 ? this.renderModules(content.slice(1, 3)) : this.renderModules(content.slice(4, 6))}
+                                    </div>
+                                </div>
+                                <div className={style.item}>
+                                    { page == 1 ? this.renderModules(content.slice(3, 4)) : ""}
+                                </div>
+                                <div className={style.items}>
+                                    <div className="flex">
+                                        { page !== 1 ? this.renderModules(content.slice(6, content.length)) : "" }
                                     </div>
                                 </div>
 
