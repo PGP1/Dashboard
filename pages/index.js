@@ -20,7 +20,10 @@ class Index extends Component {
             credentials: null,
             device: "", // NOTE inital ""
             devices: [],
-            socketMessage: []
+            socketMessage: [],
+            /* For modal add device open/close */
+            addDeviceModalOpen: false,
+            addDeviceModalError: null,
         }
         this.socket = io(SOCKET);
     }
@@ -77,13 +80,54 @@ class Index extends Component {
         this.setState({ userDetail });
     }
 
+    /* Add device modal codes*/
+    openDeviceModal = () => {
+        this.setState({ addDeviceModalOpen: true })
+    }
+
+    closeDeviceModal = () => {
+        this.setState({ addDeviceModalOpen: false })
+    }
+
+    handleAddDevice = () => {
+        const { addDeviceName, user } = this.state;
+        APIController.linkMyDevice(user.idToken, addDeviceName).then(res => {
+            this.closeDeviceModal();
+            this.fetchDevice(user);
+        }).catch(err => {
+            if(err.response) {
+                this.setState({ addDeviceModalError: err.response.data.message });
+            }
+        })
+    };
+
+    handleAddDeviceChange = (event) => {
+        this.setState({ addDeviceName: event.target.value }) ;
+    }
+
+    handleUnlinkDevice = (device) => {
+        const { user } = this.state;
+        APIController.unlinkDevice(user.idToken, device)
+        .then(res => { this.fetchDevice(this.props.user) })
+        .catch(err => console.log("Unlink Error", err));
+    }
+
     conditionRender() {
-        const { page, user, device, devices, userDetail, credentials } = this.state;
+        const { page, user, device, devices, userDetail, credentials, 
+                addDeviceModalOpen, addDeviceModalError } = this.state;
         switch(page) {
             case 0:
                 return <SelectDevices user={user} devices={devices} props={this.props} 
-                                      setDevice={this.setDevice} 
-                                      fetchDevice={this.fetchDevice} userDetail={userDetail}/>
+                                      setDevice={this.setDevice}
+                                      openDeviceModal={this.openDeviceModal}
+                                      addDeviceModalError={addDeviceModalError}
+                                      addDeviceModalOpen={addDeviceModalOpen}
+                                      closeDeviceModal={this.closeDeviceModal}
+                                      handleUnlinkDevice={this.handleUnlinkDevice}
+                                      handleAddDeviceChange={this.handleAddDeviceChange}
+                                      handleAddDevice={this.handleAddDevice}
+                                      fetchDevice={this.fetchDevice} 
+                                      userDetail={userDetail}/>
             default:
                 return <Dashboard credentials={credentials} userDetail={userDetail} user={user} 
                             page={page} setUserData={this.setUserData}
