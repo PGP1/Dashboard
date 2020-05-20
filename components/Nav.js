@@ -21,7 +21,7 @@ class Nav extends Component {
 
     render() {
 
-        const { userDetail, devices, setDevice, page, socketMessage } = this.props;
+        const { userDetail, devices, setDevice, page, socketMessage, handleSearchInput } = this.props;
         const options = devices ?.map(d => { return { key: d, text: d, value: d } });
 
         return (
@@ -32,7 +32,7 @@ class Nav extends Component {
                         <>
                             <div className={"ui action input left icon " + style.search}>
                                 <i className="search icon"></i>
-                                <input type="text" className="customInput" placeholder="Search..."/>
+                                <input type="text" className="customInput" placeholder="Search..." onChange={handleSearchInput}/>
                                 <button className="ui button d-purple">Search</button>
                             </div>
                             <div className={"flex align-center space-between " + style.items}>

@@ -25,6 +25,8 @@ class Index extends Component {
             /* For modal add device open/close */
             addDeviceModalOpen: false,
             addDeviceModalError: null,
+            /* Search Dashboard */
+            searchTerms: "",
         }
         this.socket = io(SOCKET);
     }
@@ -114,9 +116,14 @@ class Index extends Component {
         .catch(err => console.log("Unlink Error", err));
     }
 
+    /* Handle search inputs */
+    handleSearchInput = (event) => {
+        this.setState({ searchTerms: event.target.value });
+    }
+
     conditionRender() {
         const { page, user, device, devices, userDetail, credentials, 
-                addDeviceModalOpen, addDeviceModalError } = this.state;
+                addDeviceModalOpen, addDeviceModalError, searchTerms } = this.state;
         switch(page) {
             case 0:
                 return <SelectDevices user={user} devices={devices} props={this.props} 
@@ -135,6 +142,8 @@ class Index extends Component {
                             page={page} setUserData={this.setUserData}
                             setDevice={this.setDevice} device={device} 
                             openDeviceModal={this.openDeviceModal}
+                            handleSearchInput={this.handleSearchInput}
+                            searchTerms={searchTerms}
                             setUser={this.setUser} setPage={this.setPage}/>
         }
     }

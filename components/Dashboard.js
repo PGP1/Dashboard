@@ -41,9 +41,10 @@ class Dashboard extends Component {
     
     render() {
         const { isAuthenticated, devices, device, credentials, user, page, 
-            setDevice, useDetail, socketMessage, light, setPage, userDetail} = this.props;
-
-       
+            setDevice, useDetail, socketMessage, light, setPage, userDetail, 
+            openDeviceModal, handleSearchInput, searchTerms} = this.props;
+        
+        let contents = content.filter(e => e.title.toLowerCase().indexOf(searchTerms.toLowerCase()) > -1)
         return (
             <div className="dashboard-layout">
                 {device && credentials && user &&
@@ -51,11 +52,12 @@ class Dashboard extends Component {
                         <Sidenav setPage={setPage} page={page} setUserData={this.props.setUserData} userDetail={userDetail}/>
                         <div className={style.dashboardContent}>
                             <Nav isAuthenticated={isAuthenticated} devices={devices} 
-                                openDeviceModal={this.props.openDeviceModal}
+                                openDeviceModal={openDeviceModal}
                                 setDevice={setDevice} page={page} device={device} 
+                                handleSearchInput={handleSearchInput}
                                 userDetail={userDetail} socketMessage={socketMessage}/>
                             {/* <div className={style.purpleBackground} /> */}
-                            <div className={style.dashboardGridContent}>
+                            <div className={style.dashboardGridContent + (searchTerms.length > 0 ? " " + style.isSearch : "")}>
                                 <div className="flex space-between align-center">
                                     <h1 className="title">Dashboard </h1>
                                     <h1 className="subtitle textOverflow">{device}</h1>
@@ -69,19 +71,19 @@ class Dashboard extends Component {
                                     {page == 1 ? this.renderModules(content.slice(3, 4)) : this.renderModules(content.slice(6, content.length))}
                                 </div> */}
                                 <div className={style.item}>
-                                    { page == 1 ? this.renderModules(content.slice(0 , 1)) : ""}
+                                    { page == 1 ? this.renderModules(contents.slice(0 , 1)) : ""}
                                 </div>
                                 <div className={style.items}>
                                     <div className="flex">
-                                        { page == 1 ? this.renderModules(content.slice(1, 3)) : this.renderModules(content.slice(4, 6))}
+                                        { page == 1 ? this.renderModules(contents.slice(1, 3)) : this.renderModules(contents.slice(4, 6))}
                                     </div>
                                 </div>
                                 <div className={style.item}>
-                                    { page == 1 ? this.renderModules(content.slice(3, 4)) : ""}
+                                    { page == 1 ? this.renderModules(contents.slice(3, 4)) : ""}
                                 </div>
                                 <div className={style.items}>
                                     <div className="flex">
-                                        { page !== 1 ? this.renderModules(content.slice(6, content.length)) : "" }
+                                        { page !== 1 ? this.renderModules(contents.slice(6, contents.length)) : "" }
                                     </div>
                                 </div>
 
