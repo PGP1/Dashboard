@@ -3,7 +3,7 @@ import style from './styles/Nav.module.scss';
 import AWSController from '../api/AWSController';
 import { useState } from 'react';
 import { Dropdown, Button, Icon } from 'semantic-ui-react';
-import Notifications from './assets/Notifications.svg';
+import AddDeviceIcon from './assets/AddDevice.svg';
 import NotificationPopup from './NotificationPopup';
 
 class Nav extends Component {
@@ -35,9 +35,10 @@ class Nav extends Component {
                                 <input type="text" className="customInput" placeholder="Search..."/>
                                 <button className="ui button d-purple">Search</button>
                             </div>
-                            <div className="flex align-center space-between">
+                            <div className={"flex align-center space-between " + style.items}>
                                 <Dropdown placeholder='Select Device' options={options} className={[style.deviceSelect].join(" ")} defaultValue={this.props ?.device}
                                     onChange={(e, { value }) => this.props ?.setDevice(value)} />
+                                <AddDeviceIcon onClick={this.props.openDeviceModal}/>
                                 <div className={style.topNotification} onClick={this.togglePopup.bind(this)}>
                                     {this.state.showPopup ? <NotificationPopup socketMessage={socketMessage} closePopup={this.togglePopup.bind(this)} /> : null}
                                 </div>

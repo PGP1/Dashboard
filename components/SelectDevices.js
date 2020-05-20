@@ -9,47 +9,7 @@ import { API } from 'aws-amplify';
 
 
 class SelectDevices extends Component {
-    constructor(props) {
-        super(props);
-        // this.state = {
-        //     open: false,
-        //     error: false,
-        //     errorMsg: ""
-        // }
-    }
-    // handleDeviceChange = (event) => {
-    //     this.setState({ deviceName: event.target.value }) ;
-    // };
 
-    // handleAddDevice = () => {
-    //     const { deviceName } = this.state;
-    //     APIController.linkMyDevice(this.props.user.idToken, deviceName).then(res => {
-    //         this.close();
-    //         this.props.fetchDevice(this.props.user);
-    //     }).catch(err => {
-    //         if(err.response) {
-    //             this.setState({error: true, errorMsg: err.response.data.message });
-    //         }
-    //     })
-    // };
-
-    // handleUnlinkDevice = (device) => {
-     
-    //     APIController.unlinkDevice(this.props.user.idToken, device)
-    //     .then(res => { console.log(this.props.user)
-    //         this.props.fetchDevice(this.props.user)})
-    //     .catch(err => console.log(err));
-
-    // }
-
-    // show = (size, dimmer) => () => {
-    //     this.setState({ size, dimmer, open: true })
-    // };
-
-    // close = () => {
-    //     this.setState({ open: false })
-    // };
-    
     render() {
         const {  devices, setDevice, handleUnlinkDevice,
                 handleAddDevice, openDeviceModal, closeDeviceModal, 
@@ -90,11 +50,6 @@ class SelectDevices extends Component {
                                     Add device
                                 </button>
                             </div>
-                            <AddDevice addDeviceModalOpen={addDeviceModalOpen} 
-                                       handleAddDevice={handleAddDevice}
-                                       addDeviceModalError={addDeviceModalError}
-                                       handleAddDeviceChange={handleAddDeviceChange}
-                                       closeDeviceModal={closeDeviceModal}/>
                         </div>
                     </div>
                 </div>

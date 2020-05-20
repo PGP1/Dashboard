@@ -38,38 +38,12 @@ class Dashboard extends Component {
         });
     };
 
-    // renderModule = (module, index=0) => {
-    //     const { credentials, user, device } = this.props;
-    //     const { title, render, Element } = module;
-    //     return <Element key={index} title={title} credentials={credentials}
-    //     user={user} device={device}>  { render }  </Element>;
-    // }
-
-    // renderModules = (modules) => {
-    //     let render = [];
-
-    //     for(let i = 0; i < content.length; i++) {
-    //         let module = content[i];
-    //         let el = this.renderModule(module, i);
-                        
-    //         if(i % 2 == 0) {
-    //             render.push(<div class={style.slot}>)
-    //             render.push(el)
-    //             render.push(</div>);
-    //         }
-    //     }
-
-    //     return render;
-    // }
-
-
     
     render() {
         const { isAuthenticated, devices, device, credentials, user, page, 
             setDevice, useDetail, socketMessage, light, setPage, userDetail} = this.props;
 
        
-        console.log(content)
         return (
             <div className="dashboard-layout">
                 {device && credentials && user &&
@@ -77,8 +51,9 @@ class Dashboard extends Component {
                         <Sidenav setPage={setPage} page={page} setUserData={this.props.setUserData} userDetail={userDetail}/>
                         <div className={style.dashboardContent}>
                             <Nav isAuthenticated={isAuthenticated} devices={devices} 
-                            setDevice={setDevice} page={page} device={device} 
-                            userDetail={userDetail} socketMessage={socketMessage}/>
+                                openDeviceModal={this.props.openDeviceModal}
+                                setDevice={setDevice} page={page} device={device} 
+                                userDetail={userDetail} socketMessage={socketMessage}/>
                             {/* <div className={style.purpleBackground} /> */}
                             <div className={style.dashboardGridContent}>
                                 <div className="flex space-between align-center">

@@ -7,6 +7,7 @@ import APIController from "../api/APIController";
 import Router from "next/router";
 import Dashboard from "../components/Dashboard";
 import io from "socket.io-client";
+import AddDevice from "../components/modals/AddDevice"
 import { SOCKET } from "../constants";
 
 class Index extends Component {
@@ -82,6 +83,7 @@ class Index extends Component {
 
     /* Add device modal codes*/
     openDeviceModal = () => {
+        console.log("OPEN MODALLLLL")
         this.setState({ addDeviceModalOpen: true })
     }
 
@@ -132,6 +134,7 @@ class Index extends Component {
                 return <Dashboard credentials={credentials} userDetail={userDetail} user={user} 
                             page={page} setUserData={this.setUserData}
                             setDevice={this.setDevice} device={device} 
+                            openDeviceModal={this.openDeviceModal}
                             setUser={this.setUser} setPage={this.setPage}/>
         }
     }
@@ -142,6 +145,12 @@ class Index extends Component {
         return (
             <>
                 {isAuthenticated && devices &&
+                    <>
+                    <AddDevice addDeviceModalOpen={this.state.addDeviceModalOpen} 
+                                handleAddDevice={this.handleAddDevice}
+                                addDeviceModalError={this.state.addDeviceModalError}
+                                handleAddDeviceChange={this.handleAddDeviceChange}
+                                closeDeviceModal={this.closeDeviceModal}/>
                     <Layout isAuthenticated={isAuthenticated} page={page} 
                             device={device}
                             userDetail={userDetail}
@@ -149,6 +158,7 @@ class Index extends Component {
                             setDevice={this.setDevice}>
                         {this.conditionRender()}
                     </Layout>
+                    </>
                 }
             </>)
     }
