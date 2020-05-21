@@ -3,18 +3,37 @@
 .container {
   font-family: Poppins;
   color: #ffffff;
-  width: 100%;
-  max-width: 256px;
-  height: 100%;
   background-color: #334459;
-  left: 0;
-  position: fixed;
-  padding: $margin;
+  padding: $margin/2 $margin/2;
+  grid-area: sidebar;
+  height: 100vh;
+  display: block;
+  position: sticky;
+  top: 0;
+  // position: relative;
+
+  @include breakpoint(sm) {
+    padding: $margin/2 $margin;
+  }
+
+  svg {
+    opacity: .7;
+    &:hover {
+      opacity:1;
+    }
+  }
 }
 
+.menuItem {
+  display: none;
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+}
 
 .userDetails {
-  margin-top: 85px;
+  margin-top: 40px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -25,12 +44,33 @@
   }
 }
 
+.logo {
+  // font-weight: bold;
+  // font-family: Lato;
+  // font-size: 1.225rem;
+  // color: white;
+  // text-align: center;
+  // text-transform: uppercase;
+  background: url("../assets/plantlogo.png") no-repeat;
+  width: 43px;
+  height: 56px;
+  margin: 0 auto;
+  background-size: cover;
+  @include breakpoint(sm) {
+    background: url("../assets/plantly-white.png") no-repeat;
+    width: 115px;
+    height: 43px;
+    background-size: cover;
+  }
+}
+
 .avatar {
   width: 46px;
   height: 46px;
   border-radius: 100%;
   background: grey;
-  background-size: 46px 46px;
+  background-size: cover;
+  background-position: center;
   flex-shrink: 0;
 }
 
@@ -60,6 +100,13 @@
   & li {
     list-style: none;
     line-height: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(sm) {
+      justify-content: initial;
+    }
     &.active {
       &::before {
         content: "";
@@ -79,6 +126,7 @@
   }
 }
 
+
 .bottom {
   position: absolute;
   bottom: 0;
@@ -89,10 +137,22 @@
   line-height: normal;
   font-weight: 500;
   font-size: 0.9375rem;
+  width: 100%;
+  left: 0;
 
+  @include breakpoint(sm) {
+    left: initial;
+  }
   & li {
     list-style: none;
     line-height: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(sm) {
+      justify-content: initial;
+    }
 
     & .sidebar {
       font-stretch: normal;

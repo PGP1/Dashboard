@@ -18,7 +18,7 @@ class DeviceStatus extends Component {
             { data && <>
                     <div className={style.grid}>
                             <div>Device ID</div>
-                            <div style={{ color: "#BDBDBD" }}>{device}</div>
+                            <div className={"textOverflow"} style={{ color: "#BDBDBD" }}>{device}</div>
                             <div>Uptime</div>
                             <div style={{ color: "#BDBDBD" }}>{moment.utc(uptime*1000).format('HH:mm:ss')} hours</div>
                     </div>

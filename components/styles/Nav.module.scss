@@ -1,20 +1,15 @@
 @import "../../pages/styles/_constant";
 
 .nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
-  padding: $margin;
-  z-index: $z-highest;
+  padding: 20px 22px;
+  z-index: $z-2ndOrder;
   display: flex;
   justify-content: space-between;
-
-  .logo {
-    font-weight: bold;
-    font-family: Lato;
-    font-size: 1.125rem;
-    color: white;
-  }
+  background: white;
+  box-shadow: 0 0 35px 0 rgba(154,161,171,.15);
 
   .accountHolder {
     display: flex;
@@ -31,5 +26,31 @@
     margin-right: 0.5em;
     border-radius: 100%;
     background-size: 30px 30px;
+  }
+}
+
+.topNotification {
+  background: url("../assets/Notifications.svg") no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  color: #98a6ad;
+}
+
+
+.search {
+  & input {
+    width: 100%;
+  }
+}
+
+.deviceSelect {
+  color: #98a6ad;
+}
+
+.items {
+  & > *:not(:last-child)  {
+    margin-right: 2em;
+    cursor: pointer;
   }
 }
