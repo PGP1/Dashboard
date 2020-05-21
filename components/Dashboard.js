@@ -56,20 +56,13 @@ class Dashboard extends Component {
                                 setDevice={setDevice} page={page} device={device} 
                                 handleSearchInput={handleSearchInput}
                                 userDetail={userDetail} socketMessage={socketMessage}/>
-                            {/* <div className={style.purpleBackground} /> */}
+
                             <div className={style.dashboardGridContent + (searchTerms.length > 0 ? " " + style.isSearch : "")}>
                                 <div className="flex space-between align-center">
                                     <h1 className="title">Dashboard </h1>
                                     <h1 className="subtitle textOverflow">{device}</h1>
                                 </div>
-                                {/* { page == 1 ? this.renderModules(content.slice(0, 1)) : ""} */}
-                                {/* <div className={style.left}>
-                                    {page == 1 ? this.renderModules(content.slice(1, 5)) : this.renderModules(content.slice(4, 6))}
-                                </div>
-
-                                <div className={style.right}>
-                                    {page == 1 ? this.renderModules(content.slice(3, 4)) : this.renderModules(content.slice(6, content.length))}
-                                </div> */}
+       
                                 <div className={style.item}>
                                     { page == 1 ? this.renderModules(contents.slice(0 , 1)) : ""}
                                 </div>
@@ -86,8 +79,6 @@ class Dashboard extends Component {
                                         { page !== 1 ? this.renderModules(contents.slice(6, contents.length)) : "" }
                                     </div>
                                 </div>
-
-                                {/* { page == 1 ? this.renderModules(content.slice(1, 5)) : this.renderModules(content.slice(4, 6)) } */}
                             </div>
                         </div>
                     </>
