@@ -47,6 +47,11 @@ class Index extends Component {
             AWSController.getCurrentCredientials().then(d => {
                 const { Credentials } = d.data;
                 this.setState({ credentials: Credentials })
+                AWSController.getLiveVideo(Credentials).then(res => {
+                    console.log("res", res)
+                    this.setState({ liveVideo: res.HLSStreamingSessionURL }, 
+                        () => console.log("Live video", this.state.liveVideo))
+                })
             });
         }).catch(err => Router.push("/login"));
     }
@@ -123,7 +128,7 @@ class Index extends Component {
 
     conditionRender() {
         const { page, user, device, devices, userDetail, credentials, 
-                addDeviceModalOpen, addDeviceModalError, searchTerms } = this.state;
+                addDeviceModalOpen, addDeviceModalError, searchTerms, liveVideo} = this.state;
         switch(page) {
             case 0:
                 return <SelectDevices user={user} devices={devices} props={this.props} 
@@ -144,6 +149,7 @@ class Index extends Component {
                             openDeviceModal={this.openDeviceModal}
                             handleSearchInput={this.handleSearchInput}
                             searchTerms={searchTerms}
+                            liveVideo={liveVideo}
                             setUser={this.setUser} setPage={this.setPage}/>
         }
     }
