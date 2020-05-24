@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import style from "./styles/Sidenav.module.scss";
 import DashboardIcon from "./assets/Dashboard.svg";
 import DeviceIcon from "./assets/Device.svg";
+import ExitIcon from "./assets/Exit.svg";
+
 import SettingsIcon from "./assets/Settings.svg";
 import APIController from "../api/APIController";
 import AWSController from "../api/AWSController";
@@ -226,7 +228,7 @@ class Sidenav extends Component {
                 className={"flex align-center space"}
                 onClick={() => this.props.setPage(1)}
               >
-                <DashboardIcon /> Dashboard
+                <DashboardIcon /> <span className={style.menuItem}>Dashboard</span>
               </a>
             </li>
             <li className={this.props.page == 2 ? style.active : ""}>
@@ -235,7 +237,7 @@ class Sidenav extends Component {
                 className={"flex align-center space"}
                 onClick={() => this.props.setPage(2)}
               >
-                <DeviceIcon /> Devices
+                <DeviceIcon /> <span className={style.menuItem}>Devices</span>
               </a>
             </li>
           </ul>
@@ -248,7 +250,7 @@ class Sidenav extends Component {
                 onClose={this.toggle}
                 trigger={
                   <a onClick={this.toggle} href="#" className={"flex align-center space"}>
-                    <SettingsIcon /> User Settings
+                    <SettingsIcon /> <span className={style.menuItem}>User Settings</span>
                   </a>
                 }
               >
@@ -269,8 +271,8 @@ class Sidenav extends Component {
               </Modal>
             </li>
             <li>
-              <a onClick={() => AWSController.signOut()} href="/">
-                Logout
+              <a onClick={() => AWSController.signOut()} href="/" className={"flex align-center space"}>
+                <ExitIcon/> <span className={style.menuItem}>Logout</span>
               </a>
             </li>
           </ul>

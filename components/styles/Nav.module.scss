@@ -5,7 +5,7 @@
   top: 0;
   width: 100%;
   padding: 20px 22px;
-  z-index: $z-highest;
+  z-index: $z-2ndOrder;
   display: flex;
   justify-content: space-between;
   background: white;
@@ -46,5 +46,11 @@
 
 .deviceSelect {
   color: #98a6ad;
-  margin-right: 2em;
+}
+
+.items {
+  & > *:not(:last-child)  {
+    margin-right: 2em;
+    cursor: pointer;
+  }
 }
