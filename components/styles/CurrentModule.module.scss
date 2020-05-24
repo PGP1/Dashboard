@@ -18,15 +18,6 @@
 
 .holder {
     margin: 1em auto;
-    flex-wrap: wrap;
-    & > div {
-        flex-basis: 100%;
-        // flex: initial;
-        @include breakpoint(md) {
-            flex: 1;
-            margin-bottom: 1em;
-        }
-    }
 }
 
 .small { font-size: 2em; }

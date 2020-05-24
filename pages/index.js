@@ -7,7 +7,6 @@ import APIController from "../api/APIController";
 import Router from "next/router";
 import Dashboard from "../components/Dashboard";
 import io from "socket.io-client";
-import AddDevice from "../components/modals/AddDevice"
 import { SOCKET } from "../constants";
 
 class Index extends Component {
@@ -15,18 +14,13 @@ class Index extends Component {
         super(props);
         this.state = {
             isAuthenticated: false,
-            page: 0, // NOTE initial 0
+            page: 0,
             userDetail: {},
             user: null,
             credentials: null,
-            device: "", // NOTE inital ""
+            device: "",
             devices: [],
-            socketMessage: [],
-            /* For modal add device open/close */
-            addDeviceModalOpen: false,
-            addDeviceModalError: null,
-            /* Search Dashboard */
-            searchTerms: "",
+            socketMessage: []
         }
         this.socket = io(SOCKET);
     }
@@ -83,67 +77,17 @@ class Index extends Component {
         this.setState({ userDetail });
     }
 
-    /* Add device modal codes*/
-    openDeviceModal = () => {
-        console.log("OPEN MODALLLLL")
-        this.setState({ addDeviceModalOpen: true })
-    }
-
-    closeDeviceModal = () => {
-        this.setState({ addDeviceModalOpen: false })
-    }
-
-    handleAddDevice = () => {
-        const { addDeviceName, user } = this.state;
-        APIController.linkMyDevice(user.idToken, addDeviceName).then(res => {
-            this.closeDeviceModal();
-            this.fetchDevice(user);
-        }).catch(err => {
-            if(err.response) {
-                this.setState({ addDeviceModalError: err.response.data.message });
-            }
-        })
-    };
-
-    handleAddDeviceChange = (event) => {
-        this.setState({ addDeviceName: event.target.value }) ;
-    }
-
-    handleUnlinkDevice = (device) => {
-        const { user } = this.state;
-        APIController.unlinkDevice(user.idToken, device)
-        .then(res => { this.fetchDevice(this.props.user) })
-        .catch(err => console.log("Unlink Error", err));
-    }
-
-    /* Handle search inputs */
-    handleSearchInput = (event) => {
-        this.setState({ searchTerms: event.target.value });
-    }
-
     conditionRender() {
-        const { page, user, device, devices, userDetail, credentials, 
-                addDeviceModalOpen, addDeviceModalError, searchTerms } = this.state;
+        const { page, user, device, devices, userDetail, credentials } = this.state;
         switch(page) {
             case 0:
                 return <SelectDevices user={user} devices={devices} props={this.props} 
-                                      setDevice={this.setDevice}
-                                      openDeviceModal={this.openDeviceModal}
-                                      addDeviceModalError={addDeviceModalError}
-                                      addDeviceModalOpen={addDeviceModalOpen}
-                                      closeDeviceModal={this.closeDeviceModal}
-                                      handleUnlinkDevice={this.handleUnlinkDevice}
-                                      handleAddDeviceChange={this.handleAddDeviceChange}
-                                      handleAddDevice={this.handleAddDevice}
-                                      fetchDevice={this.fetchDevice} 
-                                      userDetail={userDetail}/>
+                                      setDevice={this.setDevice} 
+                                      fetchDevice={this.fetchDevice} userDetail={userDetail}/>
             default:
                 return <Dashboard credentials={credentials} userDetail={userDetail} user={user} 
                             page={page} setUserData={this.setUserData}
                             setDevice={this.setDevice} device={device} 
-                            openDeviceModal={this.openDeviceModal}
-                            handleSearchInput={this.handleSearchInput}
-                            searchTerms={searchTerms}
                             setUser={this.setUser} setPage={this.setPage}/>
         }
     }
@@ -154,12 +98,6 @@ class Index extends Component {
         return (
             <>
                 {isAuthenticated && devices &&
-                    <>
-                    <AddDevice addDeviceModalOpen={this.state.addDeviceModalOpen} 
-                                handleAddDevice={this.handleAddDevice}
-                                addDeviceModalError={this.state.addDeviceModalError}
-                                handleAddDeviceChange={this.handleAddDeviceChange}
-                                closeDeviceModal={this.closeDeviceModal}/>
                     <Layout isAuthenticated={isAuthenticated} page={page} 
                             device={device}
                             userDetail={userDetail}
@@ -167,7 +105,6 @@ class Index extends Component {
                             setDevice={this.setDevice}>
                         {this.conditionRender()}
                     </Layout>
-                    </>
                 }
             </>)
     }

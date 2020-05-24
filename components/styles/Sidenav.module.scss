@@ -4,33 +4,14 @@
   font-family: Poppins;
   color: #ffffff;
   background-color: #334459;
-  padding: $margin/2 $margin/2;
+  padding: $margin/2 $margin;
   grid-area: sidebar;
   height: 100vh;
   display: block;
   position: sticky;
   top: 0;
-  // position: relative;
-
-  @include breakpoint(sm) {
-    padding: $margin/2 $margin;
-  }
-
-  svg {
-    opacity: .7;
-    &:hover {
-      opacity:1;
-    }
-  }
 }
 
-.menuItem {
-  display: none;
-
-  @include breakpoint(sm) {
-    display: block;
-  }
-}
 
 .userDetails {
   margin-top: 40px;
@@ -51,17 +32,11 @@
   // color: white;
   // text-align: center;
   // text-transform: uppercase;
-  background: url("../assets/plantlogo.png") no-repeat;
-  width: 43px;
-  height: 56px;
+  background: url("../assets/plantly-white.png") no-repeat;
+  width: 115px;
+  height: 43px;
   margin: 0 auto;
   background-size: cover;
-  @include breakpoint(sm) {
-    background: url("../assets/plantly-white.png") no-repeat;
-    width: 115px;
-    height: 43px;
-    background-size: cover;
-  }
 }
 
 .avatar {
@@ -100,13 +75,6 @@
   & li {
     list-style: none;
     line-height: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @include breakpoint(sm) {
-      justify-content: initial;
-    }
     &.active {
       &::before {
         content: "";
@@ -126,7 +94,6 @@
   }
 }
 
-
 .bottom {
   position: absolute;
   bottom: 0;
@@ -137,22 +104,10 @@
   line-height: normal;
   font-weight: 500;
   font-size: 0.9375rem;
-  width: 100%;
-  left: 0;
 
-  @include breakpoint(sm) {
-    left: initial;
-  }
   & li {
     list-style: none;
     line-height: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @include breakpoint(sm) {
-      justify-content: initial;
-    }
 
     & .sidebar {
       font-stretch: normal;

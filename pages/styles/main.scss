@@ -141,14 +141,13 @@ canvas {
     border-color: transparent !important;
 }
 
-.dashboard-layout {
+.layout {
     display: grid;
-    grid-template-areas: "sidebar content";
-    grid-template-columns: 70px 1fr;
+    grid-template-areas:    "sidebar content" 
+                            "sidebar content";
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content min-content 1fr;
     min-height: 100vh;
-    @include breakpoint(sm) {
-        grid-template-columns: min-content 1fr;
-    }
 }
 
 
@@ -174,44 +173,4 @@ canvas {
     color: #6c757d;
     line-height: 30px;
     margin-left: 1px;
-    margin-top: 0;
-    margin-bottom: 0;
 }
-
-.subtitle {
-    font-size: 18px;
-    color: #6c757d;
-    line-height: 30px;
-    font-weight: 300;
-    margin-top: 0;
-    // margin-left: 1px;
-    @include breakpoint(xs) {
-        max-width: 200px;
-    }
-}
-
-.textOverflow {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.text {
-    @extend .textOverflow;
-    // max-width: 50px;
-    max-width: 0;
-    & + i {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        & + .menu {
-            left: auto!important;
-            right: 0;
-        }
-    }
-    @include breakpoint(md) {
-        max-width: 16rem;
-    }
-}
-
-
