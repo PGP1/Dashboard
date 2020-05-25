@@ -28,13 +28,14 @@ class Index extends Component {
             /* Search Dashboard */
             searchTerms: "",
         }
-        this.socket = io(SOCKET);
+        // this.socket = io(SOCKET);
     }
 
     componentDidMount() {
         this.getAllCrendentials();
-        this.socket.on('response', (socketMessage) => this.setState({ socketMessage }));
+        // this.socket.on('response', (socketMessage) => this.setState({ socketMessage }));
         this.setState({ isAuthenticating: false });
+        AWSController.webSocketTest().catch(err => console.log("err", err));
     }
 
     getAllCrendentials = () => {

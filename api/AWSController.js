@@ -5,6 +5,20 @@ Amplify.configure(awsconfig);
 class AWSController {
   // For advanced usage
   // You can pass an object which has the username, password and validationData which is sent to a PreAuthentication Lambda trigger
+
+  async webSocketTest() {
+    console.log("Integrating")
+    const ws = new WebSocket("wss://rumb30qq13.execute-api.ap-southeast-2.amazonaws.com/default")
+    ws.addEventListener('open', function (event) {
+      ws.send('Hello Server!');
+    });
+    ws.addEventListener('message', function (event) {
+      console.log('Message from server ', event.data);
+    });
+    ws.onerror = (error) => {
+      console.log("Err", error)
+    };
+  }
   async signIn(username, password) {
     return await Auth.signIn({
       username, // Required, the username
