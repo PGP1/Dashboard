@@ -1,7 +1,7 @@
 @import "../../pages/styles/_constant";
 
 .container {
-    width: 200px;
+    width: 455px;
     height: 400px;
     background: white;
     border-radius: 10px;
@@ -22,6 +22,14 @@
     font-size: 1rem;
     color: #BDBDBD;
 }
+
+.warning {
+    display: flex;
+}
+.margin{
+    margin-right: 10px;
+}
+
 
 .notification {
     font-family: "Poppins", "san-serif";

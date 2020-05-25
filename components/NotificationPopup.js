@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import style from './styles/NotificationPopup.module.scss';
 import Warn from './assets/Warn.svg';
+import NotificationTable from './NotificationTable';
 
 class NotificationPopup extends Component {
     constructor(props) {
@@ -17,14 +18,16 @@ class NotificationPopup extends Component {
                     <div className={style.notificationHeader}>
                         Notifications
                     </div>
-
+                    <h1 className={style.notification}>Most recent: 
+                    </h1>
                     <div className={style.notification}>
-                            <Warn /> { socketMessage.message }
-                            <div className={style.notificationText}>
-                                2020-04-18 9:24pm
+                       <div className={style.warning}> <Warn className={style.margin}/> {socketMessage.message} Its getting a little hot!</div>
+                        <div className={style.notificationText}>
+                            2020-04-18 9:24pm
                             </div>
                     </div>
-                        <hr class="rounded"></hr>
+                      <NotificationTable/>
+                    <hr class="rounded"></hr>
                 </div>
             </>
         )
