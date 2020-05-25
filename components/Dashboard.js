@@ -8,6 +8,7 @@ import APIController from "../api/APIController";
 import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-react';
 import content from "./content";
 import Nav from "./Nav";
+import ReactHLS from 'react-hls-player';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -42,7 +43,7 @@ class Dashboard extends Component {
     render() {
         const { isAuthenticated, devices, device, credentials, user, page, 
             setDevice, useDetail, socketMessage, light, setPage, userDetail, 
-            openDeviceModal, handleSearchInput, searchTerms} = this.props;
+            openDeviceModal, handleSearchInput, searchTerms, liveVideo} = this.props;
         
         let contents = content.filter(e => e.title.toLowerCase().indexOf(searchTerms.toLowerCase()) > -1)
         return (
@@ -78,6 +79,9 @@ class Dashboard extends Component {
                                     <div className="flex">
                                         { page !== 1 ? this.renderModules(contents.slice(6, contents.length)) : "" }
                                     </div>
+                                </div>
+                                <div className={style.item}>
+                                    <ReactHLS url={liveVideo} />
                                 </div>
                             </div>
                         </div>
