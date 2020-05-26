@@ -8,7 +8,6 @@ import APIController from "../api/APIController";
 import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-react';
 import content from "./content";
 import Nav from "./Nav";
-import ReactHLS from 'react-hls-player';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -30,10 +29,14 @@ class Dashboard extends Component {
 
     
     renderModules = (modules) => {
-        const { credentials, user, device } = this.props;
+        const { credentials, user, device, liveVideo } = this.props;
 
         return modules.map(({ title, render, Element }, index) => { 
-            return <Element key={index} title={title} credentials={credentials} user={user} device={device}> 
+            return <Element key={index} title={title} 
+                            credentials={credentials} 
+                            user={user} 
+                            device={device}
+                            liveVideo={liveVideo}> 
                 { render }
             </Element>
         });
@@ -73,16 +76,19 @@ class Dashboard extends Component {
                                     </div>
                                 </div>
                                 <div className={style.item}>
-                                    { page == 1 ? this.renderModules(contents.slice(3, 4)) : ""}
+                                    { page == 1 ? this.renderModules(contents.slice(3, 5)) : ""}
                                 </div>
                                 <div className={style.items}>
+                                    <div className={"flex"}>
+                                        { page !== 1 ? this.renderModules(contents.slice(5, 7)) : "" }
+                                    </div>
                                     <div className="flex">
-                                        { page !== 1 ? this.renderModules(contents.slice(6, contents.length)) : "" }
+                                        { page !== 1 ? this.renderModules(contents.slice(7, contents.length)) : "" }
                                     </div>
                                 </div>
-                                <div className={style.item}>
+                                {/* <div className={style.item}>
                                     <ReactHLS url={liveVideo} />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </>
