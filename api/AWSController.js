@@ -1,10 +1,54 @@
 import Amplify, { Auth } from "aws-amplify";
+import AWS from "aws-sdk";
 import awsconfig from "../aws-exports";
 Amplify.configure(awsconfig);
 
 class AWSController {
+
+  async getLiveVideo({ AccessKeyId, SecretKey, SessionToken }) {
+    var options = {
+      accessKeyId: AccessKeyId,
+      secretAccessKey: SecretKey,
+      sessionToken: SessionToken || undefined,
+      region: "ap-southeast-2",
+      endpoint: undefined
+    }
+    let kinesisVideo = new AWS.KinesisVideo(options);
+    let kinesisVideoArchievedContent = new AWS.KinesisVideoArchivedMedia(options)
+    const streamName = "plantly-pp1";
+
+    return await new Promise(resolve => kinesisVideo.getDataEndpoint({
+        StreamName: streamName,
+        APIName: "GET_HLS_STREAMING_SESSION_URL"
+      }, async (err, res) => {
+        if(err) {
+          console.log("Err", err)
+        } else {
+          kinesisVideoArchievedContent.endpoint = new AWS.Endpoint(res.DataEndpoint);
+          kinesisVideoArchievedContent.getHLSStreamingSessionURL({
+            StreamName: streamName,
+          }, (err, res) => {
+            resolve(res);
+          });
+        }
+    }));
+  }
   // For advanced usage
   // You can pass an object which has the username, password and validationData which is sent to a PreAuthentication Lambda trigger
+
+  async webSocketTest() {
+    console.log("Integrating")
+    const ws = new WebSocket("wss://rumb30qq13.execute-api.ap-southeast-2.amazonaws.com/default")
+    ws.addEventListener('open', function (event) {
+      ws.send('Hello Server!');
+    });
+    ws.addEventListener('message', function (event) {
+      console.log('Message from server ', event.data);
+    });
+    ws.onerror = (error) => {
+      console.log("Err", error)
+    };
+  }
   async signIn(username, password) {
     return await Auth.signIn({
       username, // Required, the username

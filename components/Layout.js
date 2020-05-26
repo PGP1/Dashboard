@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Nav from "./Nav";
 import Head from 'next/head'
 
 class Layout extends Component {
@@ -10,8 +9,7 @@ class Layout extends Component {
 
     render() {
         const { isAuthenticated, userDetail, page, device, devices, 
-            setDevice, socketMessage} = this.props;
-        console.log("devices", devices);
+            setDevice, socketMessage, children} = this.props;
 
         return (
             <>            
@@ -19,12 +17,9 @@ class Layout extends Component {
                     <title>Plantly | Dashboard </title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
-                <Nav isAuthenticated={isAuthenticated} devices={devices} 
-                        setDevice={setDevice} page={page} device={device} 
-                        userDetail={userDetail} socketMessage={socketMessage}/>
                      
                 <div className={"layout"}>
-                    {this.props.children}
+                    { React.cloneElement(children, { isAuthenticated, userDetail, page, device, devices, setDevice, socketMessage  }) } 
                 </div>
             </>
         )

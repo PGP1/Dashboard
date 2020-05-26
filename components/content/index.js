@@ -15,6 +15,8 @@ import ModuleContent from "../modules/ModuleContent";
 import ModuleContentWithFilter from "../modules/ModuleContentWithFilter";
 import ModuleSummary from "../modules/ModuleSummary";
 
+import LiveStream from "../modules/LiveStream";
+
 const content = [
     {
         title: "Current Stats",
@@ -52,10 +54,16 @@ const content = [
         Element: ModuleContent
     },
     {
+        title: "Live Stream",
+        render: <LiveStream />,
+        Element: ModuleSummary
+    },
+    {
         title: "RAM Information (%)",
         render: <RamChart />,
         Element: ModuleContent
-    }
+    },
+   
 ];
 
 export default content;

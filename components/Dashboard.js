@@ -7,6 +7,7 @@ import APIController from "../api/APIController";
 
 import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-react';
 import content from "./content";
+import Nav from "./Nav";
 
 class Dashboard extends Component {
     constructor(props) {
@@ -28,41 +29,76 @@ class Dashboard extends Component {
 
     
     renderModules = (modules) => {
-        const { credentials, user, device } = this.props;
+        const { credentials, user, device, liveVideo, 
+                handleLight, handleDrag, light } = this.props;
 
-        return modules.map(({ title, render, Element }) => { 
-            return <Element title={title} credentials={credentials} user={user} device={device}> 
-                {/* { React.cloneElement(render, { credentials, user, device }) }  */}
+        return modules.map(({ title, render, Element }, index) => { 
+            return <Element key={index} title={title} 
+                            credentials={credentials} 
+                            user={user} 
+                            device={device}
+                            handleLight={handleLight}
+                            handleDrag={handleDrag}
+                            light={light}
+                            liveVideo={liveVideo}> 
                 { render }
             </Element>
         });
-    }
+    };
+
     
     render() {
-        const { device, credentials, user, page, light, setPage, userDetail} = this.props;
-
-        console.log(content)
+        const { isAuthenticated, devices, device, credentials, user, page, 
+            setDevice, useDetail, socketMessage, handeLight, setPage, userDetail, 
+            openDeviceModal, handleSearchInput, searchTerms} = this.props;
+        
+        let contents = content.filter(e => e.title.toLowerCase().indexOf(searchTerms.toLowerCase()) > -1)
         return (
-            <>
+            <div className="dashboard-layout">
                 {device && credentials && user &&
                     <>
                         <Sidenav setPage={setPage} page={page} setUserData={this.props.setUserData} userDetail={userDetail}/>
                         <div className={style.dashboardContent}>
-                            <div className={style.purpleBackground} />
-                            <div className={style.dashboardGridContent}>
-                                { page == 1 ? this.renderModules(content.slice(0, 1)) : ""}
-                                <div className={style.left}>
-                                    {page == 1 ? this.renderModules(content.slice(1, 3)) : this.renderModules(content.slice(4, 6))}
-                                </div>
+                            <Nav isAuthenticated={isAuthenticated} devices={devices} 
+                                openDeviceModal={openDeviceModal}
+                                setDevice={setDevice} page={page} device={device} 
+                                handleSearchInput={handleSearchInput}
+                                userDetail={userDetail} socketMessage={socketMessage}/>
 
-                                <div className={style.right}>
-                                    {page == 1 ? this.renderModules(content.slice(3, 4)) : this.renderModules(content.slice(6, content.length))}
+                            <div className={style.dashboardGridContent + (searchTerms.length > 0 ? " " + style.isSearch : "")}>
+                                <div className="flex space-between align-center">
+                                    <h1 className="title">Dashboard </h1>
+                                    <h1 className="subtitle textOverflow">{device}</h1>
                                 </div>
+       
+                                <div className={style.item}>
+                                    { page == 1 ? this.renderModules(contents.slice(0 , 1)) : ""}
+                                </div>
+                                <div className={style.items}>
+                                    <div className="flex">
+                                        { page == 1 ? this.renderModules(contents.slice(1, 3)) : 
+                                            this.renderModules(contents.slice(4, 6))}
+                                    </div>
+                                </div>
+                                <div className={style.item}>
+                                    { page == 1 ? this.renderModules(contents.slice(3, 4)) : ""}
+                                </div>
+                                <div className={style.items}>
+                                    <div className="flex">
+                                        { page !== 1 ? this.renderModules(contents.slice(6, 8)) : ""}
+                                    </div>
+                                </div>
+                                <div className={style.item}>
+                                        { page !== 1 ? this.renderModules(contents.slice(8, contents.length)) : "" }
+                                </div>
+                                {/* <div className={style.item}>
+                                    <ReactHLS url={liveVideo} />
+                                </div> */}
                             </div>
                         </div>
                     </>
                 }
-            </>
+            </div>
         )
     }
 }
