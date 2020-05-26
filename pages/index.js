@@ -27,6 +27,8 @@ class Index extends Component {
             addDeviceModalError: null,
             /* Search Dashboard */
             searchTerms: "",
+            /* light */
+            light: 50
         }
         // this.socket = io(SOCKET);
     }
@@ -127,9 +129,27 @@ class Index extends Component {
         this.setState({ searchTerms: event.target.value });
     }
 
+    /* Handle Lights */
+    handleLight = () => {
+        const { user, device, light } = this.state;
+        console.log("Sending light~~~~~~~~~~~~~~~~~~");
+        APIController.controlDevice(user.idToken, device, light).then(data => {
+            console.log("Change light", data);
+        })
+        .catch(err => console.log("errrrr", err))
+    }
+
+
+    handleDrag = (light) => {
+        console.log("changing light", light)
+        this.setState({ light })
+    }
+
+    
     conditionRender() {
         const { page, user, device, devices, userDetail, credentials, 
-                addDeviceModalOpen, addDeviceModalError, searchTerms, liveVideo} = this.state;
+                addDeviceModalOpen, addDeviceModalError, searchTerms, 
+                liveVideo, light} = this.state;
         switch(page) {
             case 0:
                 return <SelectDevices user={user} devices={devices} props={this.props} 
@@ -151,9 +171,14 @@ class Index extends Component {
                             handleSearchInput={this.handleSearchInput}
                             searchTerms={searchTerms}
                             liveVideo={liveVideo}
+                            handleLight={this.handleLight}
+                            handleDrag={this.handleDrag}
+                            light={light}
                             setUser={this.setUser} setPage={this.setPage}/>
         }
     }
+
+
 
     render() {
         const { isAuthenticated, page, device, userDetail, devices, socketMessage } = this.state;

@@ -20,7 +20,7 @@ class ModuleContent extends Component {
         const { currentType } = this.state;
 
         this.setState({ credentials, user, device }, () => {
-            this.getStatusDevice(user.idToken, device);
+            // this.getStatusDevice(user.idToken, device);
             this.getData(credentials, user, device, currentType);
             this.getClusterInfo(credentials, user, device)
         });
@@ -32,15 +32,16 @@ class ModuleContent extends Component {
         }) 
     }
 
-    getStatusDevice = () => {
-        const { user, device } = this.props;
-        APIController.getStatusDevice(user.idToken, device).then(() => {
-            console.log("Get status device");
-        });
-    }
+    // getStatusDevice = () => {
+    //     const { user, device } = this.props;
+    //     APIController.getStatusDevice(user.idToken, device).then(() => {
+    //         console.log("Get status device");
+    //     });
+    // }
 
     getData = (credentials, user, device, queryType) => {
-        return APIController.elasticQuery(credentials, user.idToken, device, queryType).then(res => {
+        return APIController.elasticQuery(credentials, user.idToken,
+                                            device, queryType).then(res => {
             const data = res.data.hits?.hits;
             const aggregation = res.data.aggregations?.avgBucket.buckets;
             this.setState({ data, aggregation });
@@ -52,14 +53,14 @@ class ModuleContent extends Component {
         if (!_.isEqual(this.props, nextProps)) {
             const { credentials, user, device } = nextProps;
             this.setState({ credentials, user, device }, () => {
-                this.getStatusDevice(user.idToken, device);
+                // this.getStatusDevice(user.idToken, device);
                 this.getData(credentials, user, device, currentType);
             });
         }
     }
 
     render() {
-        const { title, children, device, user } = this.props;
+        const { title, children, device, user, handleLight, handleDrag, light } = this.props;
         const { data, clusterInfo, aggregation } = this.state;
         
         return <div className={style.box}>
@@ -67,7 +68,8 @@ class ModuleContent extends Component {
                 { title }
             </div>
             <div className={style.chart}>
-                { React.cloneElement(children, { data, clusterInfo, device, user, aggregation }) } 
+                { React.cloneElement(children, { data, clusterInfo, device,
+                     user, aggregation, handleLight, handleDrag, light }) } 
             </div>
         </div>
     }

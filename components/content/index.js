@@ -34,11 +34,6 @@ const content = [
         Element: ModuleSummary
     },
     {
-        title: "Live Stream",
-        render: <LiveStream />,
-        Element: ModuleSummary
-    },
-    {
         title: "Server Information",
         render: <ClusterInfo />,
         Element: ModuleContent
@@ -57,6 +52,11 @@ const content = [
         title: "CPU Information (%)",
         render: <CpuChart />,
         Element: ModuleContent
+    },
+    {
+        title: "Live Stream",
+        render: <LiveStream />,
+        Element: ModuleSummary
     },
     {
         title: "RAM Information (%)",

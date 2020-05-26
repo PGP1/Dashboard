@@ -20,7 +20,8 @@ class ModuleSummary extends Component {
                 { title }
             </div>
             <div className={style.chart}>
-                { React.cloneElement(children, { credentials, user, device  }) } 
+                { React.cloneElement(children, { credentials, user, device, 
+                    liveVideo  }) } 
             </div>
         </div>
     }
