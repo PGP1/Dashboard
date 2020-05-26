@@ -215,3 +215,9 @@ canvas {
 }
 
 
+.player-area {
+    video {
+        width: 100%;
+        object-fit: cover;
+    }
+}

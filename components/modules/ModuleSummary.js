@@ -11,14 +11,17 @@ class ModuleSummary extends Component {
     } 
     
     render() {
-        const { title, children, credentials, user, device } = this.props;
+        const { title, children, 
+                credentials, user, liveVideo, 
+                device } = this.props;
         
         return <div className={style.box}>
             <div className={style.header}>
                 { title }
             </div>
             <div className={style.chart}>
-                { React.cloneElement(children, { credentials, user, device  }) } 
+                { React.cloneElement(children, { credentials, user, device, 
+                    liveVideo  }) } 
             </div>
         </div>
     }

@@ -27,14 +27,17 @@ class Index extends Component {
             addDeviceModalError: null,
             /* Search Dashboard */
             searchTerms: "",
+            /* light */
+            light: 50
         }
-        this.socket = io(SOCKET);
+        // this.socket = io(SOCKET);
     }
 
     componentDidMount() {
         this.getAllCrendentials();
-        this.socket.on('response', (socketMessage) => this.setState({ socketMessage }));
+        // this.socket.on('response', (socketMessage) => this.setState({ socketMessage }));
         this.setState({ isAuthenticating: false });
+        AWSController.webSocketTest().catch(err => console.log("err", err));
     }
 
     getAllCrendentials = () => {
@@ -47,6 +50,11 @@ class Index extends Component {
             AWSController.getCurrentCredientials().then(d => {
                 const { Credentials } = d.data;
                 this.setState({ credentials: Credentials })
+                AWSController.getLiveVideo(Credentials).then(res => {
+                    console.log("res", res)
+                    this.setState({ liveVideo: res.HLSStreamingSessionURL }, 
+                        () => console.log("Live video", this.state.liveVideo))
+                })
             });
         }).catch(err => Router.push("/login"));
     }
@@ -121,9 +129,27 @@ class Index extends Component {
         this.setState({ searchTerms: event.target.value });
     }
 
+    /* Handle Lights */
+    handleLight = () => {
+        const { user, device, light } = this.state;
+        console.log("Sending light~~~~~~~~~~~~~~~~~~");
+        APIController.controlDevice(user.idToken, device, light).then(data => {
+            console.log("Change light", data);
+        })
+        .catch(err => console.log("errrrr", err))
+    }
+
+
+    handleDrag = (light) => {
+        console.log("changing light", light)
+        this.setState({ light })
+    }
+
+    
     conditionRender() {
         const { page, user, device, devices, userDetail, credentials, 
-                addDeviceModalOpen, addDeviceModalError, searchTerms } = this.state;
+                addDeviceModalOpen, addDeviceModalError, searchTerms, 
+                liveVideo, light} = this.state;
         switch(page) {
             case 0:
                 return <SelectDevices user={user} devices={devices} props={this.props} 
@@ -144,9 +170,15 @@ class Index extends Component {
                             openDeviceModal={this.openDeviceModal}
                             handleSearchInput={this.handleSearchInput}
                             searchTerms={searchTerms}
+                            liveVideo={liveVideo}
+                            handleLight={this.handleLight}
+                            handleDrag={this.handleDrag}
+                            light={light}
                             setUser={this.setUser} setPage={this.setPage}/>
         }
     }
+
+
 
     render() {
         const { isAuthenticated, page, device, userDetail, devices, socketMessage } = this.state;

@@ -59,7 +59,6 @@ class ChangeChart extends Component {
 
         const { data } = this.props;
         const {temp, ph, humidity, ldr, timeValues} = this.state;
-        console.log("CHANEBDA",humidity)
         let dataValues = {};
             dataValues = {
                 datasets: [{

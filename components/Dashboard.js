@@ -29,10 +29,18 @@ class Dashboard extends Component {
 
     
     renderModules = (modules) => {
-        const { credentials, user, device } = this.props;
+        const { credentials, user, device, liveVideo, 
+                handleLight, handleDrag, light } = this.props;
 
         return modules.map(({ title, render, Element }, index) => { 
-            return <Element key={index} title={title} credentials={credentials} user={user} device={device}> 
+            return <Element key={index} title={title} 
+                            credentials={credentials} 
+                            user={user} 
+                            device={device}
+                            handleLight={handleLight}
+                            handleDrag={handleDrag}
+                            light={light}
+                            liveVideo={liveVideo}> 
                 { render }
             </Element>
         });
@@ -41,7 +49,7 @@ class Dashboard extends Component {
     
     render() {
         const { isAuthenticated, devices, device, credentials, user, page, 
-            setDevice, useDetail, socketMessage, light, setPage, userDetail, 
+            setDevice, useDetail, socketMessage, handeLight, setPage, userDetail, 
             openDeviceModal, handleSearchInput, searchTerms} = this.props;
         
         let contents = content.filter(e => e.title.toLowerCase().indexOf(searchTerms.toLowerCase()) > -1)
@@ -68,7 +76,8 @@ class Dashboard extends Component {
                                 </div>
                                 <div className={style.items}>
                                     <div className="flex">
-                                        { page == 1 ? this.renderModules(contents.slice(1, 3)) : this.renderModules(contents.slice(4, 6))}
+                                        { page == 1 ? this.renderModules(contents.slice(1, 3)) : 
+                                            this.renderModules(contents.slice(4, 6))}
                                     </div>
                                 </div>
                                 <div className={style.item}>
@@ -76,9 +85,15 @@ class Dashboard extends Component {
                                 </div>
                                 <div className={style.items}>
                                     <div className="flex">
-                                        { page !== 1 ? this.renderModules(contents.slice(6, contents.length)) : "" }
+                                        { page !== 1 ? this.renderModules(contents.slice(6, 8)) : ""}
                                     </div>
                                 </div>
+                                <div className={style.item}>
+                                        { page !== 1 ? this.renderModules(contents.slice(8, contents.length)) : "" }
+                                </div>
+                                {/* <div className={style.item}>
+                                    <ReactHLS url={liveVideo} />
+                                </div> */}
                             </div>
                         </div>
                     </>

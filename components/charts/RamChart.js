@@ -16,7 +16,6 @@ class RamChart extends Component {
         const { data } = this.props;
 
         let ramDataValues = {};
-        console.log('dataaaaaaaa', data);
         if (data) {
             const ram_usage = data[data.length - 1]?._source.ram;
            
