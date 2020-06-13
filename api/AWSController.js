@@ -1,6 +1,7 @@
 import Amplify, { Auth } from "aws-amplify";
 import AWS from "aws-sdk";
 import awsconfig from "../aws-exports";
+import { NOTIFICATION_API } from "../constants";
 Amplify.configure(awsconfig);
 
 /**
@@ -36,14 +37,13 @@ class AWSController {
         }));
     }
 
-    async subscribeNotifications(device, username) {
-        console.log("Integrating", device, username)
-        const ws = new WebSocket("wss://rumb30qq13.execute-api.ap-southeast-2.amazonaws.com/default")
+    async subscribeNotifications(device, username, callback) {
+        const ws = new WebSocket(NOTIFICATION_API)
         ws.addEventListener('open', function (event) {
             ws.send(`{ "device": "${device}", "username": "${username}"}`);
         });
         ws.addEventListener('message', function (event) {
-            console.log('Message from server ', event.data);
+            callback(JSON.parse(event.data));
         });
         ws.onerror = (error) => {
             console.log("Err", error)

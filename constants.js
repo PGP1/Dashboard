@@ -10,6 +10,8 @@ export const UNLINK_DEVICE = "https://386om5i73i.execute-api.ap-southeast-2.amaz
 export const STATUS_DEVICE_REQUEST = "https://08miwb2z3h.execute-api.ap-southeast-2.amazonaws.com/default/status_device_request";
 export const CONTROL_DEVICE = "https://1kkpmpppf9.execute-api.ap-southeast-2.amazonaws.com/default/publish_to_mqttbroker";
 
+export const NOTIFICATION_API = "wss://rumb30qq13.execute-api.ap-southeast-2.amazonaws.com/default";
+
 export const WATER = "water";
 export const TEMP = "temp";
 export const PH = "ph";
@@ -38,4 +40,3 @@ export const SCALE = {
     humidity:100,
     ldr: 255
 }
-export const SOCKET = "https://13.239.115.39:42069/"

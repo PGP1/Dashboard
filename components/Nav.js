@@ -25,7 +25,7 @@ class Nav extends Component {
 
     render() {
 
-        const { userDetail, devices, setDevice, page, socketMessage, handleSearchInput } = this.props;
+        const { userDetail, devices, notificationMessage, handleSearchInput } = this.props;
         const options = devices ?.map(d => { return { key: d, text: d, value: d } });
 
         return (
@@ -44,7 +44,7 @@ class Nav extends Component {
                                     onChange={(e, { value }) => this.props ?.setDevice(value)} />
                                 <AddDeviceIcon onClick={this.props.openDeviceModal}/>
                                 <div className={style.topNotification} onClick={this.togglePopup.bind(this)}>
-                                    {this.state.showPopup ? <NotificationPopup socketMessage={socketMessage} closePopup={this.togglePopup.bind(this)} /> : null}
+                                    {this.state.showPopup ? <NotificationPopup notificationMessage={notificationMessage} closePopup={this.togglePopup.bind(this)} /> : null}
                                 </div>
                             </div>
                           

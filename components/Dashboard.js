@@ -53,7 +53,7 @@ class Dashboard extends Component {
     
     render() {
         const { isAuthenticated, devices, device, credentials, user, page, 
-            setDevice, useDetail, socketMessage, handeLight, setPage, userDetail, 
+            setDevice, notificationMessage, setPage, userDetail, 
             openDeviceModal, handleSearchInput, searchTerms} = this.props;
         
         let contents = content.filter(e => e.title.toLowerCase().indexOf(searchTerms.toLowerCase()) > -1)
@@ -67,7 +67,8 @@ class Dashboard extends Component {
                                 openDeviceModal={openDeviceModal}
                                 setDevice={setDevice} page={page} device={device} 
                                 handleSearchInput={handleSearchInput}
-                                userDetail={userDetail} socketMessage={socketMessage}/>
+                                notificationMessage={notificationMessage}
+                                userDetail={userDetail}/>
 
                             <div className={style.dashboardGridContent + (searchTerms.length > 0 ? " " + style.isSearch : "")}>
                                 <div className="flex space-between align-center">
