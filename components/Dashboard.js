@@ -67,6 +67,9 @@ class Dashboard extends Component {
                                 openDeviceModal={openDeviceModal}
                                 setDevice={setDevice} page={page} device={device} 
                                 handleSearchInput={handleSearchInput}
+                                credentials={credentials}
+                                user={user}
+                                device={device}
                                 notificationMessage={notificationMessage}
                                 userDetail={userDetail}/>
 

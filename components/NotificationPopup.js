@@ -15,7 +15,7 @@ class NotificationPopup extends Component {
     }
 
     render() {
-        const { notificationMessage } = this.props;
+        const { notificationMessage, credentials, user, device} = this.props;
 
         return (
             <>
@@ -28,14 +28,16 @@ class NotificationPopup extends Component {
                     <div className={style.notification}>
                         <div className={style.warning}> 
                             <div className="align-center">
-                                <Warn className={style.margin}/> {notificationMessage.value} 
+                                <Warn className={style.margin}/> {notificationMessage.prediction} 
                             </div>
                             <span className={style.notificationText}>
                                 {moment(notificationMessage.time).format('YYYY-MM-DD HH:mm')}
                             </span>
                         </div>
                     </div>
-                      <NotificationTable/>
+                    <NotificationTable credentials={credentials} 
+                                       device={device} 
+                                       user={user}/>
                     <hr class="rounded"></hr>
                 </div>
             </>
