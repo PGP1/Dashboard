@@ -4,7 +4,10 @@ import APIController from "../../api/APIController";
 import * as _ from "underscore";
 import { RESOURCES } from "../../constants";
 
-
+/**
+* Module Content is a interface to holds Dashboard Component
+* @extends React.Component
+*/
 class ModuleContent extends Component {
     constructor(props) {
         super(props);
@@ -31,13 +34,6 @@ class ModuleContent extends Component {
             this.setState({ clusterInfo: res.data })
         }) 
     }
-
-    // getStatusDevice = () => {
-    //     const { user, device } = this.props;
-    //     APIController.getStatusDevice(user.idToken, device).then(() => {
-    //         console.log("Get status device");
-    //     });
-    // }
 
     getData = (credentials, user, device, queryType) => {
         return APIController.elasticQuery(credentials, user.idToken,
