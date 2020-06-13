@@ -10,6 +10,10 @@ import io from "socket.io-client";
 import AddDevice from "../components/modals/AddDevice"
 import { SOCKET } from "../constants";
 
+/**
+ * Main state storage, which stores all the user's credentials, device details
+ * @extends React.Component
+ */
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -30,12 +34,10 @@ class Index extends Component {
             /* light */
             light: 50
         }
-        // this.socket = io(SOCKET);
     }
 
     componentDidMount() {
         this.getAllCrendentials();
-        // this.socket.on('response', (socketMessage) => this.setState({ socketMessage }));
         this.setState({ isAuthenticating: false });
     }
 
@@ -49,11 +51,10 @@ class Index extends Component {
             AWSController.getCurrentCredientials().then(d => {
                 const { Credentials } = d.data;
                 this.setState({ credentials: Credentials })
-                AWSController.getLiveVideo(Credentials).then(res => {
-                    console.log("res", res)
-                    this.setState({ liveVideo: res.HLSStreamingSessionURL }, 
-                        () => console.log("Live video", this.state.liveVideo))
-                })
+                // AWSController.getLiveVideo(Credentials).then(res => {
+                //     this.setState({ liveVideo: res.HLSStreamingSessionURL }, 
+                //         () => console.log("Live video", this.state.liveVideo))
+                // })
             });
         }).catch(err => Router.push("/login"));
     }
@@ -75,8 +76,10 @@ class Index extends Component {
 
 
     setDevice = (device) => {
+        const { userDetail } = this.state;
         this.setState({ device: device, page: 1 }, (device) => {
-            AWSController.subscribeNotifications(device).catch(err => console.log("err", err));
+            AWSController.subscribeNotifications(device, userDetail.username)
+            .catch(err => console.error("err", err));
         });
     }
 
@@ -94,7 +97,6 @@ class Index extends Component {
 
     /* Add device modal codes*/
     openDeviceModal = () => {
-        console.log("OPEN MODALLLLL")
         this.setState({ addDeviceModalOpen: true })
     }
 
@@ -121,8 +123,8 @@ class Index extends Component {
     handleUnlinkDevice = (device) => {
         const { user } = this.state;
         APIController.unlinkDevice(user.idToken, device)
-        .then(res => { this.fetchDevice(this.props.user) })
-        .catch(err => console.log("Unlink Error", err));
+        .then(res => { this.fetchDevice(user) })
+        .catch(err => console.error("Unlink Error", err));
     }
 
     /* Handle search inputs */
@@ -133,16 +135,12 @@ class Index extends Component {
     /* Handle Lights */
     handleLight = () => {
         const { user, device, light } = this.state;
-        console.log("Sending light~~~~~~~~~~~~~~~~~~");
-        APIController.controlDevice(user.idToken, device, light).then(data => {
-            console.log("Change light", data);
-        })
-        .catch(err => console.log("errrrr", err))
+        APIController.controlDevice(user.idToken, device, light)
+        .catch(err => console.error("light error", err))
     }
 
 
     handleDrag = (light) => {
-        console.log("changing light", light)
         this.setState({ light })
     }
 

@@ -119,7 +119,6 @@ class Sidenav extends Component {
 
   render() {
     const { userDetail, user, device, page} = this.props;
-    console.log("user detail?", userDetail);
     const panes = [
       {
         menuItem: "Profile",
