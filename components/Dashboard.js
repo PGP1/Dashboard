@@ -9,6 +9,10 @@ import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-reac
 import content from "./content";
 import Nav from "./Nav";
 
+/**
+* Main dashboard interface which renders the content.
+* @extends React.Component
+*/
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -91,9 +95,6 @@ class Dashboard extends Component {
                                 <div className={style.item}>
                                         { page !== 1 ? this.renderModules(contents.slice(8, contents.length)) : "" }
                                 </div>
-                                {/* <div className={style.item}>
-                                    <ReactHLS url={liveVideo} />
-                                </div> */}
                             </div>
                         </div>
                     </>

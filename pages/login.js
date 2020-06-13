@@ -10,6 +10,10 @@ import particles_config from "./assets/config/particles_config.json";
 import Router from 'next/router';
 import getConfig from 'next/config';
 
+/**
+* Login component
+* @extends React.Component
+*/
 class Login extends Component {
     constructor(props) {
         super(props);

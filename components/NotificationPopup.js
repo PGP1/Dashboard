@@ -3,6 +3,10 @@ import style from './styles/NotificationPopup.module.scss';
 import Warn from './assets/Warn.svg';
 import NotificationTable from './NotificationTable';
 
+/**
+* Notification popup component for dashboard
+* @extends React.Component
+*/
 class NotificationPopup extends Component {
     constructor(props) {
         super(props);

@@ -6,6 +6,10 @@ import { Dropdown, Button, Icon } from 'semantic-ui-react';
 import AddDeviceIcon from './assets/AddDevice.svg';
 import NotificationPopup from './NotificationPopup';
 
+/**
+* Nav component for the dashboard
+* @extends React.Component
+*/
 class Nav extends Component {
 
     constructor(props) {

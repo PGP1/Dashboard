@@ -8,13 +8,15 @@ import { API } from 'aws-amplify';
 
 
 
+/**
+* Select device table
+* @extends React.Component
+*/
 class SelectDevices extends Component {
 
     render() {
         const {  devices, setDevice, handleUnlinkDevice,
-                handleAddDevice, openDeviceModal, closeDeviceModal, 
-                addDeviceModalError, handleAddDeviceChange,
-                addDeviceModalOpen } = this.props;
+                openDeviceModal} = this.props;
 
         return <div className={style.container}>
             <div className={style.formCenter}>

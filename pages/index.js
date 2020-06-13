@@ -77,7 +77,8 @@ class Index extends Component {
 
     setDevice = (device) => {
         const { userDetail } = this.state;
-        this.setState({ device: device, page: 1 }, (device) => {
+        console.log("mydevice", device);
+        this.setState({ device: device, page: 1 }, () => {
             AWSController.subscribeNotifications(device, userDetail.username)
             .catch(err => console.error("err", err));
         });

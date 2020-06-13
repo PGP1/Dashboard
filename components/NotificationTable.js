@@ -4,6 +4,10 @@ import { Table, Icon } from 'semantic-ui-react';
 
 
 
+/**
+* Notification table history
+* @extends React.Component
+*/
 class NotificationTable extends Component {
     constructor(props) {
         super(props);

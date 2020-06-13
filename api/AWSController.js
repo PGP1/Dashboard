@@ -37,10 +37,10 @@ class AWSController {
     }
 
     async subscribeNotifications(device, username) {
-        console.log("Integrating")
+        console.log("Integrating", device, username)
         const ws = new WebSocket("wss://rumb30qq13.execute-api.ap-southeast-2.amazonaws.com/default")
         ws.addEventListener('open', function (event) {
-            ws.send({ device, username });
+            ws.send(`{ "device": "${device}", "username": "${username}"}`);
         });
         ws.addEventListener('message', function (event) {
             console.log('Message from server ', event.data);
