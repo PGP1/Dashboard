@@ -37,7 +37,6 @@ class Index extends Component {
         this.getAllCrendentials();
         // this.socket.on('response', (socketMessage) => this.setState({ socketMessage }));
         this.setState({ isAuthenticating: false });
-        AWSController.webSocketTest().catch(err => console.log("err", err));
     }
 
     getAllCrendentials = () => {
@@ -76,7 +75,9 @@ class Index extends Component {
 
 
     setDevice = (device) => {
-        this.setState({ device: device, page: 1 })
+        this.setState({ device: device, page: 1 }, (device) => {
+            AWSController.subscribeNotifications(device).catch(err => console.log("err", err));
+        });
     }
 
     setPage = (page) => {

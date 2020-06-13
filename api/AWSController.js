@@ -36,11 +36,11 @@ class AWSController {
   // For advanced usage
   // You can pass an object which has the username, password and validationData which is sent to a PreAuthentication Lambda trigger
 
-  async webSocketTest() {
+  async subscribeNotifications(device) {
     console.log("Integrating")
     const ws = new WebSocket("wss://rumb30qq13.execute-api.ap-southeast-2.amazonaws.com/default")
     ws.addEventListener('open', function (event) {
-      ws.send('Hello Server!');
+      ws.send(device);
     });
     ws.addEventListener('message', function (event) {
       console.log('Message from server ', event.data);
