@@ -4,6 +4,11 @@ import style from '../styles/ModuleContent.module.scss';
 import { Dropdown } from 'semantic-ui-react';
 import APIController from "../../api/APIController";
 import * as _ from "underscore";
+
+/**
+* Module Content interface to holds Dashboard Component with filter
+* @extends React.Component
+*/
 class ModuleContentWithFilter extends Component {
     constructor(props) {
         super(props);

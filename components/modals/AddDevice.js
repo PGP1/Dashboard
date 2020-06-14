@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Button, Form, Message, Modal } from 'semantic-ui-react';
 
-
+/**
+* Add device modal popup render
+* @extends React.Component
+*/
 class AddDevice extends Component {
 
     render() {

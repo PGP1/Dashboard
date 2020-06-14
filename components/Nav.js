@@ -6,6 +6,10 @@ import { Dropdown, Button, Icon } from 'semantic-ui-react';
 import AddDeviceIcon from './assets/AddDevice.svg';
 import NotificationPopup from './NotificationPopup';
 
+/**
+* Nav component for the dashboard
+* @extends React.Component
+*/
 class Nav extends Component {
 
     constructor(props) {
@@ -21,7 +25,7 @@ class Nav extends Component {
 
     render() {
 
-        const { userDetail, devices, setDevice, page, socketMessage, handleSearchInput } = this.props;
+        const { userDetail, devices, device, credentials, user, notificationMessage, handleSearchInput } = this.props;
         const options = devices ?.map(d => { return { key: d, text: d, value: d } });
 
         return (
@@ -40,7 +44,12 @@ class Nav extends Component {
                                     onChange={(e, { value }) => this.props ?.setDevice(value)} />
                                 <AddDeviceIcon onClick={this.props.openDeviceModal}/>
                                 <div className={style.topNotification} onClick={this.togglePopup.bind(this)}>
-                                    {this.state.showPopup ? <NotificationPopup socketMessage={socketMessage} closePopup={this.togglePopup.bind(this)} /> : null}
+                                    {this.state.showPopup ? <NotificationPopup 
+                                                                credentials={credentials}
+                                                                user={user}
+                                                                device={device}
+                                                                notificationMessage={notificationMessage} 
+                                                                closePopup={this.togglePopup.bind(this)} /> : null}
                                 </div>
                             </div>
                           

@@ -5,7 +5,6 @@ import RamChart from "../charts/RamChart";
 import CpuChart from "../charts/CpuChart";
 import ClusterInfo from "../modules/ClusterInfo";
 
-import ResourcesChart from "../charts/ResourcesChart";
 import DeviceStatus from "../modules/DeviceStatus";
 import DeviceControl from "../modules/DeviceControl";
 import CurrentModule from '../modules/CurrentModule';
@@ -17,6 +16,9 @@ import ModuleSummary from "../modules/ModuleSummary";
 
 import LiveStream from "../modules/LiveStream";
 
+/** @constant {content} 
+ * holds the content of the Dashboard (title, render function, element)
+ */
 const content = [
     {
         title: "Current Stats",

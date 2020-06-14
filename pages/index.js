@@ -6,10 +6,12 @@ import AWSController from "../api/AWSController";
 import APIController from "../api/APIController";
 import Router from "next/router";
 import Dashboard from "../components/Dashboard";
-import io from "socket.io-client";
 import AddDevice from "../components/modals/AddDevice"
-import { SOCKET } from "../constants";
 
+/**
+ * Main state storage, which stores all the user's credentials, device details
+ * @extends React.Component
+ */
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +23,7 @@ class Index extends Component {
             credentials: null,
             device: "", // NOTE inital ""
             devices: [],
-            socketMessage: [],
+            notificationMessage: null,
             /* For modal add device open/close */
             addDeviceModalOpen: false,
             addDeviceModalError: null,
@@ -30,14 +32,15 @@ class Index extends Component {
             /* light */
             light: 50
         }
-        // this.socket = io(SOCKET);
     }
 
     componentDidMount() {
         this.getAllCrendentials();
-        // this.socket.on('response', (socketMessage) => this.setState({ socketMessage }));
         this.setState({ isAuthenticating: false });
-        AWSController.webSocketTest().catch(err => console.log("err", err));
+    }
+
+    setNotificationMessage = (msg) => {
+        this.setState({ notificationMessage: msg });
     }
 
     getAllCrendentials = () => {
@@ -51,7 +54,6 @@ class Index extends Component {
                 const { Credentials } = d.data;
                 this.setState({ credentials: Credentials })
                 AWSController.getLiveVideo(Credentials).then(res => {
-                    console.log("res", res)
                     this.setState({ liveVideo: res.HLSStreamingSessionURL }, 
                         () => console.log("Live video", this.state.liveVideo))
                 })
@@ -76,7 +78,12 @@ class Index extends Component {
 
 
     setDevice = (device) => {
-        this.setState({ device: device, page: 1 })
+        const { userDetail } = this.state;
+        console.log("mydevice", device);
+        this.setState({ device: device, page: 1 }, () => {
+            AWSController.subscribeNotifications(device, userDetail.username, this.setNotificationMessage)
+            .catch(err => console.error("err", err));
+        });
     }
 
     setPage = (page) => {
@@ -93,7 +100,6 @@ class Index extends Component {
 
     /* Add device modal codes*/
     openDeviceModal = () => {
-        console.log("OPEN MODALLLLL")
         this.setState({ addDeviceModalOpen: true })
     }
 
@@ -120,8 +126,8 @@ class Index extends Component {
     handleUnlinkDevice = (device) => {
         const { user } = this.state;
         APIController.unlinkDevice(user.idToken, device)
-        .then(res => { this.fetchDevice(this.props.user) })
-        .catch(err => console.log("Unlink Error", err));
+        .then(res => { this.fetchDevice(user) })
+        .catch(err => console.error("Unlink Error", err));
     }
 
     /* Handle search inputs */
@@ -132,16 +138,12 @@ class Index extends Component {
     /* Handle Lights */
     handleLight = () => {
         const { user, device, light } = this.state;
-        console.log("Sending light~~~~~~~~~~~~~~~~~~");
-        APIController.controlDevice(user.idToken, device, light).then(data => {
-            console.log("Change light", data);
-        })
-        .catch(err => console.log("errrrr", err))
+        APIController.controlDevice(user.idToken, device, light)
+        .catch(err => console.error("light error", err))
     }
 
 
     handleDrag = (light) => {
-        console.log("changing light", light)
         this.setState({ light })
     }
 
@@ -149,7 +151,7 @@ class Index extends Component {
     conditionRender() {
         const { page, user, device, devices, userDetail, credentials, 
                 addDeviceModalOpen, addDeviceModalError, searchTerms, 
-                liveVideo, light} = this.state;
+                liveVideo, light, notificationMessage} = this.state;
         switch(page) {
             case 0:
                 return <SelectDevices user={user} devices={devices} props={this.props} 
@@ -173,6 +175,7 @@ class Index extends Component {
                             liveVideo={liveVideo}
                             handleLight={this.handleLight}
                             handleDrag={this.handleDrag}
+                            notificationMessage={notificationMessage}
                             light={light}
                             setUser={this.setUser} setPage={this.setPage}/>
         }
@@ -181,7 +184,7 @@ class Index extends Component {
 
 
     render() {
-        const { isAuthenticated, page, device, userDetail, devices, socketMessage } = this.state;
+        const { isAuthenticated, page, device, userDetail, devices } = this.state;
 
         return (
             <>
@@ -195,7 +198,7 @@ class Index extends Component {
                     <Layout isAuthenticated={isAuthenticated} page={page} 
                             device={device}
                             userDetail={userDetail}
-                            devices={devices} socketMessage={socketMessage}
+                            devices={devices}
                             setDevice={this.setDevice}>
                         {this.conditionRender()}
                     </Layout>

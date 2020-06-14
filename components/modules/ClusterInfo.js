@@ -3,6 +3,11 @@ import APIController from "../../api/APIController";
 import { Message } from 'semantic-ui-react';
 import style from '../styles/ClusterInfo.module.scss';
 
+/**
+* Dashboard component which holds cluster information of 
+* elastic search instance.
+* @extends React.Component
+*/
 class ClusterInfo extends Component {
     constructor(props) {
         super(props);
@@ -13,6 +18,7 @@ class ClusterInfo extends Component {
 
         const { clusterInfo } = this.props;
         const stat = clusterInfo.status;
+
         let statusStr = "";
         let timeStr = "";
         let statusCol = "";
@@ -33,10 +39,6 @@ class ClusterInfo extends Component {
 
         return (
             <>
-                {/* <div>
-                    <div style={{ fontFamily: "Poppins", fontSize: 1.15 + "rem", letterSpacing: 0.16 + "px" }}>Server Status </div>
-                     />
-                </div> */}
                 <Message style={{ marginTop: "20px" }} className={style.statusInfo}>
                     Server Traffic:
                     <div style={{ display: "flex", alignItems: "center" }}>
@@ -57,7 +59,6 @@ class ClusterInfo extends Component {
                     <span>Number of pending requests: </span>
                     <span>{clusterInfo.number_of_pending_tasks}</span>
                 </Message>
-
             </>
         )
     }

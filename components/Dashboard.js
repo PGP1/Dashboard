@@ -9,6 +9,10 @@ import { Checkbox, Button, Dropdown, Icon, Input, Label } from 'semantic-ui-reac
 import content from "./content";
 import Nav from "./Nav";
 
+/**
+* Main dashboard interface which renders the content.
+* @extends React.Component
+*/
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +53,7 @@ class Dashboard extends Component {
     
     render() {
         const { isAuthenticated, devices, device, credentials, user, page, 
-            setDevice, useDetail, socketMessage, handeLight, setPage, userDetail, 
+            setDevice, notificationMessage, setPage, userDetail, 
             openDeviceModal, handleSearchInput, searchTerms} = this.props;
         
         let contents = content.filter(e => e.title.toLowerCase().indexOf(searchTerms.toLowerCase()) > -1)
@@ -63,7 +67,11 @@ class Dashboard extends Component {
                                 openDeviceModal={openDeviceModal}
                                 setDevice={setDevice} page={page} device={device} 
                                 handleSearchInput={handleSearchInput}
-                                userDetail={userDetail} socketMessage={socketMessage}/>
+                                credentials={credentials}
+                                user={user}
+                                device={device}
+                                notificationMessage={notificationMessage}
+                                userDetail={userDetail}/>
 
                             <div className={style.dashboardGridContent + (searchTerms.length > 0 ? " " + style.isSearch : "")}>
                                 <div className="flex space-between align-center">
@@ -91,9 +99,6 @@ class Dashboard extends Component {
                                 <div className={style.item}>
                                         { page !== 1 ? this.renderModules(contents.slice(8, contents.length)) : "" }
                                 </div>
-                                {/* <div className={style.item}>
-                                    <ReactHLS url={liveVideo} />
-                                </div> */}
                             </div>
                         </div>
                     </>

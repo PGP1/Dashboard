@@ -4,6 +4,10 @@ import { Label, Button } from 'semantic-ui-react';
 import Slider from 'rc-slider';
 import APIController from "../../api/APIController";
 
+/**
+* Device controller interface.
+* @extends React.Component
+*/
 export default class DeviceControl extends Component {
     constructor(props) {
         super(props);

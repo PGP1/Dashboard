@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import ReactHLS from 'react-hls-player';
 import styles from '../styles/LiveStream.module.scss';
 
+/**
+* Video stream component
+* @extends React.Component
+*/
 class LiveStream extends Component {
     render() {
         const { liveVideo } = this.props;
-        console.log("Live video gg", liveVideo);
         return <div className={styles.holder}>
             <ReactHLS url={liveVideo} autoplay={true}/>
         </div>;

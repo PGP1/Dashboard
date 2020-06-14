@@ -6,6 +6,11 @@ import { TYPES, UNITS  } from "../../constants";
 import style from "../styles/CurrentModule.module.scss";
 const QUERY_TYPE = 'humidity';
 
+/**
+* Dashboard component which holds the 
+* information about the current plant.
+* @extends React.Component
+*/
 class CurrentModule extends Component {
 
     constructor(props) {
@@ -14,20 +19,21 @@ class CurrentModule extends Component {
     }
 
     render() {
-
-        // const { data, currentType, getData } = this.props;
-    
         return <div className={[style.holder, "flex", "space-around"].join(" ")}>
                 <Water {...this.props}/>
                 <Ph {...this.props}/>
                 <Temp {...this.props}/>
                 <Humidity {...this.props}/>
                 <Ldr {...this.props}/>
-            </div>
+        </div>
     }
 }
 
 
+/**
+* Water information
+* @extends React.Component
+*/
 class Water extends Component {
     constructor(props) {
         super(props);
@@ -85,6 +91,10 @@ class Water extends Component {
     }
 }
 
+/**
+* Ph information
+* @extends React.Component
+*/
 class Ph extends Component {
     constructor(props) {
         super(props);
@@ -130,6 +140,10 @@ class Ph extends Component {
     }
 }
 
+/**
+* Temperature information
+* @extends React.Component
+*/
 class Temp extends Component {
     constructor(props) {
         super(props);
@@ -175,6 +189,10 @@ class Temp extends Component {
     }
 }
 
+/**
+* Humidity information
+* @extends React.Component
+*/
 class Humidity extends Component {
     constructor(props) {
         super(props);
@@ -220,6 +238,10 @@ class Humidity extends Component {
     }
 }
 
+/**
+* Ldr information
+* @extends React.Component
+*/
 class Ldr extends Component {
     constructor(props) {
         super(props);

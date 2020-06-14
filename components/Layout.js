@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import Head from 'next/head'
+import Head from 'next/head';
 
+/**
+* Layout of the web application
+* @extends React.Component
+*/
 class Layout extends Component {
 
     constructor(props) {

@@ -11,14 +11,16 @@ import AWSController from "../api/AWSController";
 import {
   Modal,
   Image,
-  Header,
   Form,
   Button,
   Tab,
   Message,
 } from "semantic-ui-react";
-import Axios from "axios";
 
+/**
+* SideNav component
+* @extends React.Component;
+*/
 class Sidenav extends Component {
   constructor(props) {
     super(props);
@@ -119,7 +121,6 @@ class Sidenav extends Component {
 
   render() {
     const { userDetail, user, device, page} = this.props;
-    console.log("user detail?", userDetail);
     const panes = [
       {
         menuItem: "Profile",
