@@ -4,6 +4,10 @@ import APIController from "../../api/APIController";
 import moment from 'moment';
 const QUERY_TYPE = 'Resources';
 
+/**
+* Visualisation chart for CPU usage
+* @extends React.Component
+*/
 class CpuChart extends Component {
 
     constructor(props) {

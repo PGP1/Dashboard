@@ -1,0 +1,56 @@
+{
+  "uid" : "8e220471f45118da",
+  "name" : "should be able to see Device Control",
+  "fullName" : "US 3.5.4: Elastic search.should be able to see Device Control",
+  "historyId" : "3195cb06854ae2dcb352ebf82c304ca9",
+  "time" : {
+    "start" : 1592125304380,
+    "stop" : 1592125304532,
+    "duration" : 152
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to see Device Control"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8e220471f45118da.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

@@ -1,0 +1,56 @@
+{
+  "uid" : "48ef54450e2fa16b",
+  "name" : "should unlink devices",
+  "fullName" : "US 3.5.5: Device removal functionality.should unlink devices",
+  "historyId" : "286d8da9cca0c857b3e261daf6c137e1",
+  "time" : {
+    "start" : 1592124828266,
+    "stop" : 1592124833546,
+    "duration" : 5280
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.5: Device removal functionality"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.5: Device removal functionality"
+  }, {
+    "name" : "testMethod",
+    "value" : "should unlink devices"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.5: Device removal functionality"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "48ef54450e2fa16b.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

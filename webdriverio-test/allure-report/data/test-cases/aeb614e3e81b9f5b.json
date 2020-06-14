@@ -1,0 +1,56 @@
+{
+  "uid" : "aeb614e3e81b9f5b",
+  "name" : "should be able to see RAM information",
+  "fullName" : "US 3.5.4: Elastic search.should be able to see RAM information",
+  "historyId" : "ded4ff5c316ed7670df5d0db2b5f28fc",
+  "time" : {
+    "start" : 1592123407611,
+    "stop" : 1592123407626,
+    "duration" : 15
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to see RAM information"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "aeb614e3e81b9f5b.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

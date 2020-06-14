@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1592124951372' stop='1592124956849'>
+    <name>US 3.5.3.2: Device Linkage functionality</name>
+    <title>US 3.5.3.2: Device Linkage functionality</title>
+    <test-cases>
+        <test-case start='1592124951372' status='passed' stop='1592124954620'>
+            <name>should reject incorrect devices</name>
+            <title>should reject incorrect devices</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome-18.7.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1592124954620' status='passed' stop='1592124956848'>
+            <name>should accept correct devices</name>
+            <title>should accept correct devices</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome-18.7.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

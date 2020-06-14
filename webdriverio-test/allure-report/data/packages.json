@@ -1,0 +1,287 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "US 3",
+    "children" : [ {
+      "name" : "8: AWS Socket API",
+      "children" : [ {
+        "name" : "Should show previous prediction",
+        "uid" : "b6a1b97d457c3c88",
+        "parentUid" : "ca92c507d4968e8baeda82c16c648053",
+        "status" : "failed",
+        "time" : {
+          "start" : 1592125472081,
+          "stop" : 1592125482107,
+          "duration" : 10026
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Chrome-18.7.0" ]
+      }, {
+        "name" : "Should be able to see WebSocket notification",
+        "uid" : "e0f87764f9ed57a2",
+        "parentUid" : "ca92c507d4968e8baeda82c16c648053",
+        "status" : "passed",
+        "time" : {
+          "start" : 1592125540840,
+          "stop" : 1592125543950,
+          "duration" : 3110
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Chrome-18.7.0" ]
+      } ],
+      "uid" : "ca92c507d4968e8baeda82c16c648053"
+    }, {
+      "name" : "5",
+      "children" : [ {
+        "name" : "1.1: User Authentication functionality",
+        "children" : [ {
+          "name" : "should reject incorrect details",
+          "uid" : "acade49330b6ef9e",
+          "parentUid" : "90cdbefd060c5d5653ce92f87395d460",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592125498341,
+            "stop" : 1592125508525,
+            "duration" : 10184
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Chrome-18.7.0" ]
+        }, {
+          "name" : "should login on correct details",
+          "uid" : "5af523da1a0e8ff1",
+          "parentUid" : "90cdbefd060c5d5653ce92f87395d460",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592125508525,
+            "stop" : 1592125516396,
+            "duration" : 7871
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Chrome-18.7.0" ]
+        } ],
+        "uid" : "1.1: User Authentication functionality"
+      }, {
+        "name" : "3",
+        "children" : [ {
+          "name" : "2: Device Linkage functionality",
+          "children" : [ {
+            "name" : "should reject incorrect devices",
+            "uid" : "247bf17d7e38a1e0",
+            "parentUid" : "ce4ac57cdf15c8dd6ad879ed64d25bd6",
+            "status" : "passed",
+            "time" : {
+              "start" : 1592125516409,
+              "stop" : 1592125519642,
+              "duration" : 3233
+            },
+            "flaky" : false,
+            "newFailed" : false,
+            "parameters" : [ "Chrome-18.7.0" ]
+          }, {
+            "name" : "should accept correct devices",
+            "uid" : "58f2cc44d5ca5385",
+            "parentUid" : "ce4ac57cdf15c8dd6ad879ed64d25bd6",
+            "status" : "passed",
+            "time" : {
+              "start" : 1592125519642,
+              "stop" : 1592125521897,
+              "duration" : 2255
+            },
+            "flaky" : false,
+            "newFailed" : false,
+            "parameters" : [ "Chrome-18.7.0" ]
+          } ],
+          "uid" : "ce4ac57cdf15c8dd6ad879ed64d25bd6"
+        }, {
+          "name" : "3: Device status connection dashboard",
+          "children" : [ {
+            "name" : "should be able to view current device stats",
+            "uid" : "8087a3af82502bc",
+            "parentUid" : "7acc6b02014cfe4fdc57805dabba1177",
+            "status" : "passed",
+            "time" : {
+              "start" : 1592125533522,
+              "stop" : 1592125536562,
+              "duration" : 3040
+            },
+            "flaky" : false,
+            "newFailed" : false,
+            "parameters" : [ "Chrome-18.7.0" ]
+          }, {
+            "name" : "should be able to switch device dashboards",
+            "uid" : "b83db5b8bdc10850",
+            "parentUid" : "7acc6b02014cfe4fdc57805dabba1177",
+            "status" : "passed",
+            "time" : {
+              "start" : 1592125536562,
+              "stop" : 1592125540337,
+              "duration" : 3775
+            },
+            "flaky" : false,
+            "newFailed" : false,
+            "parameters" : [ "Chrome-18.7.0" ]
+          } ],
+          "uid" : "7acc6b02014cfe4fdc57805dabba1177"
+        } ],
+        "uid" : "a0b76d9379d607a1f6c1ee171f12926e"
+      }, {
+        "name" : "5: Device removal functionality",
+        "children" : [ {
+          "name" : "should unlink devices",
+          "uid" : "37a46cc6f332a889",
+          "parentUid" : "6ba4406993862d59a3fbba46cd8d2076",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592125521899,
+            "stop" : 1592125527146,
+            "duration" : 5247
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Chrome-18.7.0" ]
+        } ],
+        "uid" : "6ba4406993862d59a3fbba46cd8d2076"
+      }, {
+        "name" : "1: Dashboard front end",
+        "children" : [ {
+          "name" : "should be able to access a device dashboard",
+          "uid" : "9d32e504ae66085a",
+          "parentUid" : "68fed8c5bab51cff731ec4b9091e13ce",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592125527148,
+            "stop" : 1592125533520,
+            "duration" : 6372
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Chrome-18.7.0" ]
+        } ],
+        "uid" : "68fed8c5bab51cff731ec4b9091e13ce"
+      }, {
+        "name" : "4: Elastic search",
+        "children" : [ {
+          "name" : "should be able to see elastic search server status",
+          "uid" : "ddca5bc9bb03c796",
+          "parentUid" : "9a7fa0070a23eb116050175156bee894",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592125540360,
+            "stop" : 1592125540515,
+            "duration" : 155
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Chrome-18.7.0" ]
+        }, {
+          "name" : "should be able to see Device Status",
+          "uid" : "d990bfe8cbfddefc",
+          "parentUid" : "9a7fa0070a23eb116050175156bee894",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592125540515,
+            "stop" : 1592125540650,
+            "duration" : 135
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Chrome-18.7.0" ]
+        }, {
+          "name" : "should be able to see Device Control",
+          "uid" : "915bdb6fffa0cebd",
+          "parentUid" : "9a7fa0070a23eb116050175156bee894",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592125540650,
+            "stop" : 1592125540687,
+            "duration" : 37
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Chrome-18.7.0" ]
+        }, {
+          "name" : "should be able to see CPU information",
+          "uid" : "863b08f129170b0b",
+          "parentUid" : "9a7fa0070a23eb116050175156bee894",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592125540687,
+            "stop" : 1592125540728,
+            "duration" : 41
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Chrome-18.7.0" ]
+        }, {
+          "name" : "should be able to see RAM information",
+          "uid" : "d85399ed02621038",
+          "parentUid" : "9a7fa0070a23eb116050175156bee894",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592125540728,
+            "stop" : 1592125540791,
+            "duration" : 63
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Chrome-18.7.0" ]
+        } ],
+        "uid" : "9a7fa0070a23eb116050175156bee894"
+      } ],
+      "uid" : "e68502ca404e9c877436fb4d914f9a36"
+    } ],
+    "uid" : "22f299633d2d1c075d224b54e243ff10"
+  }, {
+    "name" : "US: 3.5.10 Register account via Cognito API",
+    "children" : [ {
+      "name" : "should reject incorrect details",
+      "uid" : "793b39119ebff56e",
+      "parentUid" : "84cc84f393b1777f42e0e47f60cf5f5b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125498337,
+        "stop" : 1592125509546,
+        "duration" : 11209
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "80cc9a2c6dc1eefe",
+      "parentUid" : "84cc84f393b1777f42e0e47f60cf5f5b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125509547,
+        "stop" : 1592125519357,
+        "duration" : 9810
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    } ],
+    "uid" : "US: 3.5.10 Register account via Cognito API"
+  }, {
+    "name" : "US 1.6: Video Streaming of Plants",
+    "children" : [ {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "5a4d4f0d301cac7",
+      "parentUid" : "98eed3fdc7d656486760cf9a175acd9d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540796,
+        "stop" : 1592125540837,
+        "duration" : 41
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    } ],
+    "uid" : "US 1.6: Video Streaming of Plants"
+  } ]
+}

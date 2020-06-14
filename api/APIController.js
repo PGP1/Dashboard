@@ -1,8 +1,11 @@
 import axios from 'axios';
 import { DEVICE_LIST, LINK_DEVICE,UNLINK_DEVICE, ELASTIC_QUERY, USER_DATA, UPLOAD_AVATAR,
      STATUS_DEVICE_REQUEST, ELASTIC_CLUSTER_QUERY, CONTROL_DEVICE} from "../constants";
-class APIController {
 
+/**
+* Main API Controller, which handles all the API calls to API gateway
+*/
+class APIController {
     async getMyDevices({ jwtToken }) {
         const config = {
             headers: { Authorization: jwtToken }
@@ -21,8 +24,7 @@ class APIController {
         const config = {
             headers: {Authorization: jwtToken}
         };
-        console.log(deviceId);
-        console.log(config)
+
         return await axios.post(UNLINK_DEVICE, {ID : deviceId}, config)
     }
 

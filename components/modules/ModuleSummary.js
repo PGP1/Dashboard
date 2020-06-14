@@ -4,7 +4,10 @@ import APIController from "../../api/APIController";
 import * as _ from "underscore";
 import { TYPES } from "../../constants";
 
-
+/**
+* Module Content which summary the details of the plants
+* @extends React.Component
+*/
 class ModuleSummary extends Component {
     constructor(props) {
         super(props);

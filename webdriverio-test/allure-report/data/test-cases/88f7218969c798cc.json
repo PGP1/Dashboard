@@ -1,0 +1,56 @@
+{
+  "uid" : "88f7218969c798cc",
+  "name" : "should reject incorrect devices",
+  "fullName" : "US 3.5.3.2: Device Linkage functionality.should reject incorrect devices",
+  "historyId" : "701902590fd220f4b478208bdb16e4eb",
+  "time" : {
+    "start" : 1592125105803,
+    "stop" : 1592125109031,
+    "duration" : 3228
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.3.2: Device Linkage functionality"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.3.2: Device Linkage functionality"
+  }, {
+    "name" : "testMethod",
+    "value" : "should reject incorrect devices"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.3.2: Device Linkage functionality"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "88f7218969c798cc.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

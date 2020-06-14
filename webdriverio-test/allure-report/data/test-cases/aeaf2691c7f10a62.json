@@ -1,0 +1,56 @@
+{
+  "uid" : "aeaf2691c7f10a62",
+  "name" : "should reject incorrect details",
+  "fullName" : "US: 3.5.10 Register account via Cognito API..should reject incorrect details",
+  "historyId" : "e4078f3a8377f8978ae54de48f2c374c",
+  "time" : {
+    "start" : 1592124801549,
+    "stop" : 1592124814578,
+    "duration" : 13029
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "US: 3.5.10 Register account via Cognito API."
+  }, {
+    "name" : "testClass",
+    "value" : "US: 3.5.10 Register account via Cognito API."
+  }, {
+    "name" : "testMethod",
+    "value" : "should reject incorrect details"
+  }, {
+    "name" : "package",
+    "value" : "US: 3.5.10 Register account via Cognito API."
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "aeaf2691c7f10a62.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

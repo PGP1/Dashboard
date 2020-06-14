@@ -1,0 +1,56 @@
+{
+  "uid" : "b6c9621dc6de6a01",
+  "name" : "should login on correct details",
+  "fullName" : "US 3.5.1.1: User Authentication functionality..should login on correct details",
+  "historyId" : "1467a90090e45e241cf6f6f33bd29872",
+  "time" : {
+    "start" : 1592124813723,
+    "stop" : 1592124822750,
+    "duration" : 9027
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.1.1: User Authentication functionality."
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.1.1: User Authentication functionality."
+  }, {
+    "name" : "testMethod",
+    "value" : "should login on correct details"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.1.1: User Authentication functionality."
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b6c9621dc6de6a01.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

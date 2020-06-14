@@ -1,0 +1,130 @@
+{
+  "uid" : "5a4d4f0d301cac7",
+  "name" : "should be able to see Video Streaming service",
+  "fullName" : "US 1.6: Video Streaming of Plants.should be able to see Video Streaming service",
+  "historyId" : "d02f6276e6799cca349cac52fe26d1fc",
+  "time" : {
+    "start" : 1592125540796,
+    "stop" : 1592125540837,
+    "duration" : 41
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 1.6: Video Streaming of Plants"
+  }, {
+    "name" : "testClass",
+    "value" : "US 1.6: Video Streaming of Plants"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to see Video Streaming service"
+  }, {
+    "name" : "package",
+    "value" : "US 1.6: Video Streaming of Plants"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "a042672bde435604",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468929,
+        "stop" : 1592125468982,
+        "duration" : 53
+      }
+    }, {
+      "uid" : "fb1b2cad403cf911",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304575,
+        "stop" : 1592125304602,
+        "duration" : 27
+      }
+    }, {
+      "uid" : "10f02e343b2315f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218666,
+        "stop" : 1592125218691,
+        "duration" : 25
+      }
+    }, {
+      "uid" : "9018a50e6e4123df",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125130038,
+        "stop" : 1592125130089,
+        "duration" : 51
+      }
+    }, {
+      "uid" : "5e5106902a06a5a4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975715,
+        "stop" : 1592124975751,
+        "duration" : 36
+      }
+    }, {
+      "uid" : "654d38e524a3ac02",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124847171,
+        "stop" : 1592124847197,
+        "duration" : 26
+      }
+    }, {
+      "uid" : "5d7c2a49ffff53e5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771511,
+        "stop" : 1592124771544,
+        "duration" : 33
+      }
+    }, {
+      "uid" : "d4020f0b0c1f371",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124406862,
+        "stop" : 1592124406946,
+        "duration" : 84
+      }
+    }, {
+      "uid" : "29c296b319c11c2e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123407632,
+        "stop" : 1592123407649,
+        "duration" : 17
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5a4d4f0d301cac7.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

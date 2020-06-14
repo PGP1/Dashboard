@@ -4,6 +4,10 @@ import APIController from "../../api/APIController";
 import moment from 'moment';
 import { UNITS } from '../../constants';
 
+/**
+* Visualisation chart in summary
+* @extends React.Component
+*/
 class SummaryChart extends Component {
 
     constructor(props) {

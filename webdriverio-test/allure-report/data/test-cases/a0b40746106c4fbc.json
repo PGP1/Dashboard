@@ -1,0 +1,56 @@
+{
+  "uid" : "a0b40746106c4fbc",
+  "name" : "should be able to see elastic search server status",
+  "fullName" : "US 3.5.4: Elastic search.should be able to see elastic search server status",
+  "historyId" : "cdb930a6d77735cf5fe4bf8c86acdefa",
+  "time" : {
+    "start" : 1592124406558,
+    "stop" : 1592124406698,
+    "duration" : 140
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to see elastic search server status"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a0b40746106c4fbc.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

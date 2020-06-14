@@ -1,0 +1,57 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1592124406948' stop='1592124408333'>
+    <name>US 3.8: AWS Socket API</name>
+    <title>US 3.8: AWS Socket API</title>
+    <test-cases>
+        <test-case start='1592124406948' status='failed' stop='1592124408316'>
+            <name>Should be able to see WebSocket notification</name>
+            <title>Should be able to see WebSocket notification</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome-18.7.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>expect(received).toBe(expected) // Object.is equality
+                
+                Expected: true
+                Received: false</message>
+                <stack-trace>Error: expect(received).toBe(expected) // Object.is equality
+                
+                Expected: true
+                Received: false
+                    at Context.it (/Users/austin/Desktop/PROJECTFOLDER/Dashboard/webdriverio-test/test/specs/basic.js:246:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1592124408317' status='failed' stop='1592124408333'>
+            <name>Should show previous prediction</name>
+            <title>Should show previous prediction</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome-18.7.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>expect(received).toBe(expected) // Object.is equality
+                
+                Expected: true
+                Received: false</message>
+                <stack-trace>Error: expect(received).toBe(expected) // Object.is equality
+                
+                Expected: true
+                Received: false
+                    at Context.it (/Users/austin/Desktop/PROJECTFOLDER/Dashboard/webdriverio-test/test/specs/basic.js:252:29)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -7,9 +7,12 @@ import React, { Component } from 'react';
 import AWSController from "../api/AWSController"
 import SimpleReactValidator from 'simple-react-validator';
 import Link from "next/link";
-import particles_config from "./assets/config/particles_config.json"
+import particles_config from "./assets/config/particles_config.json";
 
-
+/**
+* Register Component
+* @extends React.Component
+*/
 class Register extends Component {
 
     constructor(props) {

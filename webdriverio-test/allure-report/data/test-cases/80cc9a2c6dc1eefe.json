@@ -1,0 +1,130 @@
+{
+  "uid" : "80cc9a2c6dc1eefe",
+  "name" : "should accepts correct details",
+  "fullName" : "US: 3.5.10 Register account via Cognito API..should accepts correct details",
+  "historyId" : "361469133e1d08a3a0eee37b4f029666",
+  "time" : {
+    "start" : 1592125509547,
+    "stop" : 1592125519357,
+    "duration" : 9810
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "US: 3.5.10 Register account via Cognito API."
+  }, {
+    "name" : "testClass",
+    "value" : "US: 3.5.10 Register account via Cognito API."
+  }, {
+    "name" : "testMethod",
+    "value" : "should accepts correct details"
+  }, {
+    "name" : "package",
+    "value" : "US: 3.5.10 Register account via Cognito API."
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "c5448c2a516bfbf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125437038,
+        "stop" : 1592125447102,
+        "duration" : 10064
+      }
+    }, {
+      "uid" : "c46ddf3302f1b3b9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125269838,
+        "stop" : 1592125282299,
+        "duration" : 12461
+      }
+    }, {
+      "uid" : "d5059369b89b0559",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125187474,
+        "stop" : 1592125197100,
+        "duration" : 9626
+      }
+    }, {
+      "uid" : "fb965e86739936df",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125098530,
+        "stop" : 1592125108192,
+        "duration" : 9662
+      }
+    }, {
+      "uid" : "9c69e45f86f62e9c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124943138,
+        "stop" : 1592124952625,
+        "duration" : 9487
+      }
+    }, {
+      "uid" : "a3160431e5f99b63",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124814578,
+        "stop" : 1592124824631,
+        "duration" : 10053
+      }
+    }, {
+      "uid" : "b86f093cea0b3566",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124739991,
+        "stop" : 1592124749588,
+        "duration" : 9597
+      }
+    }, {
+      "uid" : "5720b366f5cc37da",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124374185,
+        "stop" : 1592124383995,
+        "duration" : 9810
+      }
+    }, {
+      "uid" : "71558c157c7d7be3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123374666,
+        "stop" : 1592123384411,
+        "duration" : 9745
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "80cc9a2c6dc1eefe.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

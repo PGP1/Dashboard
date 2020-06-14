@@ -1,0 +1,181 @@
+[ {
+  "uid" : "acade49330b6ef9e",
+  "name" : "should reject incorrect details",
+  "time" : {
+    "start" : 1592125498341,
+    "stop" : 1592125508525,
+    "duration" : 10184
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5af523da1a0e8ff1",
+  "name" : "should login on correct details",
+  "time" : {
+    "start" : 1592125508525,
+    "stop" : 1592125516396,
+    "duration" : 7871
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d85399ed02621038",
+  "name" : "should be able to see RAM information",
+  "time" : {
+    "start" : 1592125540728,
+    "stop" : 1592125540791,
+    "duration" : 63
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b83db5b8bdc10850",
+  "name" : "should be able to switch device dashboards",
+  "time" : {
+    "start" : 1592125536562,
+    "stop" : 1592125540337,
+    "duration" : 3775
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "793b39119ebff56e",
+  "name" : "should reject incorrect details",
+  "time" : {
+    "start" : 1592125498337,
+    "stop" : 1592125509546,
+    "duration" : 11209
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b6a1b97d457c3c88",
+  "name" : "Should show previous prediction",
+  "time" : {
+    "start" : 1592125472081,
+    "stop" : 1592125482107,
+    "duration" : 10026
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "863b08f129170b0b",
+  "name" : "should be able to see CPU information",
+  "time" : {
+    "start" : 1592125540687,
+    "stop" : 1592125540728,
+    "duration" : 41
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d990bfe8cbfddefc",
+  "name" : "should be able to see Device Status",
+  "time" : {
+    "start" : 1592125540515,
+    "stop" : 1592125540650,
+    "duration" : 135
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5a4d4f0d301cac7",
+  "name" : "should be able to see Video Streaming service",
+  "time" : {
+    "start" : 1592125540796,
+    "stop" : 1592125540837,
+    "duration" : 41
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "58f2cc44d5ca5385",
+  "name" : "should accept correct devices",
+  "time" : {
+    "start" : 1592125519642,
+    "stop" : 1592125521897,
+    "duration" : 2255
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "37a46cc6f332a889",
+  "name" : "should unlink devices",
+  "time" : {
+    "start" : 1592125521899,
+    "stop" : 1592125527146,
+    "duration" : 5247
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8087a3af82502bc",
+  "name" : "should be able to view current device stats",
+  "time" : {
+    "start" : 1592125533522,
+    "stop" : 1592125536562,
+    "duration" : 3040
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "247bf17d7e38a1e0",
+  "name" : "should reject incorrect devices",
+  "time" : {
+    "start" : 1592125516409,
+    "stop" : 1592125519642,
+    "duration" : 3233
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "80cc9a2c6dc1eefe",
+  "name" : "should accepts correct details",
+  "time" : {
+    "start" : 1592125509547,
+    "stop" : 1592125519357,
+    "duration" : 9810
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "915bdb6fffa0cebd",
+  "name" : "should be able to see Device Control",
+  "time" : {
+    "start" : 1592125540650,
+    "stop" : 1592125540687,
+    "duration" : 37
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ddca5bc9bb03c796",
+  "name" : "should be able to see elastic search server status",
+  "time" : {
+    "start" : 1592125540360,
+    "stop" : 1592125540515,
+    "duration" : 155
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e0f87764f9ed57a2",
+  "name" : "Should be able to see WebSocket notification",
+  "time" : {
+    "start" : 1592125540840,
+    "stop" : 1592125543950,
+    "duration" : 3110
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9d32e504ae66085a",
+  "name" : "should be able to access a device dashboard",
+  "time" : {
+    "start" : 1592125527148,
+    "stop" : 1592125533520,
+    "duration" : 6372
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

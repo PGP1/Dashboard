@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+      "children" : [ {
+        "name" : "Should show previous prediction",
+        "uid" : "b6a1b97d457c3c88",
+        "parentUid" : "7d22550bcc2853ce14c87084cc359937",
+        "status" : "failed",
+        "time" : {
+          "start" : 1592125472081,
+          "stop" : 1592125482107,
+          "duration" : 10026
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Chrome-18.7.0" ]
+      } ],
+      "uid" : "7d22550bcc2853ce14c87084cc359937"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

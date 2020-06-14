@@ -1,0 +1,123 @@
+{
+  "uid" : "e0f87764f9ed57a2",
+  "name" : "Should be able to see WebSocket notification",
+  "fullName" : "US 3.8: AWS Socket API.Should be able to see WebSocket notification",
+  "historyId" : "327179b46b2d5dc491f8ee5d01fa92ad",
+  "time" : {
+    "start" : 1592125540840,
+    "stop" : 1592125543950,
+    "duration" : 3110
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.8: AWS Socket API"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.8: AWS Socket API"
+  }, {
+    "name" : "testMethod",
+    "value" : "Should be able to see WebSocket notification"
+  }, {
+    "name" : "package",
+    "value" : "US 3.8: AWS Socket API"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "bbb978e102ef52cd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468984,
+        "stop" : 1592125472081,
+        "duration" : 3097
+      }
+    }, {
+      "uid" : "d4e959a68c074617",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304608,
+        "stop" : 1592125307769,
+        "duration" : 3161
+      }
+    }, {
+      "uid" : "a013374337cde3e4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218696,
+        "stop" : 1592125221853,
+        "duration" : 3157
+      }
+    }, {
+      "uid" : "f8e04817ad1dc35f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125130091,
+        "stop" : 1592125133175,
+        "duration" : 3084
+      }
+    }, {
+      "uid" : "e9fd84c121f9b278",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975752,
+        "stop" : 1592124977117,
+        "duration" : 1365
+      }
+    }, {
+      "uid" : "1ce333302bfab3bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124847200,
+        "stop" : 1592124848520,
+        "duration" : 1320
+      }
+    }, {
+      "uid" : "e9ef716e2ddb6def",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771547,
+        "stop" : 1592124773552,
+        "duration" : 2005
+      }
+    }, {
+      "uid" : "917adaaa6b5e858f",
+      "status" : "failed",
+      "statusDetails" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+      "time" : {
+        "start" : 1592124406948,
+        "stop" : 1592124408316,
+        "duration" : 1368
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e0f87764f9ed57a2.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}
