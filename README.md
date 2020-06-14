@@ -1,6 +1,10 @@
 # Dashboard
 ![Deployment](https://github.com/PGP1/Dashboard/workflows/Deployment/badge.svg)
 
+<img src="README.assets/PIOT_5-20200614205827267.png" alt="img" style="zoom: 50%;" />
+
+
+
 ## 1. Pre-requisite
 
 For the project to work, this is the requirements:
