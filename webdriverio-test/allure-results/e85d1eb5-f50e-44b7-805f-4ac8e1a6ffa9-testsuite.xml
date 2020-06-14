@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1592115392657' stop='1592115399482'>
+    <name>Plantly -> [Dashboard Interaction]</name>
+    <title>Plantly -> [Dashboard Interaction]</title>
+    <test-cases>
+        <test-case start='1592115392657' status='passed' stop='1592115395720'>
+            <name>it should be able to view current device stats</name>
+            <title>it should be able to view current device stats</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1592115395720' status='passed' stop='1592115399482'>
+            <name>it should be able to switch device dashboards</name>
+            <title>it should be able to switch device dashboards</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

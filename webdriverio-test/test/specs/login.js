@@ -1,22 +1,22 @@
 describe('Plantly -> [Logging In]', () => {
-    // it('should reject incorrect details', () => {
-    //     browser.url('http://localhost:3000/login')
+    it('should reject incorrect details', () => {
+        browser.url('http://localhost:3000/login')
         
-    //     const wrongLogin = {
-    //         username: 'test7',
-    //         password: 'banadfadf'
-    //     }
+        const wrongLogin = {
+            username: 'test7',
+            password: 'banadfadf'
+        }
 
-    //     $('[name=username]').addValue(wrongLogin.username );
-    //     $('[name=password]').addValue(wrongLogin.password);
+        $('[name=username]').addValue(wrongLogin.username );
+        $('[name=password]').addValue(wrongLogin.password);
         
-    //     $('button.ui.animated.button').click();
-    //     browser.pause(5000);
+        $('button.ui.animated.button').click();
+        browser.pause(5000);
         
-    //     const msg = $('ul.list').getText();
+        const msg = $('ul.list').getText();
 
-    //     expect(msg).toBe("Incorrect username or password.");
-    // })
+        expect(msg).toBe("Incorrect username or password.");
+    })
    
     it('should login on correct details', () => {
         browser.url('http://localhost:3000/login')
@@ -37,89 +37,89 @@ describe('Plantly -> [Logging In]', () => {
     })
 })
 
-// describe('Plantly -> [Adding Devices]', () => {
+describe('Plantly -> [Adding Devices]', () => {
     
-//     it('should reject incorrect devices', () => {
-//         $('button.ui.right.floated.primary.button').click();
-//         browser.pause(1000);
+    it('should reject incorrect devices', () => {
+        $('button.ui.right.floated.primary.button').click();
+        browser.pause(1000);
 
-//         const invalDevice = "abcada"
+        const invalDevice = "abcada"
 
-//         $('input').addValue(invalDevice);
+        $('input').addValue(invalDevice);
         
-//         browser.pause(1000);
+        browser.pause(1000);
 
-//         const button = $("div.actions button");
-//         console.log(button)
+        const button = $("div.actions button");
+        console.log(button)
 
-//         button.click();
-//         browser.pause(1000);
+        button.click();
+        browser.pause(1000);
 
-//         const msg = $('div.ui.negative.message p');
+        const msg = $('div.ui.negative.message p');
 
      
-//         expect(msg.getText()).toBe("Device isn't available");
-//     })
+        expect(msg.getText()).toBe("Device isn't available");
+    })
    
-//     it('should accept correct devices', () => {
+    it('should accept correct devices', () => {
       
-//         const valDevice = "ghzy567"
+        const valDevice = "ghzy567"
 
-//         $('input').setValue(valDevice);
+        $('input').setValue(valDevice);
         
-//         browser.pause(1000);
+        browser.pause(1000);
 
-//         const button = $("div.actions button");
+        const button = $("div.actions button");
       
-//         button.click();
-//         browser.pause(1000);
+        button.click();
+        browser.pause(1000);
 
-//         var table = $$('table tbody')[0];
-//         var devices = table.$$('tr');
+        var table = $$('table tbody')[0];
+        var devices = table.$$('tr');
 
-//         var contains = false;
+        var contains = false;
         
-//         for(var i=0; i < devices.length; i++){
-//             if(devices[i].$$('td')[0].getText() == 'ghzy567'){
-//                 contains = true;
-//                 break;
-//             }
+        for(var i=0; i < devices.length; i++){
+            if(devices[i].$$('td')[0].getText() == 'ghzy567'){
+                contains = true;
+                break;
+            }
 
-//         }
-//         expect(contains).toBe(true);
-//     })
+        }
+        expect(contains).toBe(true);
+    })
 
-// })
-// describe('Plantly -> [Removing Devices]', () => {
+})
+describe('Plantly -> [Removing Devices]', () => {
     
-//     it('it should unlink devices', () => {
+    it('it should unlink devices', () => {
         
-//         var table = $$('table tbody')[0];
-//         var devices = table.$$('tr');
+        var table = $$('table tbody')[0];
+        var devices = table.$$('tr');
         
-//         for(var i=0; i < devices.length; i++){
-//             if(devices[i].$$('td')[0].getText() == 'ghzy567'){
-//                 devices[i].$$('td')[2].$$('a')[1].click()
-//                 break;
-//             }
-//         }
+        for(var i=0; i < devices.length; i++){
+            if(devices[i].$$('td')[0].getText() == 'ghzy567'){
+                devices[i].$$('td')[2].$$('a')[1].click()
+                break;
+            }
+        }
 
-//         var contains = "still inside table";
+        var contains = "still inside table";
 
-//         browser.pause(5000)
-//         var table = $$('table tbody')[0];
-//         var devices = table.$$('tr');
+        browser.pause(5000)
+        var table = $$('table tbody')[0];
+        var devices = table.$$('tr');
         
-//         for(var i=0; i < devices.length; i++){
-//             if(devices[i].$$('td')[0].getText() == 'ghzy567'){
-//                 contains = "still inside table";
-//                 break;
-//             } else contains = "passed";
-//         }
-//         expect(contains).toBe("passed");
-//     })
+        for(var i=0; i < devices.length; i++){
+            if(devices[i].$$('td')[0].getText() == 'ghzy567'){
+                contains = "still inside table";
+                break;
+            } else contains = "passed";
+        }
+        expect(contains).toBe("passed");
+    })
    
-// })
+})
 
 describe('Plantly -> [Viewing the Dashboard]', () => {
     
@@ -198,23 +198,23 @@ describe('Plantly -> [Dashboard Interaction]', () => {
         expect(device).toBe(dropdownTxt);
     })
 
-    it('it should be able to view device details', () => {
+    // it('it should be able to view device details', () => {
         
-        var deviceTab =  $('a.flex.align-center.space').click();
+    //     var deviceTab =  $('a.flex.align-center.space').click();
         
-        browser.pause(1500);
+    //     browser.pause(1500);
 
-        var dropdownItem = $$('div.visible.menu.transition')[0].$$('div')[0];
-        var dropdownTxt = dropdownItem.$$('span')[0].getText()
+    //     var dropdownItem = $$('div.visible.menu.transition')[0].$$('div')[0];
+    //     var dropdownTxt = dropdownItem.$$('span')[0].getText()
 
-        dropdownItem.click();
+    //     dropdownItem.click();
 
-        browser.pause(3000)
+    //     browser.pause(3000)
         
-        var device = $('h1.subtitle.textOverflow').getText();
+    //     var device = $('h1.subtitle.textOverflow').getText();
        
-        expect(device).toBe(dropdownTxt);
-    })
+    //     expect(device).toBe(dropdownTxt);
+    // })
 
 
    

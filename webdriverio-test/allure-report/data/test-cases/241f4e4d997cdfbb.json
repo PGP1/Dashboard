@@ -1,0 +1,58 @@
+{
+  "uid" : "241f4e4d997cdfbb",
+  "name" : "should reject incorrect details",
+  "fullName" : "Plantly -> [Logging In].should reject incorrect details",
+  "historyId" : "d6b9fb355ce1b6b9820ff03a7cc794cf",
+  "time" : {
+    "start" : 1592115361422,
+    "stop" : 1592115368544,
+    "duration" : 7122
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Plantly -> [Logging In]"
+  }, {
+    "name" : "testClass",
+    "value" : "Plantly -> [Logging In]"
+  }, {
+    "name" : "testMethod",
+    "value" : "should reject incorrect details"
+  }, {
+    "name" : "package",
+    "value" : "Plantly -> [Logging In]"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "241f4e4d997cdfbb.json",
+  "parameterValues" : [ "chrome" ]
+}

@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1592115361421' stop='1592115375239'>
+    <name>Plantly -> [Logging In]</name>
+    <title>Plantly -> [Logging In]</title>
+    <test-cases>
+        <test-case start='1592115361422' status='passed' stop='1592115368544'>
+            <name>should reject incorrect details</name>
+            <title>should reject incorrect details</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1592115368544' status='passed' stop='1592115375238'>
+            <name>should login on correct details</name>
+            <title>should login on correct details</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

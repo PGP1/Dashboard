@@ -1,0 +1,58 @@
+{
+  "uid" : "15bcd6a68ee630dd",
+  "name" : "it should unlink devices",
+  "fullName" : "Plantly -> [Removing Devices].it should unlink devices",
+  "historyId" : "3c46c377584df74f3fd7f20ad0d38256",
+  "time" : {
+    "start" : 1592115380830,
+    "stop" : 1592115386148,
+    "duration" : 5318
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Plantly -> [Removing Devices]"
+  }, {
+    "name" : "testClass",
+    "value" : "Plantly -> [Removing Devices]"
+  }, {
+    "name" : "testMethod",
+    "value" : "it should unlink devices"
+  }, {
+    "name" : "package",
+    "value" : "Plantly -> [Removing Devices]"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "15bcd6a68ee630dd.json",
+  "parameterValues" : [ "chrome" ]
+}

@@ -1,0 +1,129 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "Plantly -> [Logging In]",
+    "children" : [ {
+      "name" : "should reject incorrect details",
+      "uid" : "241f4e4d997cdfbb",
+      "parentUid" : "906a62a50b73a602c8407a391c25332f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592115361422,
+        "stop" : 1592115368544,
+        "duration" : 7122
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "should login on correct details",
+      "uid" : "b1098591aa13c050",
+      "parentUid" : "906a62a50b73a602c8407a391c25332f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592115368544,
+        "stop" : 1592115375238,
+        "duration" : 6694
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "906a62a50b73a602c8407a391c25332f"
+  }, {
+    "name" : "Plantly -> [Adding Devices]",
+    "children" : [ {
+      "name" : "should reject incorrect devices",
+      "uid" : "e6ccd5d5e15704f0",
+      "parentUid" : "35cb8c10487fa782e5ed6e437f2a473a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592115375245,
+        "stop" : 1592115378491,
+        "duration" : 3246
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "95b863da7b726aa3",
+      "parentUid" : "35cb8c10487fa782e5ed6e437f2a473a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592115378491,
+        "stop" : 1592115380827,
+        "duration" : 2336
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "35cb8c10487fa782e5ed6e437f2a473a"
+  }, {
+    "name" : "Plantly -> [Removing Devices]",
+    "children" : [ {
+      "name" : "it should unlink devices",
+      "uid" : "15bcd6a68ee630dd",
+      "parentUid" : "19cf49595f0ddfaa9e3198f46854b5e1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592115380830,
+        "stop" : 1592115386148,
+        "duration" : 5318
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "19cf49595f0ddfaa9e3198f46854b5e1"
+  }, {
+    "name" : "Plantly -> [Viewing the Dashboard]",
+    "children" : [ {
+      "name" : "it should be able to access a device dashboard",
+      "uid" : "972b7cf623f7960c",
+      "parentUid" : "7b2ce740aabd78c72d5da495591dc7d3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592115386150,
+        "stop" : 1592115392656,
+        "duration" : 6506
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "7b2ce740aabd78c72d5da495591dc7d3"
+  }, {
+    "name" : "Plantly -> [Dashboard Interaction]",
+    "children" : [ {
+      "name" : "it should be able to view current device stats",
+      "uid" : "c23ae7e1e3430d0b",
+      "parentUid" : "29f6b1911bc6f2d93b26a26bd93e9a2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592115392657,
+        "stop" : 1592115395720,
+        "duration" : 3063
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "it should be able to switch device dashboards",
+      "uid" : "5f4def1b272f21c0",
+      "parentUid" : "29f6b1911bc6f2d93b26a26bd93e9a2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592115395720,
+        "stop" : 1592115399482,
+        "duration" : 3762
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "29f6b1911bc6f2d93b26a26bd93e9a2c"
+  } ]
+}

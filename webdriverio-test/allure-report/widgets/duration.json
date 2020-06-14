@@ -1,0 +1,81 @@
+[ {
+  "uid" : "972b7cf623f7960c",
+  "name" : "it should be able to access a device dashboard",
+  "time" : {
+    "start" : 1592115386150,
+    "stop" : 1592115392656,
+    "duration" : 6506
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b1098591aa13c050",
+  "name" : "should login on correct details",
+  "time" : {
+    "start" : 1592115368544,
+    "stop" : 1592115375238,
+    "duration" : 6694
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5f4def1b272f21c0",
+  "name" : "it should be able to switch device dashboards",
+  "time" : {
+    "start" : 1592115395720,
+    "stop" : 1592115399482,
+    "duration" : 3762
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e6ccd5d5e15704f0",
+  "name" : "should reject incorrect devices",
+  "time" : {
+    "start" : 1592115375245,
+    "stop" : 1592115378491,
+    "duration" : 3246
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c23ae7e1e3430d0b",
+  "name" : "it should be able to view current device stats",
+  "time" : {
+    "start" : 1592115392657,
+    "stop" : 1592115395720,
+    "duration" : 3063
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "241f4e4d997cdfbb",
+  "name" : "should reject incorrect details",
+  "time" : {
+    "start" : 1592115361422,
+    "stop" : 1592115368544,
+    "duration" : 7122
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "15bcd6a68ee630dd",
+  "name" : "it should unlink devices",
+  "time" : {
+    "start" : 1592115380830,
+    "stop" : 1592115386148,
+    "duration" : 5318
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "95b863da7b726aa3",
+  "name" : "should accept correct devices",
+  "time" : {
+    "start" : 1592115378491,
+    "stop" : 1592115380827,
+    "duration" : 2336
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,59 @@
+{
+  "total" : 5,
+  "items" : [ {
+    "uid" : "b5623068e800942adac1f7889781e2f4",
+    "name" : "Plantly -> [Logging In]",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
+    "uid" : "a73a6aaf5425c2cdfdf1e2f2f17a37cc",
+    "name" : "Plantly -> [Adding Devices]",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
+    "uid" : "db7eb5f4fccc960c85e58c967f4785ea",
+    "name" : "Plantly -> [Dashboard Interaction]",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
+    "uid" : "002b3d974f5bb60c8b9269aa2191da63",
+    "name" : "Plantly -> [Removing Devices]",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "d3f24214cfc4798c8397f8d56c70b855",
+    "name" : "Plantly -> [Viewing the Dashboard]",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    }
+  } ]
+}
