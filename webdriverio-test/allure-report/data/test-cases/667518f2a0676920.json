@@ -1,0 +1,56 @@
+{
+  "uid" : "667518f2a0676920",
+  "name" : "should be able to see CPU information",
+  "fullName" : "US 3.5.4: Elastic search.should be able to see CPU information",
+  "historyId" : "674a9fde6a132e694af9f888934db841",
+  "time" : {
+    "start" : 1592123407595,
+    "stop" : 1592123407611,
+    "duration" : 16
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to see CPU information"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "667518f2a0676920.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

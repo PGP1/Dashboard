@@ -1,0 +1,56 @@
+{
+  "uid" : "dcfa1657ddac2248",
+  "name" : "should reject incorrect details",
+  "fullName" : "US 3.5.1.1: User Authentication functionality..should reject incorrect details",
+  "historyId" : "19c87aa77df736a84bc7a6cbf3e04d29",
+  "time" : {
+    "start" : 1592125086504,
+    "stop" : 1592125097456,
+    "duration" : 10952
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.1.1: User Authentication functionality."
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.1.1: User Authentication functionality."
+  }, {
+    "name" : "testMethod",
+    "value" : "should reject incorrect details"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.1.1: User Authentication functionality."
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "dcfa1657ddac2248.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

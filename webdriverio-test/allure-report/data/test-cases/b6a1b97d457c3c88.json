@@ -1,0 +1,127 @@
+{
+  "uid" : "b6a1b97d457c3c88",
+  "name" : "Should show previous prediction",
+  "fullName" : "US 3.8: AWS Socket API.Should show previous prediction",
+  "historyId" : "40f462067145eda63d63994d8112ee06",
+  "time" : {
+    "start" : 1592125472081,
+    "stop" : 1592125482107,
+    "duration" : 10026
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+  "statusTrace" : "Error: expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false\n                    at Context.it (/Users/austin/Desktop/PROJECTFOLDER/Dashboard/webdriverio-test/test/specs/basic.js:262:29)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.8: AWS Socket API"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.8: AWS Socket API"
+  }, {
+    "name" : "testMethod",
+    "value" : "Should show previous prediction"
+  }, {
+    "name" : "package",
+    "value" : "US 3.8: AWS Socket API"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "c030b5f03e6f1e03",
+      "status" : "failed",
+      "statusDetails" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+      "time" : {
+        "start" : 1592125307769,
+        "stop" : 1592125310802,
+        "duration" : 3033
+      }
+    }, {
+      "uid" : "89a2035b8f0d420f",
+      "status" : "failed",
+      "statusDetails" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+      "time" : {
+        "start" : 1592125221853,
+        "stop" : 1592125221873,
+        "duration" : 20
+      }
+    }, {
+      "uid" : "4528dedc478e84ef",
+      "status" : "failed",
+      "statusDetails" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+      "time" : {
+        "start" : 1592125133175,
+        "stop" : 1592125133194,
+        "duration" : 19
+      }
+    }, {
+      "uid" : "1c0cef4a7f018caf",
+      "status" : "failed",
+      "statusDetails" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+      "time" : {
+        "start" : 1592124977117,
+        "stop" : 1592124977141,
+        "duration" : 24
+      }
+    }, {
+      "uid" : "687b2badfb76f9e3",
+      "status" : "failed",
+      "statusDetails" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+      "time" : {
+        "start" : 1592124848520,
+        "stop" : 1592124848543,
+        "duration" : 23
+      }
+    }, {
+      "uid" : "4b696c6ca3730917",
+      "status" : "failed",
+      "statusDetails" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+      "time" : {
+        "start" : 1592124773552,
+        "stop" : 1592124773568,
+        "duration" : 16
+      }
+    }, {
+      "uid" : "f76ea164aa613d05",
+      "status" : "failed",
+      "statusDetails" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+      "time" : {
+        "start" : 1592124408317,
+        "stop" : 1592124408333,
+        "duration" : 16
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "b6a1b97d457c3c88.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

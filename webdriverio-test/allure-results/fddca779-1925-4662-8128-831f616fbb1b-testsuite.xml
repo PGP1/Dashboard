@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1592123364366' stop='1592123384411'>
+    <name>US: 3.5.10 Register account via Cognito API.</name>
+    <title>US: 3.5.10 Register account via Cognito API.</title>
+    <test-cases>
+        <test-case start='1592123364367' status='passed' stop='1592123374665'>
+            <name>should reject incorrect details</name>
+            <title>should reject incorrect details</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome-18.7.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1592123374666' status='passed' stop='1592123384411'>
+            <name>should accepts correct details</name>
+            <title>should accepts correct details</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome-18.7.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

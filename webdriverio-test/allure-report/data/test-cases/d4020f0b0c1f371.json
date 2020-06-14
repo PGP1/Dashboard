@@ -1,0 +1,56 @@
+{
+  "uid" : "d4020f0b0c1f371",
+  "name" : "should be able to see Video Streaming service",
+  "fullName" : "US 1.6: Video Streaming of Plants.should be able to see Video Streaming service",
+  "historyId" : "d02f6276e6799cca349cac52fe26d1fc",
+  "time" : {
+    "start" : 1592124406862,
+    "stop" : 1592124406946,
+    "duration" : 84
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 1.6: Video Streaming of Plants"
+  }, {
+    "name" : "testClass",
+    "value" : "US 1.6: Video Streaming of Plants"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to see Video Streaming service"
+  }, {
+    "name" : "package",
+    "value" : "US 1.6: Video Streaming of Plants"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d4020f0b0c1f371.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

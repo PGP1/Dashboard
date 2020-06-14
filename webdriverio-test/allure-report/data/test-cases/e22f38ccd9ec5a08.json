@@ -1,0 +1,56 @@
+{
+  "uid" : "e22f38ccd9ec5a08",
+  "name" : "should be able to switch device dashboards",
+  "fullName" : "US 3.5.3.3: Device status connection dashboard.should be able to switch device dashboards",
+  "historyId" : "5fc551fd79bd11268a1d2bb6c082765b",
+  "time" : {
+    "start" : 1592124842992,
+    "stop" : 1592124846729,
+    "duration" : 3737
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.3.3: Device status connection dashboard"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.3.3: Device status connection dashboard"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to switch device dashboards"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.3.3: Device status connection dashboard"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e22f38ccd9ec5a08.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

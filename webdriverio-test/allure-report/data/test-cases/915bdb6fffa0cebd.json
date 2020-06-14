@@ -1,0 +1,130 @@
+{
+  "uid" : "915bdb6fffa0cebd",
+  "name" : "should be able to see Device Control",
+  "fullName" : "US 3.5.4: Elastic search.should be able to see Device Control",
+  "historyId" : "3195cb06854ae2dcb352ebf82c304ca9",
+  "time" : {
+    "start" : 1592125540650,
+    "stop" : 1592125540687,
+    "duration" : 37
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to see Device Control"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.4: Elastic search"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "3128c6b908c54dbf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468837,
+        "stop" : 1592125468855,
+        "duration" : 18
+      }
+    }, {
+      "uid" : "8e220471f45118da",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304380,
+        "stop" : 1592125304532,
+        "duration" : 152
+      }
+    }, {
+      "uid" : "28259a78345acf0a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218355,
+        "stop" : 1592125218391,
+        "duration" : 36
+      }
+    }, {
+      "uid" : "4e1acaf70287f181",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125129954,
+        "stop" : 1592125129992,
+        "duration" : 38
+      }
+    }, {
+      "uid" : "7d7b68f47802ec95",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975519,
+        "stop" : 1592124975609,
+        "duration" : 90
+      }
+    }, {
+      "uid" : "10064412985b7b6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124847016,
+        "stop" : 1592124847061,
+        "duration" : 45
+      }
+    }, {
+      "uid" : "f42dc3f080ce71a0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771399,
+        "stop" : 1592124771452,
+        "duration" : 53
+      }
+    }, {
+      "uid" : "526fccfc87559f96",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124406778,
+        "stop" : 1592124406812,
+        "duration" : 34
+      }
+    }, {
+      "uid" : "22040436db7ed9a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123407555,
+        "stop" : 1592123407595,
+        "duration" : 40
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "915bdb6fffa0cebd.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

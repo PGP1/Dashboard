@@ -2,128 +2,274 @@
   "uid" : "98d3104e051c652961429bf95fa0b5d6",
   "name" : "suites",
   "children" : [ {
-    "name" : "Plantly -> [Logging In]",
+    "name" : "US 3.8: AWS Socket API",
+    "children" : [ {
+      "name" : "Should show previous prediction",
+      "uid" : "b6a1b97d457c3c88",
+      "parentUid" : "0cd4f86c450036815100d39d5de0f6a6",
+      "status" : "failed",
+      "time" : {
+        "start" : 1592125472081,
+        "stop" : 1592125482107,
+        "duration" : 10026
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "e0f87764f9ed57a2",
+      "parentUid" : "0cd4f86c450036815100d39d5de0f6a6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540840,
+        "stop" : 1592125543950,
+        "duration" : 3110
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    } ],
+    "uid" : "0cd4f86c450036815100d39d5de0f6a6"
+  }, {
+    "name" : "US: 3.5.10 Register account via Cognito API.",
     "children" : [ {
       "name" : "should reject incorrect details",
-      "uid" : "241f4e4d997cdfbb",
-      "parentUid" : "b5623068e800942adac1f7889781e2f4",
+      "uid" : "793b39119ebff56e",
+      "parentUid" : "8571b032e088f2e89d767580bab9befd",
       "status" : "passed",
       "time" : {
-        "start" : 1592115361422,
-        "stop" : 1592115368544,
-        "duration" : 7122
+        "start" : 1592125498337,
+        "stop" : 1592125509546,
+        "duration" : 11209
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "80cc9a2c6dc1eefe",
+      "parentUid" : "8571b032e088f2e89d767580bab9befd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125509547,
+        "stop" : 1592125519357,
+        "duration" : 9810
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    } ],
+    "uid" : "8571b032e088f2e89d767580bab9befd"
+  }, {
+    "name" : "US 3.5.1.1: User Authentication functionality.",
+    "children" : [ {
+      "name" : "should reject incorrect details",
+      "uid" : "acade49330b6ef9e",
+      "parentUid" : "108b96f2b0a1a12e29c1b851c4c4ce61",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125498341,
+        "stop" : 1592125508525,
+        "duration" : 10184
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
     }, {
       "name" : "should login on correct details",
-      "uid" : "b1098591aa13c050",
-      "parentUid" : "b5623068e800942adac1f7889781e2f4",
+      "uid" : "5af523da1a0e8ff1",
+      "parentUid" : "108b96f2b0a1a12e29c1b851c4c4ce61",
       "status" : "passed",
       "time" : {
-        "start" : 1592115368544,
-        "stop" : 1592115375238,
-        "duration" : 6694
+        "start" : 1592125508525,
+        "stop" : 1592125516396,
+        "duration" : 7871
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     } ],
-    "uid" : "b5623068e800942adac1f7889781e2f4"
+    "uid" : "108b96f2b0a1a12e29c1b851c4c4ce61"
   }, {
-    "name" : "Plantly -> [Adding Devices]",
+    "name" : "US 3.5.3.2: Device Linkage functionality",
     "children" : [ {
       "name" : "should reject incorrect devices",
-      "uid" : "e6ccd5d5e15704f0",
-      "parentUid" : "a73a6aaf5425c2cdfdf1e2f2f17a37cc",
+      "uid" : "247bf17d7e38a1e0",
+      "parentUid" : "f7bb87d2b611520bdb72a54996debb0a",
       "status" : "passed",
       "time" : {
-        "start" : 1592115375245,
-        "stop" : 1592115378491,
-        "duration" : 3246
+        "start" : 1592125516409,
+        "stop" : 1592125519642,
+        "duration" : 3233
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     }, {
       "name" : "should accept correct devices",
-      "uid" : "95b863da7b726aa3",
-      "parentUid" : "a73a6aaf5425c2cdfdf1e2f2f17a37cc",
+      "uid" : "58f2cc44d5ca5385",
+      "parentUid" : "f7bb87d2b611520bdb72a54996debb0a",
       "status" : "passed",
       "time" : {
-        "start" : 1592115378491,
-        "stop" : 1592115380827,
-        "duration" : 2336
+        "start" : 1592125519642,
+        "stop" : 1592125521897,
+        "duration" : 2255
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     } ],
-    "uid" : "a73a6aaf5425c2cdfdf1e2f2f17a37cc"
+    "uid" : "f7bb87d2b611520bdb72a54996debb0a"
   }, {
-    "name" : "Plantly -> [Removing Devices]",
+    "name" : "US 3.5.5: Device removal functionality",
     "children" : [ {
-      "name" : "it should unlink devices",
-      "uid" : "15bcd6a68ee630dd",
-      "parentUid" : "002b3d974f5bb60c8b9269aa2191da63",
+      "name" : "should unlink devices",
+      "uid" : "37a46cc6f332a889",
+      "parentUid" : "702931f929a6c396ede9b0c22a617cf4",
       "status" : "passed",
       "time" : {
-        "start" : 1592115380830,
-        "stop" : 1592115386148,
-        "duration" : 5318
+        "start" : 1592125521899,
+        "stop" : 1592125527146,
+        "duration" : 5247
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     } ],
-    "uid" : "002b3d974f5bb60c8b9269aa2191da63"
+    "uid" : "702931f929a6c396ede9b0c22a617cf4"
   }, {
-    "name" : "Plantly -> [Viewing the Dashboard]",
+    "name" : "US 3.5.1: Dashboard front end",
     "children" : [ {
-      "name" : "it should be able to access a device dashboard",
-      "uid" : "972b7cf623f7960c",
-      "parentUid" : "d3f24214cfc4798c8397f8d56c70b855",
+      "name" : "should be able to access a device dashboard",
+      "uid" : "9d32e504ae66085a",
+      "parentUid" : "abdcbd964e4974556a05f415436949c1",
       "status" : "passed",
       "time" : {
-        "start" : 1592115386150,
-        "stop" : 1592115392656,
-        "duration" : 6506
+        "start" : 1592125527148,
+        "stop" : 1592125533520,
+        "duration" : 6372
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     } ],
-    "uid" : "d3f24214cfc4798c8397f8d56c70b855"
+    "uid" : "abdcbd964e4974556a05f415436949c1"
   }, {
-    "name" : "Plantly -> [Dashboard Interaction]",
+    "name" : "US 3.5.3.3: Device status connection dashboard",
     "children" : [ {
-      "name" : "it should be able to view current device stats",
-      "uid" : "c23ae7e1e3430d0b",
-      "parentUid" : "db7eb5f4fccc960c85e58c967f4785ea",
+      "name" : "should be able to view current device stats",
+      "uid" : "8087a3af82502bc",
+      "parentUid" : "40306dee8bc2908e567549284470ba7a",
       "status" : "passed",
       "time" : {
-        "start" : 1592115392657,
-        "stop" : 1592115395720,
-        "duration" : 3063
+        "start" : 1592125533522,
+        "stop" : 1592125536562,
+        "duration" : 3040
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     }, {
-      "name" : "it should be able to switch device dashboards",
-      "uid" : "5f4def1b272f21c0",
-      "parentUid" : "db7eb5f4fccc960c85e58c967f4785ea",
+      "name" : "should be able to switch device dashboards",
+      "uid" : "b83db5b8bdc10850",
+      "parentUid" : "40306dee8bc2908e567549284470ba7a",
       "status" : "passed",
       "time" : {
-        "start" : 1592115395720,
-        "stop" : 1592115399482,
-        "duration" : 3762
+        "start" : 1592125536562,
+        "stop" : 1592125540337,
+        "duration" : 3775
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     } ],
-    "uid" : "db7eb5f4fccc960c85e58c967f4785ea"
+    "uid" : "40306dee8bc2908e567549284470ba7a"
+  }, {
+    "name" : "US 3.5.4: Elastic search",
+    "children" : [ {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "ddca5bc9bb03c796",
+      "parentUid" : "3322d685efd72a3e833d8fe94b5997cf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540360,
+        "stop" : 1592125540515,
+        "duration" : 155
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "d990bfe8cbfddefc",
+      "parentUid" : "3322d685efd72a3e833d8fe94b5997cf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540515,
+        "stop" : 1592125540650,
+        "duration" : 135
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "915bdb6fffa0cebd",
+      "parentUid" : "3322d685efd72a3e833d8fe94b5997cf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540650,
+        "stop" : 1592125540687,
+        "duration" : 37
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "863b08f129170b0b",
+      "parentUid" : "3322d685efd72a3e833d8fe94b5997cf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540687,
+        "stop" : 1592125540728,
+        "duration" : 41
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "d85399ed02621038",
+      "parentUid" : "3322d685efd72a3e833d8fe94b5997cf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540728,
+        "stop" : 1592125540791,
+        "duration" : 63
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    } ],
+    "uid" : "3322d685efd72a3e833d8fe94b5997cf"
+  }, {
+    "name" : "US 1.6: Video Streaming of Plants",
+    "children" : [ {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "5a4d4f0d301cac7",
+      "parentUid" : "a3a9186e3318c22744a38d05d784c3e0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540796,
+        "stop" : 1592125540837,
+        "duration" : 41
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    } ],
+    "uid" : "a3a9186e3318c22744a38d05d784c3e0"
   } ]
 }

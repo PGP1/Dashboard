@@ -1,8 +1,30 @@
 {
-  "total" : 5,
+  "total" : 9,
   "items" : [ {
-    "uid" : "b5623068e800942adac1f7889781e2f4",
-    "name" : "Plantly -> [Logging In]",
+    "uid" : "0cd4f86c450036815100d39d5de0f6a6",
+    "name" : "US 3.8: AWS Socket API",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
+    "uid" : "3322d685efd72a3e833d8fe94b5997cf",
+    "name" : "US 3.5.4: Elastic search",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 5,
+      "unknown" : 0,
+      "total" : 5
+    }
+  }, {
+    "uid" : "8571b032e088f2e89d767580bab9befd",
+    "name" : "US: 3.5.10 Register account via Cognito API.",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -12,8 +34,8 @@
       "total" : 2
     }
   }, {
-    "uid" : "a73a6aaf5425c2cdfdf1e2f2f17a37cc",
-    "name" : "Plantly -> [Adding Devices]",
+    "uid" : "108b96f2b0a1a12e29c1b851c4c4ce61",
+    "name" : "US 3.5.1.1: User Authentication functionality.",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -23,8 +45,8 @@
       "total" : 2
     }
   }, {
-    "uid" : "db7eb5f4fccc960c85e58c967f4785ea",
-    "name" : "Plantly -> [Dashboard Interaction]",
+    "uid" : "f7bb87d2b611520bdb72a54996debb0a",
+    "name" : "US 3.5.3.2: Device Linkage functionality",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -34,8 +56,19 @@
       "total" : 2
     }
   }, {
-    "uid" : "002b3d974f5bb60c8b9269aa2191da63",
-    "name" : "Plantly -> [Removing Devices]",
+    "uid" : "40306dee8bc2908e567549284470ba7a",
+    "name" : "US 3.5.3.3: Device status connection dashboard",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
+    "uid" : "702931f929a6c396ede9b0c22a617cf4",
+    "name" : "US 3.5.5: Device removal functionality",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -45,8 +78,19 @@
       "total" : 1
     }
   }, {
-    "uid" : "d3f24214cfc4798c8397f8d56c70b855",
-    "name" : "Plantly -> [Viewing the Dashboard]",
+    "uid" : "abdcbd964e4974556a05f415436949c1",
+    "name" : "US 3.5.1: Dashboard front end",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "a3a9186e3318c22744a38d05d784c3e0",
+    "name" : "US 1.6: Video Streaming of Plants",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,

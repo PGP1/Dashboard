@@ -1,0 +1,56 @@
+{
+  "uid" : "81e5a81e1f1c874",
+  "name" : "should be able to access a device dashboard",
+  "fullName" : "US 3.5.1: Dashboard front end.should be able to access a device dashboard",
+  "historyId" : "fc0d58f5f76fa07898abcec6edbf1baa",
+  "time" : {
+    "start" : 1592125290669,
+    "stop" : 1592125297279,
+    "duration" : 6610
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.1: Dashboard front end"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.1: Dashboard front end"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to access a device dashboard"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.1: Dashboard front end"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "81e5a81e1f1c874.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

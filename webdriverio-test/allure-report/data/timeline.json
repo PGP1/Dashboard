@@ -4,110 +4,2311 @@
   "children" : [ {
     "name" : "0-0",
     "children" : [ {
-      "name" : "should login on correct details",
-      "uid" : "b1098591aa13c050",
+      "name" : "Should show previous prediction",
+      "uid" : "4528dedc478e84ef",
       "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
-      "status" : "passed",
+      "status" : "failed",
       "time" : {
-        "start" : 1592115368544,
-        "stop" : 1592115375238,
-        "duration" : 6694
+        "start" : 1592125133175,
+        "stop" : 1592125133194,
+        "duration" : 19
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     }, {
-      "name" : "should reject incorrect devices",
-      "uid" : "e6ccd5d5e15704f0",
+      "name" : "should be able to see Device Control",
+      "uid" : "22040436db7ed9a",
       "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
       "status" : "passed",
       "time" : {
-        "start" : 1592115375245,
-        "stop" : 1592115378491,
-        "duration" : 3246
+        "start" : 1592123407555,
+        "stop" : 1592123407595,
+        "duration" : 40
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "d15234dbcd29902f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125461869,
+        "stop" : 1592125464902,
+        "duration" : 3033
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should login on correct details",
+      "uid" : "8bea7348dde65536",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124738487,
+        "stop" : 1592124747277,
+        "duration" : 8790
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should show previous prediction",
+      "uid" : "f76ea164aa613d05",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1592124408317,
+        "stop" : 1592124408333,
+        "duration" : 16
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "add7479b1b4bb1da",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124847104,
+        "stop" : 1592124847167,
+        "duration" : 63
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "810e90b7e0dc91be",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124956851,
+        "stop" : 1592124962110,
+        "duration" : 5259
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "273b527f1646048",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124406813,
+        "stop" : 1592124406840,
+        "duration" : 27
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should show previous prediction",
+      "uid" : "1c0cef4a7f018caf",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1592124977117,
+        "stop" : 1592124977141,
+        "duration" : 24
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
     }, {
       "name" : "should accept correct devices",
-      "uid" : "95b863da7b726aa3",
+      "uid" : "6f27ed53fc54977b",
       "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
       "status" : "passed",
       "time" : {
-        "start" : 1592115378491,
-        "stop" : 1592115380827,
-        "duration" : 2336
+        "start" : 1592125448044,
+        "stop" : 1592125450261,
+        "duration" : 2217
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     }, {
-      "name" : "it should unlink devices",
-      "uid" : "15bcd6a68ee630dd",
+      "name" : "should login on correct details",
+      "uid" : "7be6c1cff52f5b78",
       "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
       "status" : "passed",
       "time" : {
-        "start" : 1592115380830,
-        "stop" : 1592115386148,
-        "duration" : 5318
+        "start" : 1592123373313,
+        "stop" : 1592123383377,
+        "duration" : 10064
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "it should be able to switch device dashboards",
-      "uid" : "5f4def1b272f21c0",
-      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
-      "status" : "passed",
-      "time" : {
-        "start" : 1592115395720,
-        "stop" : 1592115399482,
-        "duration" : 3762
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "it should be able to access a device dashboard",
-      "uid" : "972b7cf623f7960c",
-      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
-      "status" : "passed",
-      "time" : {
-        "start" : 1592115386150,
-        "stop" : 1592115392656,
-        "duration" : 6506
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     }, {
       "name" : "should reject incorrect details",
-      "uid" : "241f4e4d997cdfbb",
+      "uid" : "acade49330b6ef9e",
       "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
       "status" : "passed",
       "time" : {
-        "start" : 1592115361422,
-        "stop" : 1592115368544,
-        "duration" : 7122
+        "start" : 1592125498341,
+        "stop" : 1592125508525,
+        "duration" : 10184
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
     }, {
-      "name" : "it should be able to view current device stats",
-      "uid" : "c23ae7e1e3430d0b",
+      "name" : "should login on correct details",
+      "uid" : "bd2a2576b0477421",
       "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
       "status" : "passed",
       "time" : {
-        "start" : 1592115392657,
-        "stop" : 1592115395720,
-        "duration" : 3063
+        "start" : 1592124942486,
+        "stop" : 1592124951352,
+        "duration" : 8866
       },
       "flaky" : false,
       "newFailed" : false,
-      "parameters" : [ "chrome" ]
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "2a415661e1e3202c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125126016,
+        "stop" : 1592125129757,
+        "duration" : 3741
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "60b32acbe64d8e46",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123383395,
+        "stop" : 1592123386661,
+        "duration" : 3266
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "493fd91b594cfe1b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124839949,
+        "stop" : 1592124842992,
+        "duration" : 3043
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "5a4d4f0d301cac7",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540796,
+        "stop" : 1592125540837,
+        "duration" : 41
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "1a32358524f5d0a7",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125109032,
+        "stop" : 1592125111262,
+        "duration" : 2230
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "c980fab219654644",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124750515,
+        "stop" : 1592124752756,
+        "duration" : 2241
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "bdd65896d6037145",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124382125,
+        "stop" : 1592124385879,
+        "duration" : 3754
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "3a7b227d3d1223fa",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125444829,
+        "stop" : 1592125448044,
+        "duration" : 3215
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "2400fc6d46e9e0a4",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304098,
+        "stop" : 1592125304263,
+        "duration" : 165
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should show previous prediction",
+      "uid" : "c030b5f03e6f1e03",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1592125307769,
+        "stop" : 1592125310802,
+        "duration" : 3033
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "9b7e9bb2358d9b38",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468642,
+        "stop" : 1592125468767,
+        "duration" : 125
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "8087a3af82502bc",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125533522,
+        "stop" : 1592125536562,
+        "duration" : 3040
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "482e0fbbad9a4c3c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124847061,
+        "stop" : 1592124847104,
+        "duration" : 43
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "7d7b68f47802ec95",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975519,
+        "stop" : 1592124975609,
+        "duration" : 90
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "d96b4d9827ade3b5",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125455516,
+        "stop" : 1592125461867,
+        "duration" : 6351
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "3eb62d74661c12a3",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124954620,
+        "stop" : 1592124956848,
+        "duration" : 2228
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "aeb614e3e81b9f5b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123407611,
+        "stop" : 1592123407626,
+        "duration" : 15
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "9018a50e6e4123df",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125130038,
+        "stop" : 1592125130089,
+        "duration" : 51
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "a907c70ea7b0d282",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125464903,
+        "stop" : 1592125468639,
+        "duration" : 3736
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "1ce333302bfab3bb",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124847200,
+        "stop" : 1592124848520,
+        "duration" : 1320
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "2e35cda96c8d372f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125129759,
+        "stop" : 1592125129885,
+        "duration" : 126
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "526fccfc87559f96",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124406778,
+        "stop" : 1592124406812,
+        "duration" : 34
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "f8c143a545c79476",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125450263,
+        "stop" : 1592125455514,
+        "duration" : 5251
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "a890f4ef2b3ce6d3",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218237,
+        "stop" : 1592125218354,
+        "duration" : 117
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "98196e74afe8a45b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218391,
+        "stop" : 1592125218420,
+        "duration" : 29
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "51101cf1d711681a",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123403625,
+        "stop" : 1592123407368,
+        "duration" : 3743
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "f6e1a87320dbbcf4",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124727563,
+        "stop" : 1592124738487,
+        "duration" : 10924
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "5e5106902a06a5a4",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975715,
+        "stop" : 1592124975751,
+        "duration" : 36
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "df292b0817e1f33b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975693,
+        "stop" : 1592124975712,
+        "duration" : 19
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "5e2f94b96714015e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125196952,
+        "stop" : 1592125199229,
+        "duration" : 2277
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "13d4f26fbae5d47e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123407492,
+        "stop" : 1592123407555,
+        "duration" : 63
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "19da622375017345",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124801509,
+        "stop" : 1592124813723,
+        "duration" : 12214
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "3ee0a2c6d05f3a7f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125279470,
+        "stop" : 1592125282918,
+        "duration" : 3448
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "bd77487996c9cc17",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125285229,
+        "stop" : 1592125290664,
+        "duration" : 5435
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "14742b03e58ab516",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771453,
+        "stop" : 1592124771487,
+        "duration" : 34
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should show previous prediction",
+      "uid" : "89a2035b8f0d420f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1592125221853,
+        "stop" : 1592125221873,
+        "duration" : 20
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "247fcb8933a62994",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123400588,
+        "stop" : 1592123403625,
+        "duration" : 3037
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should show previous prediction",
+      "uid" : "b6a1b97d457c3c88",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1592125472081,
+        "stop" : 1592125482107,
+        "duration" : 10026
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "69aac0fd2713ff9e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124833547,
+        "stop" : 1592124839948,
+        "duration" : 6401
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "c2fa53ba028ac7ff",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125424959,
+        "stop" : 1592125436130,
+        "duration" : 11171
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "e22f38ccd9ec5a08",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124842992,
+        "stop" : 1592124846729,
+        "duration" : 3737
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "dacfbe4317f4b0ce",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124951372,
+        "stop" : 1592124954620,
+        "duration" : 3248
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "d85399ed02621038",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540728,
+        "stop" : 1592125540791,
+        "duration" : 63
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "19955195c99bc2ff",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124406698,
+        "stop" : 1592124406778,
+        "duration" : 80
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "8a01e8acde7283c2",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124402808,
+        "stop" : 1592124406556,
+        "duration" : 3748
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "4acfe65321a76248",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771335,
+        "stop" : 1592124771399,
+        "duration" : 64
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "48105c87d4422b17",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125116563,
+        "stop" : 1592125122975,
+        "duration" : 6412
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "e9ef716e2ddb6def",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771547,
+        "stop" : 1592124773552,
+        "duration" : 2005
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "fe3cad3c2d63db70",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124388108,
+        "stop" : 1592124393377,
+        "duration" : 5269
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "10f02e343b2315f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218666,
+        "stop" : 1592125218691,
+        "duration" : 25
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "8942a79443624c4f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124764411,
+        "stop" : 1592124767449,
+        "duration" : 3038
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "ea03cc2d2cc44688",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124968481,
+        "stop" : 1592124971521,
+        "duration" : 3040
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "915bdb6fffa0cebd",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540650,
+        "stop" : 1592125540687,
+        "duration" : 37
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should login on correct details",
+      "uid" : "b6c9621dc6de6a01",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124813723,
+        "stop" : 1592124822750,
+        "duration" : 9027
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "4c18e334f93f50af",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125122977,
+        "stop" : 1592125126016,
+        "duration" : 3039
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "48ef54450e2fa16b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124828266,
+        "stop" : 1592124833546,
+        "duration" : 5280
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "3f9028cf1595404a",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123388899,
+        "stop" : 1592123394158,
+        "duration" : 5259
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "863b08f129170b0b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540687,
+        "stop" : 1592125540728,
+        "duration" : 41
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "1fd2d071d06bf627",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124360571,
+        "stop" : 1592124373314,
+        "duration" : 12743
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "ddca5bc9bb03c796",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540360,
+        "stop" : 1592125540515,
+        "duration" : 155
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "90d0cd315aef35fe",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125199232,
+        "stop" : 1592125204542,
+        "duration" : 5310
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "8acff99723dfd989",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124971521,
+        "stop" : 1592124975266,
+        "duration" : 3745
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should login on correct details",
+      "uid" : "27b7b540dfdf2ffb",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124373315,
+        "stop" : 1592124382113,
+        "duration" : 8798
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "d990bfe8cbfddefc",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540515,
+        "stop" : 1592125540650,
+        "duration" : 135
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should login on correct details",
+      "uid" : "51c0ecf51d3f4330",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125268284,
+        "stop" : 1592125279457,
+        "duration" : 11173
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "4f4666605d1fd97c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125282918,
+        "stop" : 1592125285223,
+        "duration" : 2305
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should show previous prediction",
+      "uid" : "4b696c6ca3730917",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1592124773552,
+        "stop" : 1592124773568,
+        "duration" : 16
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "dddd26614494fb63",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124406841,
+        "stop" : 1592124406858,
+        "duration" : 17
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "28259a78345acf0a",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218355,
+        "stop" : 1592125218391,
+        "duration" : 36
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "d8f9fb0a73972d7",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123386661,
+        "stop" : 1592123388897,
+        "duration" : 2236
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "4e1acaf70287f181",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125129954,
+        "stop" : 1592125129992,
+        "duration" : 38
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "42d9d5fed53fb841",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771198,
+        "stop" : 1592124771335,
+        "duration" : 137
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "a1502b1287697afb",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304548,
+        "stop" : 1592125304567,
+        "duration" : 19
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "a0b40746106c4fbc",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124406558,
+        "stop" : 1592124406698,
+        "duration" : 140
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "f42dc3f080ce71a0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771399,
+        "stop" : 1592124771452,
+        "duration" : 53
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "a81b5563cc093b25",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218072,
+        "stop" : 1592125218236,
+        "duration" : 164
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "eadaf7aa6caa8695",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123364369,
+        "stop" : 1592123373311,
+        "duration" : 8942
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "564bba3d7d667a65",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125214276,
+        "stop" : 1592125218069,
+        "duration" : 3793
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "a326183a0308e6f0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124752759,
+        "stop" : 1592124758017,
+        "duration" : 5258
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "31556f786d2c5cf5",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124846733,
+        "stop" : 1592124846880,
+        "duration" : 147
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "247bf17d7e38a1e0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125516409,
+        "stop" : 1592125519642,
+        "duration" : 3233
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "e0f87764f9ed57a2",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125540840,
+        "stop" : 1592125543950,
+        "duration" : 3110
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "cc218ae8a8395e7e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125176327,
+        "stop" : 1592125185559,
+        "duration" : 9232
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "9d32e504ae66085a",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125527148,
+        "stop" : 1592125533520,
+        "duration" : 6372
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "3128c6b908c54dbf",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468837,
+        "stop" : 1592125468855,
+        "duration" : 18
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "9f551fec363518cc",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125129992,
+        "stop" : 1592125130010,
+        "duration" : 18
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should login on correct details",
+      "uid" : "c627ab3c5681c068",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125097456,
+        "stop" : 1592125105789,
+        "duration" : 8333
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "58f2cc44d5ca5385",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125519642,
+        "stop" : 1592125521897,
+        "duration" : 2255
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "6bcecb3063841502",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123407370,
+        "stop" : 1592123407492,
+        "duration" : 122
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "8e76430ac43e2014",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468767,
+        "stop" : 1592125468834,
+        "duration" : 67
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "c3d3360785f672cb",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125193723,
+        "stop" : 1592125196952,
+        "duration" : 3229
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "b83db5b8bdc10850",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125536562,
+        "stop" : 1592125540337,
+        "duration" : 3775
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "dcfa1657ddac2248",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125086504,
+        "stop" : 1592125097456,
+        "duration" : 10952
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "a042672bde435604",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468929,
+        "stop" : 1592125468982,
+        "duration" : 53
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "a12c1c1684a4fc87",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304532,
+        "stop" : 1592125304547,
+        "duration" : 15
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "6b77c8056a10b576",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304263,
+        "stop" : 1592125304380,
+        "duration" : 117
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see elastic search server status",
+      "uid" : "d3b25f8531aad204",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975268,
+        "stop" : 1592124975416,
+        "duration" : 148
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "d025aecf5c47fbe8",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125111264,
+        "stop" : 1592125116561,
+        "duration" : 5297
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "d4673a1c07789dad",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218421,
+        "stop" : 1592125218661,
+        "duration" : 240
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "8e220471f45118da",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304380,
+        "stop" : 1592125304532,
+        "duration" : 152
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Control",
+      "uid" : "10064412985b7b6a",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124847016,
+        "stop" : 1592124847061,
+        "duration" : 45
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "e5689f169b2425dc",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771487,
+        "stop" : 1592124771505,
+        "duration" : 18
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "901349cd8fea3179",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125297282,
+        "stop" : 1592125300332,
+        "duration" : 3050
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "264db2e30933d295",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125204578,
+        "stop" : 1592125211217,
+        "duration" : 6639
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "3c6c80e86989da17",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125129886,
+        "stop" : 1592125129954,
+        "duration" : 68
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "92f28fa26a7d8dcf",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125130010,
+        "stop" : 1592125130032,
+        "duration" : 22
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "6c6f0cc45151942c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124399771,
+        "stop" : 1592124402808,
+        "duration" : 3037
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "5517d68ece584f45",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125255748,
+        "stop" : 1592125268284,
+        "duration" : 12536
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "3053632192f4b118",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123394161,
+        "stop" : 1592123400584,
+        "duration" : 6423
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "a660b43d6163e721",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124962112,
+        "stop" : 1592124968479,
+        "duration" : 6367
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "3fc8d20ba5defc24",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124747292,
+        "stop" : 1592124750515,
+        "duration" : 3223
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "81e5a81e1f1c874",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125290669,
+        "stop" : 1592125297279,
+        "duration" : 6610
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "4ad2e61c72dc347e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124846881,
+        "stop" : 1592124847016,
+        "duration" : 135
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "bbb978e102ef52cd",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468984,
+        "stop" : 1592125472081,
+        "duration" : 3097
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "7c142b26dd0b9496",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124385879,
+        "stop" : 1592124388106,
+        "duration" : 2227
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "223b161fca1109e2",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124822760,
+        "stop" : 1592124825998,
+        "duration" : 3238
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "ea46451bffbde840",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468855,
+        "stop" : 1592125468892,
+        "duration" : 37
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect devices",
+      "uid" : "88f7218969c798cc",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125105803,
+        "stop" : 1592125109031,
+        "duration" : 3228
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "e9fd84c121f9b278",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975752,
+        "stop" : 1592124977117,
+        "duration" : 1365
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should login on correct details",
+      "uid" : "c709d467b03da263",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125185559,
+        "stop" : 1592125193709,
+        "duration" : 8150
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should login on correct details",
+      "uid" : "5af523da1a0e8ff1",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125508525,
+        "stop" : 1592125516396,
+        "duration" : 7871
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see RAM information",
+      "uid" : "4099a74873c67961",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125468893,
+        "stop" : 1592125468924,
+        "duration" : 31
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "76096cad16c9469a",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124393381,
+        "stop" : 1592124399769,
+        "duration" : 6388
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "fb1b2cad403cf911",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304575,
+        "stop" : 1592125304602,
+        "duration" : 27
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "917adaaa6b5e858f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1592124406948,
+        "stop" : 1592124408316,
+        "duration" : 1368
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accept correct devices",
+      "uid" : "ccdf05c1705cf8ec",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124825998,
+        "stop" : 1592124828264,
+        "duration" : 2266
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "654d38e524a3ac02",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124847171,
+        "stop" : 1592124847197,
+        "duration" : 26
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should login on correct details",
+      "uid" : "5b5c419127e2003a",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125436130,
+        "stop" : 1592125444817,
+        "duration" : 8687
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to view current device stats",
+      "uid" : "6df3ebc51e3f1fad",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125211219,
+        "stop" : 1592125214276,
+        "duration" : 3057
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "f18d91c80d607f89",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124767449,
+        "stop" : 1592124771195,
+        "duration" : 3746
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should show previous prediction",
+      "uid" : "687b2badfb76f9e3",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1592124848520,
+        "stop" : 1592124848543,
+        "duration" : 23
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "d4e959a68c074617",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125304608,
+        "stop" : 1592125307769,
+        "duration" : 3161
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "b8365df185e64d4",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975610,
+        "stop" : 1592124975693,
+        "duration" : 83
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should unlink devices",
+      "uid" : "37a46cc6f332a889",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125521899,
+        "stop" : 1592125527146,
+        "duration" : 5247
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "29c296b319c11c2e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123407632,
+        "stop" : 1592123407649,
+        "duration" : 17
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to switch device dashboards",
+      "uid" : "7067924bd464b232",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125300332,
+        "stop" : 1592125304096,
+        "duration" : 3764
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "d4020f0b0c1f371",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124406862,
+        "stop" : 1592124406946,
+        "duration" : 84
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Video Streaming service",
+      "uid" : "5d7c2a49ffff53e5",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124771511,
+        "stop" : 1592124771544,
+        "duration" : 33
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "f8e04817ad1dc35f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125130091,
+        "stop" : 1592125133175,
+        "duration" : 3084
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see CPU information",
+      "uid" : "667518f2a0676920",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123407595,
+        "stop" : 1592123407611,
+        "duration" : 16
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to see Device Status",
+      "uid" : "d16b34efc85a9665",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124975416,
+        "stop" : 1592124975519,
+        "duration" : 103
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "Should be able to see WebSocket notification",
+      "uid" : "a013374337cde3e4",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125218696,
+        "stop" : 1592125221853,
+        "duration" : 3157
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "256f4f53b7235556",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124930707,
+        "stop" : 1592124942485,
+        "duration" : 11778
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should be able to access a device dashboard",
+      "uid" : "33d802b14f104a25",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124758019,
+        "stop" : 1592124764408,
+        "duration" : 6389
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
     } ],
     "uid" : "516fe00eea05ad99e936fa729b55eff4"
+  }, {
+    "name" : "0-1",
+    "children" : [ {
+      "name" : "should accepts correct details",
+      "uid" : "d5059369b89b0559",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125187474,
+        "stop" : 1592125197100,
+        "duration" : 9626
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "d75d2f587374b94d",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124930706,
+        "stop" : 1592124943137,
+        "duration" : 12431
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "9c69e45f86f62e9c",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124943138,
+        "stop" : 1592124952625,
+        "duration" : 9487
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "a341ca54d1982b30",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123364367,
+        "stop" : 1592123374665,
+        "duration" : 10298
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "71558c157c7d7be3",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592123374666,
+        "stop" : 1592123384411,
+        "duration" : 9745
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "813134e8cc3f1d97",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124360569,
+        "stop" : 1592124374184,
+        "duration" : 13615
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "2948bca9c459ff48",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125176301,
+        "stop" : 1592125187473,
+        "duration" : 11172
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "2851b2b8e486cf1a",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125424959,
+        "stop" : 1592125437037,
+        "duration" : 12078
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "793b39119ebff56e",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125498337,
+        "stop" : 1592125509546,
+        "duration" : 11209
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "5720b366f5cc37da",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124374185,
+        "stop" : 1592124383995,
+        "duration" : 9810
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "aeaf2691c7f10a62",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124801549,
+        "stop" : 1592124814578,
+        "duration" : 13029
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "c46ddf3302f1b3b9",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125269838,
+        "stop" : 1592125282299,
+        "duration" : 12461
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "900a61b177861424",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125255798,
+        "stop" : 1592125269837,
+        "duration" : 14039
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "6b10a84929b56ad1",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124727563,
+        "stop" : 1592124739990,
+        "duration" : 12427
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "a3160431e5f99b63",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124814578,
+        "stop" : 1592124824631,
+        "duration" : 10053
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "80cc9a2c6dc1eefe",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125509547,
+        "stop" : 1592125519357,
+        "duration" : 9810
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "fb965e86739936df",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125098530,
+        "stop" : 1592125108192,
+        "duration" : 9662
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "c5448c2a516bfbf",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125437038,
+        "stop" : 1592125447102,
+        "duration" : 10064
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should reject incorrect details",
+      "uid" : "cc89ff063c607f50",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592125086503,
+        "stop" : 1592125098529,
+        "duration" : 12026
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    }, {
+      "name" : "should accepts correct details",
+      "uid" : "b86f093cea0b3566",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592124739991,
+        "stop" : 1592124749588,
+        "duration" : 9597
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome-18.7.0" ]
+    } ],
+    "uid" : "27fa874cadc1574e37a07abb440963bd"
   } ]
 }

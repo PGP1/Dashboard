@@ -1,0 +1,58 @@
+{
+  "uid" : "917adaaa6b5e858f",
+  "name" : "Should be able to see WebSocket notification",
+  "fullName" : "US 3.8: AWS Socket API.Should be able to see WebSocket notification",
+  "historyId" : "327179b46b2d5dc491f8ee5d01fa92ad",
+  "time" : {
+    "start" : 1592124406948,
+    "stop" : 1592124408316,
+    "duration" : 1368
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false",
+  "statusTrace" : "Error: expect(received).toBe(expected) // Object.is equality\n                \n                Expected: true\n                Received: false\n                    at Context.it (/Users/austin/Desktop/PROJECTFOLDER/Dashboard/webdriverio-test/test/specs/basic.js:246:28)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.8: AWS Socket API"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.8: AWS Socket API"
+  }, {
+    "name" : "testMethod",
+    "value" : "Should be able to see WebSocket notification"
+  }, {
+    "name" : "package",
+    "value" : "US 3.8: AWS Socket API"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "917adaaa6b5e858f.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}

@@ -1,0 +1,56 @@
+{
+  "uid" : "d15234dbcd29902f",
+  "name" : "should be able to view current device stats",
+  "fullName" : "US 3.5.3.3: Device status connection dashboard.should be able to view current device stats",
+  "historyId" : "861d8b5f6664f7e90c559d77e1a4084",
+  "time" : {
+    "start" : 1592125461869,
+    "stop" : 1592125464902,
+    "duration" : 3033
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "US 3.5.3.3: Device status connection dashboard"
+  }, {
+    "name" : "testClass",
+    "value" : "US 3.5.3.3: Device status connection dashboard"
+  }, {
+    "name" : "testMethod",
+    "value" : "should be able to view current device stats"
+  }, {
+    "name" : "package",
+    "value" : "US 3.5.3.3: Device status connection dashboard"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "Chrome-18.7.0"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d15234dbcd29902f.json",
+  "parameterValues" : [ "Chrome-18.7.0" ]
+}
