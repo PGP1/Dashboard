@@ -53,10 +53,10 @@ class Index extends Component {
             AWSController.getCurrentCredientials().then(d => {
                 const { Credentials } = d.data;
                 this.setState({ credentials: Credentials })
-                // AWSController.getLiveVideo(Credentials).then(res => {
-                //     this.setState({ liveVideo: res.HLSStreamingSessionURL }, 
-                //         () => console.log("Live video", this.state.liveVideo))
-                // })
+                AWSController.getLiveVideo(Credentials).then(res => {
+                    this.setState({ liveVideo: res.HLSStreamingSessionURL }, 
+                        () => console.log("Live video", this.state.liveVideo))
+                })
             });
         }).catch(err => Router.push("/login"));
     }
