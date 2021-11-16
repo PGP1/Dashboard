@@ -2231,8 +2231,8 @@ aws-sdk@2.518.0:
     xml2js "0.4.19"
 
 aws-sdk@^2.681.0:
-  version "2.715.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.715.0.tgz#b890892098e0a4d9e7189ed341267d4a9a6e856b"
+  version "2.814.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.814.0.tgz#7a1c36006e0b5826f14bd2511b1d229ef6814bb0"
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
